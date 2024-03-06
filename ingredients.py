@@ -5,7 +5,9 @@ from openpyxl import Workbook, load_workbook
 book = load_workbook('pythonParlorInventory.xlsx')          # excel sheet for inventory
 sheet = book.active
 
-def cheesePizza(x):                     
+
+# updates inventory with ingredients in a cheese pizza 
+def cheesePizza(x):                           
     dough = sheet['D2'].value   # updates dough
     dough = int(dough) - x
     sheet['D2'].value = dough
