@@ -25,8 +25,6 @@ def cheesePizza(x):
     
 
 
-
-
 # updates inventory with ingredients in a pepperonni pizza 
 def pepperonniPizza(x):                           
     dough = sheet['D2'].value   # updates dough
@@ -47,7 +45,6 @@ def pepperonniPizza(x):
     
     book.save('pythonParlorInventory.xlsx')     # saves changes in excel sheet 
     
-
 
 
 # updates inventory with ingredients in a hawaiian pizza 
@@ -74,8 +71,6 @@ def hawaiianPizza(x):
     
     book.save('pythonParlorInventory.xlsx')     # saves changes in excel sheet 
     
-
-
 
 
 # updates inventory with ingredients in a meat lovers pizza 
