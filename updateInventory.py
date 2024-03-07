@@ -109,14 +109,14 @@ def meatLoversPizza(x):
 
 # resets inventory to it's initial values, will only be available to call in the manager file 
 def restockInventory():
-    sheet['A2'].value = 999         # pepperonin
-    sheet['B2'].value = 999         # cheese
-    sheet['C2'].value = 999         # sause
-    sheet['D2'].value = 999         # dough
-    sheet['E2'].value = 999         # ham
-    sheet['F2'].value = 999         # pineapple
-    sheet['G2'].value = 999         # sausage
-    sheet['H2'].value = 999         # bacon
-    sheet['I2'].value = 999         # jalapenos
+    sheet['A2'].value = 1000         # pepperonin
+    sheet['B2'].value = 1000         # cheese
+    sheet['C2'].value = 1000         # sause
+    sheet['D2'].value = 1000         # dough
+    sheet['E2'].value = 1000         # ham
+    sheet['F2'].value = 1000         # pineapple
+    sheet['G2'].value = 1000         # sausage
+    sheet['H2'].value = 1000         # bacon
+    sheet['I2'].value = 1000         # jalapenos
     
     
