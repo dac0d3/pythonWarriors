@@ -48,9 +48,9 @@ def pepperonniPizza(x):
     return True 
 
 
-    
+# resets inventory to it's initial values, will only be available to call in the manager file 
 def restockInventory():
-    sheet['A2'].value = 500
+    pass
     
     
     
