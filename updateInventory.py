@@ -24,6 +24,8 @@ def cheesePizza(x):
     
     return True 
 
+
+# updates inventory with ingredients in a pepperonni pizza 
 def pepperonniPizza(x):                           
     dough = sheet['D2'].value   # updates dough
     dough = int(dough) - x
