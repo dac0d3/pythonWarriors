@@ -49,7 +49,9 @@ def pepperonniPizza(x):
 
 
     
-
+def restockInventory():
+    sheet['A2'].value = 500
+    
     
     
     
