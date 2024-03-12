@@ -10,20 +10,24 @@ from placeOrder import pizzaOrder,orderId    # gets pizza and order num
 
 
 
-def storeName():
-    pass
 
-def storeEmail():
-    pass
+# when this gets called it will store all the customers information into excel file 
+class StoreTransaction():
 
-def storeOrder():
-    pass
+    def storeName():
+        pass
 
-def storeTotal():
-    pass
+    def storeEmail():
+        pass
 
-def storeOrderNum():
-    pass
+    def storeOrder():
+        pass
+
+    def storeTotal():
+        pass
+
+    def storeOrderNum():
+        pass
 
 
 
