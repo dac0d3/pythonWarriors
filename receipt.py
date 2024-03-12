@@ -5,3 +5,7 @@
 # total + tax
 # order #
 
+from customer import * # gets name/email
+from placeOrder import * # gets order
+
+

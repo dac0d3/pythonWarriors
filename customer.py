@@ -4,6 +4,6 @@
 
 
 
-name = None
-email = None
+name = 'customer'
+email = 'email@abc.com'
 
