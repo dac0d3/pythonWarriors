@@ -6,7 +6,7 @@
 # order #
 
 from customer import name,email      # gets name/email
-from placeOrder import pizzaOrder    # gets pizza
+from placeOrder import pizzaOrder,orderId    # gets pizza and order num 
 
 
 
