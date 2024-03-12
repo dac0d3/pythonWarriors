@@ -6,4 +6,6 @@
 menu = ['CHEESE PIZZA','PEPPERONI PIZZA',]
 menu_prices = {'CHEESE PIZZA':15,'PEPPERONNI PIZZA':17} # needs full menu and prices 
 
+
+pizzaOrder = None
 total = None
