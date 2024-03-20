@@ -5,9 +5,8 @@
 # total + tax
 # order #
 
-from customer import name,email      # gets name/email
-from placeOrder import pizzaOrder,orderId    # gets pizza and order num 
-
+#from customer import *   # gets name/email
+from order import pizzaOrder,orderId    # gets pizza and order num 
 
 
 
