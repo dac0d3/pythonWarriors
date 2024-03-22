@@ -17,7 +17,7 @@ def getVals():
     nameEntry.config(state = DISABLED)
     emailEntry.config(state = DISABLED)
     
-    #call class for order 
+    #  <-- call class for order here
     print(nameVal,emailVal)
     
     
