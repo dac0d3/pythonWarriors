@@ -6,7 +6,10 @@
 # display receipt from receipt file 
 # confirm button = (sends order to chef) && (updates inventory on excel)
 # starts a new customer transaction in customer file
+
+
 from tkinter import *
+from revenue import calculateTax
 
 menu = ['CHEESE PIZZA','PEPPERONI PIZZA',]
 menu_prices = {'CHEESE PIZZA':15,'PEPPERONNI PIZZA':17} # needs full menu and prices 
@@ -23,7 +26,14 @@ menubox = Listbox(window,font = 'Constantia',width = 15,selectmode = MULTIPLE)
 menubox.pack()
 #listbox.grid(row = 1,column=1)
 #listbox.anchor()
-    
+
+# Method to calculate total for the order with tax 
+def calculateTotal(x):
+    i = calculateTax(x)
+    print('done')   
+
+
+
 class Order_Menu:
     
     def checkout ():
@@ -34,17 +44,12 @@ class Order_Menu:
             order.insert(index,menubox.get(index))
         
         for index in order:
-            total(index)
+            #calculateTotal(index)
             print(index)
             
-        # function to open new window here 
+        #open new window here 
         
-        
-    def calculateTotal(x):
-        pass
           
-        
-
     # Menu Items
     menubox.insert(1,'Cheese Pizza')
     menubox.insert(2,'Meat Lovers Pizza')
