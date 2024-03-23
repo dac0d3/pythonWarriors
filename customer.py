@@ -3,6 +3,7 @@
 
 from tkinter import *
 
+
 #name = 'customer'
 #email = 'email@abc.com'
 
@@ -16,9 +17,11 @@ def getVals():
     emailVal = emailEntry.get()
     nameEntry.config(state = DISABLED)
     emailEntry.config(state = DISABLED)
-    
-    #  <-- call class for order here
     print(nameVal,emailVal)
+    #close window here 
+    from order import Order_Menu #  <-- call class for order here
+    
+    
     
     
 

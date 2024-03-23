@@ -11,12 +11,12 @@
 from tkinter import *
 from revenue import calculateTax
 
-menu = ['CHEESE PIZZA','PEPPERONI PIZZA',]
-menu_prices = {'CHEESE PIZZA':15,'PEPPERONNI PIZZA':17} # needs full menu and prices 
+menu = ['CHEESE PIZZA','PEPPERONI PIZZA','HAWAIIAN PIZZA','MEAT LOVERS PIZZA']
+menu_prices = {'CHEESE PIZZA':15,'PEPPERONNI PIZZA':17,'HAWAIIAN PIZZA':16,'MEAT LOVERS PIZZA':19} 
 
 orderId = None
 pizzaOrder = None
-total = None
+
 
 
 
@@ -28,32 +28,49 @@ menubox.pack()
 #listbox.anchor()
 
 # Method to calculate total for the order with tax 
-def calculateTotal(x):
+totalList = []
+
+def calculateTotal(x: int):
     i = calculateTax(x)
-    print('done')   
+    return i   
 
-
-
+#This class has the informaiton of the menu that displays to the customer 
 class Order_Menu:
     
     def checkout ():
         
+        total = 0
         order = []
     
         for index in menubox.curselection():
-            order.insert(index,menubox.get(index))
-        
-        for index in order:
-            #calculateTotal(index)
-            print(index)
+            order.insert(index,menubox.get(index))  # inserts selected items in order[]
             
+        for index in order:
+            item = index.upper()                #capitalizes option to find it in menu
+            i = menu_prices[item]               #get price of item in menu 
+            itemWithTax = calculateTotal(i)     #sends item to calculateTax
+            totalList.append(itemWithTax)       #adds new price to totalList[]
+            
+            #print(i)                            #prints price of item
+        
+        
+        # this loop calculates total of order with tax 
+        for index in totalList:
+            if (total != 0):
+                total = total + index
+            else:
+                total = index
+        
+        print(total)    # print price of total order 
+            
+        
         #open new window here 
         
           
     # Menu Items
     menubox.insert(1,'Cheese Pizza')
     menubox.insert(2,'Meat Lovers Pizza')
-    menubox.insert(3,'Pepperoni Pizza')
+    menubox.insert(3,'Pepperonni Pizza')
     menubox.insert(4,'Hawaiian Pizza')
 
     # make size of menu same as number of items
