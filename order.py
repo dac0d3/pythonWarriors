@@ -20,6 +20,11 @@ pizzaOrder = None
 
 
 
+
+##################################################################################################################
+
+
+
 window = Tk()
 window.geometry('800x500')
 window.title('Order Screen')
@@ -28,9 +33,8 @@ menubox = Listbox(window,font = 'Constantia',width = 15,selectmode = MULTIPLE)
 menubox.pack()
 #listbox.grid(row = 1,column=1)
 #listbox.anchor()
-
-# Method to calculate total for the order with tax 
-totalList = []
+ 
+totalList = []      #list that holds the prices of the customer selection with tax 
 
 
 #This class has the informaiton of the menu that displays to the customer 
@@ -82,10 +86,42 @@ class Order_Menu:
     window.mainloop()
 
 
-    class Checkout():
+
+
+
+##################################################################################################################
+
+
+
+
+window2 = Tk()
+window2.geometry('800x500')
+window2.title('Checkout')
+
+
+class Checkout():
         
-        def displayReceipt():
-            pass
+   
+        
+    def orderComplete():
+       
+       
+        window2.destroy()
+    
+    
+    checkoutButton = Button(window2,text = 'Complete Order',command = orderComplete )
+    checkoutButton.pack()
         
         
-        print('Working')
+    window.mainloop()
+        
+        
+        
+        
+    print('Working')
+    
+    
+    
+    
+    
+##################################################################################################################
