@@ -10,13 +10,12 @@
 
 from tkinter import *
 from revenue import calculateTax
+#from customer import nameVal,emailVal
+
+
 
 menu = ['CHEESE PIZZA','PEPPERONI PIZZA','HAWAIIAN PIZZA','MEAT LOVERS PIZZA']
 menu_prices = {'CHEESE PIZZA':15,'PEPPERONNI PIZZA':17,'HAWAIIAN PIZZA':16,'MEAT LOVERS PIZZA':19} 
-
-orderId = None
-pizzaOrder = None
-
 
 
 
@@ -104,8 +103,8 @@ class Checkout():
    
         
     def orderComplete():
-       
-       
+        
+        
         window2.destroy()
     
     

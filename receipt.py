@@ -6,12 +6,37 @@
 # order #
 
 #from customer import *   # gets name/email
-from order import pizzaOrder,orderId    # gets pizza and order num 
+# gets pizza and order num 
 
+
+
+# This class or set of functions will create a new customer transaction and will hold all the information before it gets stored 
+class CustomerTransaction:
+    
+    
+    #create a constructor to get all the info from customer and order 
+    
+    def getname():
+        pass
+
+    def gerEmail():
+        pass
+
+    def getOrder():
+        pass
+
+    def getTotal():
+        pass
+
+    def getOrderNum():
+        pass
+
+
+###########################################################################################
 
 
 # when this gets called it will store all the customers information into excel file 
-class StoreTransaction():
+class StoreTransaction:
 
     def storeName():
         pass
@@ -27,6 +52,11 @@ class StoreTransaction():
 
     def storeOrderNum():
         pass
+    
+    
+
+
+
 
 
 
