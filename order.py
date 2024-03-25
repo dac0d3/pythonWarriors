@@ -21,7 +21,9 @@ pizzaOrder = None
 
 
 window = Tk()
-window.geometry('500x500')
+window.geometry('800x500')
+window.title('Order Screen')
+
 menubox = Listbox(window,font = 'Constantia',width = 15,selectmode = MULTIPLE)
 menubox.pack()
 #listbox.grid(row = 1,column=1)

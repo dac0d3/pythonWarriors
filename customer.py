@@ -9,6 +9,7 @@ from tkinter import *
 
 window = Tk()
 window.geometry('800x500')
+window.title('Customer Registration')
 
 
 # gets values for name and email from customer when confirm button is clicked 
@@ -18,7 +19,7 @@ def getVals():
     nameEntry.config(state = DISABLED)
     emailEntry.config(state = DISABLED)
     print(nameVal,emailVal)
-    #close window here 
+    window.destroy()             #close window here 
     from order import Order_Menu #  <-- call class for order here
     
     
