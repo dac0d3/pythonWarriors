@@ -32,9 +32,6 @@ menubox.pack()
 # Method to calculate total for the order with tax 
 totalList = []
 
-def calculateTotal(x: int):
-    i = calculateTax(x)
-    return i   
 
 #This class has the informaiton of the menu that displays to the customer 
 class Order_Menu:
@@ -50,7 +47,7 @@ class Order_Menu:
         for index in order:
             item = index.upper()                #capitalizes option to find it in menu
             i = menu_prices[item]               #get price of item in menu 
-            itemWithTax = calculateTotal(i)     #sends item to calculateTax
+            itemWithTax = calculateTax(i)       #sends item to calculateTax
             totalList.append(itemWithTax)       #adds new price to totalList[]
             
             #print(i)                            #prints price of item
