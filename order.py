@@ -25,7 +25,7 @@ menu_prices = {'CHEESE PIZZA':15,'PEPPERONNI PIZZA':17,'HAWAIIAN PIZZA':16,'MEAT
 
 
 window = Tk()
-window.geometry('800x500')
+window.geometry('1440x900')
 window.title('Order Screen')
 
 menubox = Listbox(window,font = 'Constantia',width = 15,selectmode = MULTIPLE)
@@ -94,7 +94,7 @@ class Order_Menu:
 
 
 window2 = Tk()
-window2.geometry('800x500')
+window2.geometry('1440x900')
 window2.title('Checkout')
 
 

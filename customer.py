@@ -8,7 +8,7 @@ from tkinter import *
 #email = 'email@abc.com'
 
 window = Tk()
-window.geometry('800x500')
+window.geometry('1440x900')
 window.title('Customer Registration')
 
 
