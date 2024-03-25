@@ -66,7 +66,7 @@ class Order_Menu:
         print(total)    # print price of total order 
             
         
-        #open new window here 
+        #open new window here / go to checkout class
         
           
     # Menu Items
@@ -86,4 +86,4 @@ class Order_Menu:
 
 
 class Checkout:
-    pass
+    print('Next')
