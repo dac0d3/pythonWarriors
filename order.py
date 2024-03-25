@@ -36,7 +36,7 @@ totalList = []
 #This class has the informaiton of the menu that displays to the customer 
 class Order_Menu:
     
-    def checkout ():
+    def goToCheckout ():
         
         total = 0
         order = []
@@ -62,8 +62,8 @@ class Order_Menu:
         
         print(total)    # print price of total order 
             
-        
-        #open new window here / go to checkout class
+        window.destroy()
+        #after this, Checkout class precedes
         
           
     # Menu Items
@@ -76,11 +76,16 @@ class Order_Menu:
     menubox.config(height = menubox.size())
 
     # button that will get order and open window to checkout screen 
-    checkoutButton = Button(window,text = "Checkout",command = checkout)
+    checkoutButton = Button(window,text = "Checkout",command = goToCheckout)
     checkoutButton.pack()
 
     window.mainloop()
 
 
-class Checkout:
-    print('Next')
+    class Checkout():
+        
+        def displayReceipt():
+            pass
+        
+        
+        print('Working')
