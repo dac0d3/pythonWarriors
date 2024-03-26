@@ -107,6 +107,7 @@ class Order_Menu:
         priceWithTax = calculateTax(price)                               #calculates tax
         print('Order:\nPepperoni Pizza: '+
               str(numPepperoniPizza)+'\nPrice: '+str(priceWithTax))
+        
     
     
     PPlabel = Label(window,text = 'Pepperoni Pizza')
