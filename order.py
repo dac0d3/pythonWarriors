@@ -88,13 +88,13 @@ class Order_Menu:
         priceWithTax = calculateTax(price)                              #calculates tax
         print('Order:\nCheese Pizza: '+
               str(numCheesePizza)+'\nPrice: '+str(priceWithTax))
-        
+        #cheesePizza(numCheesePizza)
         
     CPlabel = Label(window,text = 'Cheese Pizza')
     CPlabel.grid(row = 1,column = 1)
     
     CPbutton = Button(window,text = 'Add to Order',command = updateCP)
-    CPbutton.grid(row =2,column = 2)
+    CPbutton.grid(row = 2 ,column = 2)
     
     
     
@@ -107,7 +107,7 @@ class Order_Menu:
         priceWithTax = calculateTax(price)                               #calculates tax
         print('Order:\nPepperoni Pizza: '+
               str(numPepperoniPizza)+'\nPrice: '+str(priceWithTax))
-        
+    
     
     PPlabel = Label(window,text = 'Pepperoni Pizza')
     PPlabel.grid(row = 3,column = 1)
