@@ -19,10 +19,10 @@ menu = ['CHEESE PIZZA','PEPPERONI PIZZA','HAWAIIAN PIZZA','MEAT LOVERS PIZZA']
 menu_prices = {'CHEESE PIZZA':15,'PEPPERONI PIZZA':17,'HAWAIIAN PIZZA':16,'MEAT LOVERS PIZZA':19} 
 
 
-numCheesePizza = StringVar
-numPepperoniPizza = StringVar
-numHawaiianPizza = StringVar
-numMeatLoversPizza = StringVar
+numCheesePizza = IntVar
+numPepperoniPizza = IntVar
+numHawaiianPizza = IntVar
+numMeatLoversPizza = IntVar
 
 ##################################################################################################################
 
@@ -67,7 +67,7 @@ class Order_Menu:
         
         # this loop calculates total of order with tax 
         
-            
+        
         window.destroy()
         #after this, Order_Menu class ends and Checkout class precedes
         
@@ -75,7 +75,6 @@ class Order_Menu:
     # button that will get order and open window to checkout screen 
     checkoutButton = Button(window,text = "Checkout",command = goToCheckout)
     checkoutButton.grid(row = 12,column = 1)
-
 
 
 
@@ -167,7 +166,6 @@ window2.title('Checkout')
 
 class Checkout():
         
-   
         
     def orderComplete():
         print('Order Submitted')
