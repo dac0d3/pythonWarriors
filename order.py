@@ -9,6 +9,7 @@
 
 
 from tkinter import *
+from tkinter import BOTH,END,LEFT
 from revenue import calculateTax
 #from customer import nameVal,emailVal
 
@@ -28,10 +29,19 @@ window = Tk()
 window.geometry('1440x900')
 window.title('Order Screen')
 
-menubox = Listbox(window,font = 'Constantia',width = 15,selectmode = MULTIPLE)
-menubox.pack()
-#listbox.grid(row = 1,column=1)
-#listbox.anchor()
+#entry for Cheese pizzas 
+entryCP = Entry(window)
+entryCP.grid(row = 1,column = 2)
+
+#entry for Pepperoni pizzas 
+entryPP = Entry(window)
+entryPP.grid(row = 3,column = 2)
+
+#entry for Hawaiian pizzas 
+entryCP = Entry(window)
+entryCP.grid(row = 5,column = 2)
+
+
  
 totalList = []      #list that holds the prices of the customer selection with tax 
 
@@ -44,43 +54,57 @@ class Order_Menu:
         total = 0
         order = []
     
-        for index in menubox.curselection():
-            order.insert(index,menubox.get(index))  # inserts selected items in order[]
-            
-        for index in order:
-            item = index.upper()                #capitalizes option to find it in menu
-            i = menu_prices[item]               #get price of item in menu 
-            itemWithTax = calculateTax(i)       #sends item to calculateTax
-            totalList.append(itemWithTax)       #adds new price to totalList[]
-            
-            #print(i)                            #prints price of item
+        # inserts selected items in order[]
         
+        # loop to calc tax for each item
         
         # this loop calculates total of order with tax 
-        for index in totalList:
-            if (total != 0):
-                total = total + index
-            else:
-                total = index
         
-        print(total)    # print price of total order 
             
         window.destroy()
         #after this, Checkout class precedes
         
-          
-    # Menu Items
-    menubox.insert(1,'Cheese Pizza')
-    menubox.insert(2,'Meat Lovers Pizza')
-    menubox.insert(3,'Pepperonni Pizza')
-    menubox.insert(4,'Hawaiian Pizza')
-
-    # make size of menu same as number of items
-    menubox.config(height = menubox.size())
 
     # button that will get order and open window to checkout screen 
     checkoutButton = Button(window,text = "Checkout",command = goToCheckout)
-    checkoutButton.pack()
+    checkoutButton.grid(row = 12,column = 2)
+
+
+
+    #Update number of cheese pizzas
+    def updateCP():
+        numCheesePizza = entryCP.get()
+        
+    CPlabel = Label(window,text = 'Cheese Pizza')
+    CPlabel.grid(row = 1,column = 1)
+    
+    CPbutton = Button(window,text = 'Add to Order',command = updateCP)
+    CPbutton.grid(row =2,column = 1)
+    
+    
+    
+    #Update number of pepperoni pizzas
+    def updatePP():
+        pass
+    
+    PPlabel = Label(window,text = 'Pepperoni Pizza')
+    PPlabel.grid(row = 3,column = 1)
+    
+    PPbutton = Button(window,text = 'Add to Order',command = updatePP)
+    PPbutton.grid(row =4,column = 1)
+    
+    
+     
+    #Update number of hawaiian pizzas
+    def updateHP():
+        pass
+    
+    HPlabel = Label(window,text = 'Hawaiian Pizza')
+    HPlabel.grid(row = 5,column = 1)
+    
+    HPbutton = Button(window,text = 'Add to Order',command = updateHP)
+    HPbutton.grid(row =6,column = 1)
+    
 
     window.mainloop()
 
