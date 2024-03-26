@@ -16,10 +16,13 @@ from revenue import calculateTax
 
 
 menu = ['CHEESE PIZZA','PEPPERONI PIZZA','HAWAIIAN PIZZA','MEAT LOVERS PIZZA']
-menu_prices = {'CHEESE PIZZA':15,'PEPPERONNI PIZZA':17,'HAWAIIAN PIZZA':16,'MEAT LOVERS PIZZA':19} 
+menu_prices = {'CHEESE PIZZA':15,'PEPPERONI PIZZA':17,'HAWAIIAN PIZZA':16,'MEAT LOVERS PIZZA':19} 
 
 
-
+numCheesePizza = StringVar
+numPepperoniPizza = StringVar
+numHawaiianPizza = StringVar
+numMeatLoversPizza = StringVar
 
 ##################################################################################################################
 
@@ -38,8 +41,12 @@ entryPP = Entry(window)
 entryPP.grid(row = 3,column = 2)
 
 #entry for Hawaiian pizzas 
-entryCP = Entry(window)
-entryCP.grid(row = 5,column = 2)
+entryHP = Entry(window)
+entryHP.grid(row = 5,column = 2)
+
+#entry for Meat Lovers pizzas 
+entryMP = Entry(window)
+entryMP.grid(row = 7,column = 2)
 
 
  
@@ -62,48 +69,84 @@ class Order_Menu:
         
             
         window.destroy()
-        #after this, Checkout class precedes
+        #after this, Order_Menu class ends and Checkout class precedes
         
 
     # button that will get order and open window to checkout screen 
     checkoutButton = Button(window,text = "Checkout",command = goToCheckout)
-    checkoutButton.grid(row = 12,column = 2)
+    checkoutButton.grid(row = 12,column = 1)
+
+
 
 
 
     #Update number of cheese pizzas
     def updateCP():
         numCheesePizza = entryCP.get()
+        price = menu_prices['CHEESE PIZZA']                             #Finds price of pizza in menu
+        priceWithTax = calculateTax(price)                              #calculates tax
+        print('Order:\nCheese Pizza: '+
+              str(numCheesePizza)+'\nPrice: '+str(priceWithTax))
         
     CPlabel = Label(window,text = 'Cheese Pizza')
     CPlabel.grid(row = 1,column = 1)
     
     CPbutton = Button(window,text = 'Add to Order',command = updateCP)
-    CPbutton.grid(row =2,column = 1)
+    CPbutton.grid(row =2,column = 2)
+    
+    
     
     
     
     #Update number of pepperoni pizzas
     def updatePP():
-        pass
+        numPepperoniPizza = entryPP.get()
+        price = menu_prices['PEPPERONI PIZZA']                           #Finds price of pizza in menu
+        priceWithTax = calculateTax(price)                               #calculates tax
+        print('Order:\nPepperoni Pizza: '+
+              str(numPepperoniPizza)+'\nPrice: '+str(priceWithTax))
+        
     
     PPlabel = Label(window,text = 'Pepperoni Pizza')
     PPlabel.grid(row = 3,column = 1)
     
     PPbutton = Button(window,text = 'Add to Order',command = updatePP)
-    PPbutton.grid(row =4,column = 1)
+    PPbutton.grid(row =4,column = 2)
+    
+    
     
     
      
     #Update number of hawaiian pizzas
     def updateHP():
-        pass
-    
+        numHawaiianPizza = entryHP.get()
+        price = menu_prices['HAWAIIAN PIZZA']                             #Finds price of pizza in menu
+        priceWithTax = calculateTax(price)                                #calculates tax
+        print('Order:\nHawaiian Pizza: '+
+              str(numHawaiianPizza)+'\nPrice: '+str(priceWithTax))
+        
     HPlabel = Label(window,text = 'Hawaiian Pizza')
     HPlabel.grid(row = 5,column = 1)
     
     HPbutton = Button(window,text = 'Add to Order',command = updateHP)
-    HPbutton.grid(row =6,column = 1)
+    HPbutton.grid(row =6,column = 2)
+    
+    
+    
+    
+    #Update number of meat lovers pizza
+    def updateMP():
+        numMeatLoversPizza = entryMP.get()                                 #Gets num of pizza from entry
+        price = menu_prices['MEAT LOVERS PIZZA']                           #Finds price of pizza in menu
+        priceWithTax = calculateTax(price)                                 #calculates tax
+        print('Order:\nMeat Lovers Pizza: '+
+              str(numMeatLoversPizza)+'\nPrice: '+str(priceWithTax))
+
+    MPlabel = Label(window,text = 'Meat Lovers Pizza')
+    MPlabel.grid(row = 7,column = 1)
+    
+    MPbutton = Button(window,text = 'Add to Order',command = updateMP)
+    MPbutton.grid(row = 8,column = 2)
     
 
     window.mainloop()
@@ -127,8 +170,7 @@ class Checkout():
    
         
     def orderComplete():
-        
-        
+        print('Order Submitted')
         window2.destroy()
     
     
@@ -141,7 +183,7 @@ class Checkout():
         
         
         
-    print('Order Submitted')
+    
     
     
     
