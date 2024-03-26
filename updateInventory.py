@@ -119,4 +119,5 @@ def restockInventory():
     sheet['H2'].value = 1000         # bacon
     sheet['I2'].value = 1000         # jalapenos
     
+    book.save('pythonParlorInventory.xlsx')
     
