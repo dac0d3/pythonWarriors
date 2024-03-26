@@ -11,6 +11,7 @@
 from tkinter import *
 from tkinter import BOTH,END,LEFT
 from revenue import calculateTax
+from updateInventory import *
 #from customer import nameVal,emailVal
 
 
@@ -82,10 +83,12 @@ class Order_Menu:
     #Update number of cheese pizzas
     def updateCP():
         numCheesePizza = entryCP.get()
+        numCheesePizza = int(numCheesePizza)
         price = menu_prices['CHEESE PIZZA']                             #Finds price of pizza in menu
         priceWithTax = calculateTax(price)                              #calculates tax
         print('Order:\nCheese Pizza: '+
               str(numCheesePizza)+'\nPrice: '+str(priceWithTax))
+        
         
     CPlabel = Label(window,text = 'Cheese Pizza')
     CPlabel.grid(row = 1,column = 1)
@@ -165,10 +168,12 @@ window2.title('Checkout')
 
 
 class Checkout():
-        
+    
+    
         
     def orderComplete():
         print('Order Submitted')
+        
         window2.destroy()
     
     

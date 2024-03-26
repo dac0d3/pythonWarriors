@@ -23,7 +23,7 @@ def cheesePizza(x):
     
     book.save('pythonParlorInventory.xlsx')     # saves changes in excel sheet 
     
-
+    
 
 # updates inventory with ingredients in a pepperonni pizza 
 def pepperonniPizza(x):                           
