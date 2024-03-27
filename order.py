@@ -23,9 +23,6 @@ numPepperoniPizza = IntVar
 numHawaiianPizza = IntVar
 numMeatLoversPizza = IntVar
 
-##################################################################################################################
-
-
 
 window = Tk()
 window.geometry('1440x900')
@@ -48,8 +45,9 @@ entryMP = Entry(window)
 entryMP.grid(row = 7,column = 2)
 
 
- 
-totalList = []      #list that holds the prices of the customer selection with tax 
+
+##################################################################################################################
+
 
 
 #This class has the informaiton of the menu that displays to the customer 
