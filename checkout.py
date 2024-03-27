@@ -5,6 +5,7 @@
 
 from tkinter import *
 from updateInventory import *
+from order import *
 
 window2 = Tk()
 window2.geometry('1440x900')
@@ -17,7 +18,7 @@ class Checkout():
     def orderComplete():
         print('Order Submitted')
         
-        # call receipt to store values in excel
+        # call receipt to store values in excel 
         # call update inventory to change excel values 
         # send order to chef
         

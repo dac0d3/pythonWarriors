@@ -150,7 +150,7 @@ class Order_Menu:
         #after this, Order_menu class ends and Checkout class precedes
         
         from checkout import Checkout
-        order1 = Checkout(numCheesePizza,numPepperoniPizza,numHawaiianPizza,numMeatLoversPizza,total)
+        
         
                
         
