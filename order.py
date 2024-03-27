@@ -9,7 +9,6 @@
 
 
 from tkinter import *
-from tkinter import BOTH,END,LEFT
 from revenue import calculateTax
 from updateInventory import *
 #from customer import nameVal,emailVal
@@ -72,7 +71,6 @@ class Order_Menu:
         window.destroy()
         #after this, Order_Menu class ends and Checkout class precedes
         
-
     # button that will get order and open window to checkout screen 
     checkoutButton = Button(window,text = "Checkout",command = goToCheckout)
     checkoutButton.grid(row = 12,column = 1)
@@ -108,7 +106,6 @@ class Order_Menu:
         print('Order:\nPepperoni Pizza: '+
               str(numPepperoniPizza)+'\nPrice: '+str(priceWithTax))
         
-    
     
     PPlabel = Label(window,text = 'Pepperoni Pizza')
     PPlabel.grid(row = 3,column = 1)
