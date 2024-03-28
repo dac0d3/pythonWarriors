@@ -147,8 +147,8 @@ def getValues ():
             total = total + index
        
     
-    
-    sheet['E2'].value = total
+    from customer import cusID
+    sheet['E'+str(cusID)].value = total
     book.save('customerTransactions.xlsx')
     #print(total)
     #print(order)
