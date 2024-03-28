@@ -1,9 +1,19 @@
 #name   #email   #confirm button takes to order file
 
 #doc string documentation ?
-
+import openpyxl
+from openpyxl import Workbook, load_workbook
 from tkinter import *
 
+
+
+book = load_workbook('customerTransactions.xlsx')
+sheet = book.active
+
+
+cusID = sheet['A2'].value
+cusID = int(cusID)
+print(cusID)
 
 #name = 'customer'
 #email = 'email@abc.com'
@@ -19,8 +29,13 @@ def getVals():
     emailVal = emailEntry.get()
     nameEntry.config(state = DISABLED)
     emailEntry.config(state = DISABLED)
-    print(nameVal,emailVal)
-    window.destroy()             #close window here 
+    
+    sheet['B'+str(cusID)].value = nameVal               # stores name in excel 
+    sheet['C'+str(cusID)].value = emailVal              # stores email in excel
+    book.save('customerTransactions.xlsx')
+    
+    #print(nameVal,emailVal)
+    window.destroy()            #close window here 
     #import order #  <-- call class for order here
     
     

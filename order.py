@@ -5,13 +5,16 @@
 
 
 
-
+import openpyxl
+from openpyxl import Workbook, load_workbook
 from tkinter import *
 from revenue import calculateTax
-#from customer import nameVal,emailVal
 from updateInventory import *
 
 
+
+book = load_workbook('customerTransactions.xlsx')
+sheet = book.active
 
 
 
@@ -142,9 +145,13 @@ def getValues ():
             total = index
         else:
             total = total + index
-            
-    print(total)
-    print(order)
+       
+    
+    
+    sheet['E2'].value = total
+    book.save('customerTransactions.xlsx')
+    #print(total)
+    #print(order)
         
     window.destroy()
         
