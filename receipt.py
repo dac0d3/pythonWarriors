@@ -10,6 +10,8 @@
 
 
 
+
+
 # This class or set of functions will create a new customer transaction and will hold all the information before it gets stored 
 class CustomerTransaction:
     
@@ -58,6 +60,24 @@ class StoreTransaction:
 
 
 
+###########################################################################################
 
+
+class FileTransaction:
+
+    def fileName():
+        pass
+
+    def fileEmail():
+        pass
+
+    def fileOrder():
+        pass
+
+    def fileTotal():
+        pass
+
+    def fileOrderNum():
+        pass
 
 

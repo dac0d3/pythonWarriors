@@ -5,36 +5,47 @@
 
 from tkinter import *
 from updateInventory import *
-from order import *
+
 
 window2 = Tk()
 window2.geometry('1440x900')
 window2.title('Checkout')
     
-class Checkout():
-    
-    
 
-    def orderComplete():
-        print('Order Submitted')
+
+
+
+def orderComplete():
+    print('Order Submitted')
         
-        # call receipt to store values in excel 
-        # call update inventory to change excel values 
-        # send order to chef
+    # call receipt to store values in excel 
+    # call update inventory to change excel values 
+    # send order to chef
         
-        window2.destroy()
+    window2.destroy()
     
-    checkoutButton = Button(window2,text = 'Complete Order',command = orderComplete )
-    checkoutButton.pack()
+checkoutButton = Button(window2,text = 'Complete Order',command = orderComplete )
+checkoutButton.grid(row = 10,column=10)
+        
+       
+    
+# label with pizza order  and   another label with number of pizzas 
+label1 = Label(window2,text = 'label 1')    
+label1.grid(row = 1,column = 1)  
+    
+label2 = Label(window2,text = "label 2")    
+label2.grid(row = 2,column = 1)  
+    
+label3 = Label(window2,text = "label 3")    
+label3.grid(row = 3,column = 1)  
+    
+label4 = Label(window2,text = "label 4")    
+label4.grid(row = 4,column = 1)  
+    
         
         
-    # label with pizza order  and   another label with number of pizzas 
         
-        
-        
-        
-        
-    window2.mainloop()
+window2.mainloop()
         
         
         

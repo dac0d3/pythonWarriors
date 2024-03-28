@@ -21,8 +21,7 @@ def getVals():
     emailEntry.config(state = DISABLED)
     print(nameVal,emailVal)
     window.destroy()             #close window here 
-    from order import Order_Menu #  <-- call class for order here
-    
+    #import order #  <-- call class for order here
     
     
     
