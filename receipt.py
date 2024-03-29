@@ -1,3 +1,7 @@
+# this file might not be needed, since information is being stores after each customer input 
+
+
+
 # this is where all the information will get stored in excel 
 # name 
 # email 

@@ -1,4 +1,4 @@
-
+from updateInventory import *
 
 # make it a loop 
 
@@ -8,3 +8,4 @@ import checkout
 
 
 
+#restockInventory()

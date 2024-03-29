@@ -5,6 +5,12 @@
 
 from tkinter import *
 from updateInventory import *
+import openpyxl
+from openpyxl import Workbook, load_workbook
+
+
+book = load_workbook('customerTransactions.xlsx')       # get values to show on display for customer from excel
+sheet = book.active
 
 
 window2 = Tk()
