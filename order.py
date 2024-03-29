@@ -58,7 +58,9 @@ entryMP.grid(row = 7,column = 2)
 
     
 def getValues ():
-        
+    
+    from customer import cusID
+    
     total = 0
     order = []
         
@@ -79,7 +81,7 @@ def getValues ():
     #print('Order:\nCheese Pizza: '+str(numCheesePizza)+'\nPrice: '+str(priceWithTax))
     order.append(priceWithTax1)
     cheesePizza(numCheesePizza)
-        
+    sheet['D'+str(cusID)].value = numCheesePizza
         
         
         
@@ -98,7 +100,7 @@ def getValues ():
     #print('Order:\nPepperoni Pizza: '+ str(numPepperoniPizza)+'\nPrice: '+str(priceWithTax))
     order.append(priceWithTax2)
     pepperonniPizza(numPepperoniPizza)
-        
+    sheet['E'+str(cusID)].value = numPepperoniPizza
         
         
         
@@ -117,7 +119,7 @@ def getValues ():
     #print('Order:\nHawaiian Pizza: '+str(numHawaiianPizza)+'\nPrice: '+str(priceWithTax))
     order.append(priceWithTax3)
     hawaiianPizza(numHawaiianPizza)
-        
+    sheet['F'+str(cusID)].value = numHawaiianPizza
         
         
         
@@ -136,7 +138,7 @@ def getValues ():
     #print('Order:\nMeat Lovers Pizza: '+str(numMeatLoversPizza)+'\nPrice: '+str(priceWithTax))
     order.append(priceWithTax4)
     meatLoversPizza(numMeatLoversPizza)
-        
+    sheet['G'+str(cusID)].value = numMeatLoversPizza
         
         
         
@@ -148,7 +150,7 @@ def getValues ():
        
     
     from customer import cusID
-    sheet['E'+str(cusID)].value = total
+    sheet['H'+str(cusID)].value = total
     book.save('customerTransactions.xlsx')
     #print(total)
     #print(order)
