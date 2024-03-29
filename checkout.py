@@ -17,16 +17,52 @@ window2 = Tk()
 window2.geometry('1440x900')
 window2.title('Checkout')
     
+    
 
+from customer import cusID      #gets the id and row for customer 
+
+numCP = sheet['D'+str(cusID)].value   
+numPP = sheet['E'+str(cusID)].value  
+numHP = sheet['F'+str(cusID)].value  
+numMP = sheet['G'+str(cusID)].value
+
+print(numCP,numPP,numHP,numMP)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+# label with pizza order  and   another label with number of pizzas 
+label1 = Label(window2,text = 'Cheese Pizzas')    
+label1.grid(row = 1,column = 1)  
+    
+label2 = Label(window2,text = "Pepperoni Pizzas")    
+label2.grid(row = 2,column = 1)  
+    
+label3 = Label(window2,text = "Hawaiian Pizzas")    
+label3.grid(row = 3,column = 1)  
+    
+label4 = Label(window2,text = "Meat Lovers Pizzas")    
+label4.grid(row = 4,column = 1)  
 
 
 
 def orderComplete():
     print('Order Submitted')
         
-    # call receipt to store values in excel 
-    # call update inventory to change excel values 
-    # send order to chef
+    # start new customer transaction
         
     window2.destroy()
     
@@ -35,18 +71,7 @@ checkoutButton.grid(row = 10,column=10)
         
        
     
-# label with pizza order  and   another label with number of pizzas 
-label1 = Label(window2,text = 'label 1')    
-label1.grid(row = 1,column = 1)  
-    
-label2 = Label(window2,text = "label 2")    
-label2.grid(row = 2,column = 1)  
-    
-label3 = Label(window2,text = "label 3")    
-label3.grid(row = 3,column = 1)  
-    
-label4 = Label(window2,text = "label 4")    
-label4.grid(row = 4,column = 1)  
+
     
         
         
