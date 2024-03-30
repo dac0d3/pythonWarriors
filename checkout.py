@@ -30,33 +30,31 @@ print(numCP,numPP,numHP,numMP)
 
 
 
-heading = Label(window2,text = "Checkout Screen",font = 'ar 20 bold').grid(row = 0,column = 3)
-
-
-
-
-
-
-
-
-
-
-
+heading = Label(window2,text = "Order",font = 'ar 20 bold').grid(row = 0,column = 1)
 
 
     
-# label with pizza order  and   another label with number of pizzas 
-label1 = Label(window2,text = 'Cheese Pizzas')    
+# label with pizza order and another label with number of pizzas 
+
+label1 = Label(window2,text = 'Cheese Pizzas: ')    
 label1.grid(row = 1,column = 1)  
+label1Num = Label(window2,text = str(numCP))    
+label1Num.grid(row = 1,column = 2)
     
-label2 = Label(window2,text = "Pepperoni Pizzas")    
+label2 = Label(window2,text = "Pepperoni Pizzas: ")    
 label2.grid(row = 2,column = 1)  
+label2Num = Label(window2,text = str(numPP))    
+label2Num.grid(row = 2,column = 2)
     
-label3 = Label(window2,text = "Hawaiian Pizzas")    
-label3.grid(row = 3,column = 1)  
+label3 = Label(window2,text = "Hawaiian Pizzas: ")    
+label3.grid(row = 3,column = 1) 
+label3Num = Label(window2,text = str(numHP))    
+label3Num.grid(row = 3,column = 2) 
     
-label4 = Label(window2,text = "Meat Lovers Pizzas")    
+label4 = Label(window2,text = "Meat Lovers Pizzas: ")    
 label4.grid(row = 4,column = 1)  
+label4Num = Label(window2,text = str(numMP))    
+label4Num.grid(row = 4,column = 2)
 
 
 
