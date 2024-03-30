@@ -13,7 +13,7 @@ sheet = book.active
 
 cusID = sheet['A2'].value
 cusID = int(cusID)
-print(cusID)
+print('Customer ID: '+str(cusID))
 
 #name = 'customer'
 #email = 'email@abc.com'

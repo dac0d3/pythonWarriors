@@ -30,6 +30,7 @@ print(numCP,numPP,numHP,numMP)
 
 
 
+heading = Label(window2,text = "Checkout Screen",font = 'ar 20 bold').grid(row = 0,column = 3)
 
 
 
@@ -61,7 +62,13 @@ label4.grid(row = 4,column = 1)
 
 def orderComplete():
     print('Order Submitted')
-        
+    
+    from customer import cusID                  # sets the order ID for next customer transaction and saves to excel
+    cusID = int(cusID)
+    cusID = cusID + 1
+    sheet['A'+str(cusID)].value = cusID
+    
+    book.save('customerTransactions.xlsx')
     # start new customer transaction
         
     window2.destroy()
