@@ -10,6 +10,7 @@ from openpyxl import Workbook, load_workbook
 from tkinter import *
 from revenue import calculateTax
 from updateInventory import *
+import math 
 
 
 
@@ -147,7 +148,8 @@ def getValues ():
             total = index
         else:
             total = total + index
-       
+    total = round(total,2)  # round total to 2 decimals 
+    
     
     from customer import cusID
     sheet['H'+str(cusID)].value = total
@@ -160,11 +162,10 @@ def getValues ():
     #after this, Order_menu class ends and Checkout class precedes
         
     
-    #import checkout
+    
         
         
                
-        
         
 # button that will get order and open window to checkout screen 
 checkoutButton = Button(window,text = "Checkout",command = getValues)
