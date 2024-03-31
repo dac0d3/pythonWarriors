@@ -71,6 +71,7 @@ def orderComplete():
         
     window2.destroy()
     
+    
 checkoutButton = Button(window2,text = 'Complete Order',command = orderComplete )
 checkoutButton.grid(row = 10,column=10)
         
@@ -80,11 +81,13 @@ checkoutButton.grid(row = 10,column=10)
     
         
         
-        
+
+ 
 window2.mainloop()
         
         
         
+
         
     
     

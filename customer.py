@@ -25,6 +25,7 @@ window.title('Customer Registration')
 
 # gets values for name and email from customer when confirm button is clicked 
 def getVals():
+    
     nameVal = nameEntry.get()
     emailVal = emailEntry.get()
     nameEntry.config(state = DISABLED)

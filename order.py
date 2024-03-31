@@ -151,7 +151,7 @@ def getValues ():
     total = round(total,2)  # round total to 2 decimals 
     
     
-    from customer import cusID
+    #from customer import cusID                                              #######maybe get rid of this line
     sheet['H'+str(cusID)].value = total
     book.save('customerTransactions.xlsx')
     #print(total)
