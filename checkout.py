@@ -69,6 +69,7 @@ def orderComplete():
     book.save('customerTransactions.xlsx')
     # start new customer transaction
         
+    
     window2.destroy()
     
     

@@ -11,11 +11,12 @@ from tkinter import *
 
 
 
+def main():
+    import customer 
+    import order 
+    import checkout
 
-import customer 
-import order 
-import checkout
-    
+main()
 
     
 
