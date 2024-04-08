@@ -9,18 +9,8 @@ from openpyxl import Workbook, load_workbook
 from order import Order
 
 
-
-    
-
 book = load_workbook('customerTransactions.xlsx')
 sheet = book.active
-
-
-
-#windowCustomer = Tk()
-#windowCustomer.geometry('1440x900')
-#windowCustomer.title('Customer Registration')
-
     
 
 cusID = sheet['A2'].value
@@ -63,7 +53,6 @@ class Customer(Toplevel):
         self.checkoutButton = Button(self,text = 'Submit',command = self.getVals)
         self.checkoutButton.grid(row = 7,column = 3)
         
-        
             
        
     # gets values for name and email from customer when confirm button is clicked 
@@ -90,15 +79,3 @@ class Customer(Toplevel):
             messagebox.showwarning('Error',"You missed an entry!")
         
         
-        
-    
-        
-    
-        #windowCustomer.destroy()
-        #print(nameVal,emailVal)
-        
-    
-
-
-
-
