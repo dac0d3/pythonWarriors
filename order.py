@@ -11,11 +11,11 @@ from tkinter import *
 from revenue import calculateTax
 from updateInventory import *
 from checkout import Checkout
+from updateTransaction import *
 
 
-
-book = load_workbook('customerTransactions.xlsx')
-sheet = book.active
+#book = load_workbook('customerTransactions.xlsx')
+#sheet = book.active
 
 
 menu = ['CHEESE PIZZA','PEPPERONI PIZZA','HAWAIIAN PIZZA','MEAT LOVERS PIZZA']
@@ -35,8 +35,10 @@ class Order(Toplevel):
     def __init__(self,parent):
         super().__init__(parent)
         
+        self.book = load_workbook('customerTransactions.xlsx')
+        self.sheet = self.book.active
         
-        self.geometry('1440x900')
+        self.geometry('1440x500') #900
         self.title('Order Screen')
         
         #entry for Cheese pizzas 
@@ -82,6 +84,8 @@ class Order(Toplevel):
     def getValues(self):
 
         from customer import cusID
+        
+        print (cusID)
 
         total = 0
         order = []
@@ -100,10 +104,10 @@ class Order(Toplevel):
         price1 = menu_prices['CHEESE PIZZA']                             #Finds price of pizza in menu
         priceWithTax1 = calculateTax(price1)                              #calculates tax
         priceWithTax1 = priceWithTax1 * numCheesePizza
-        #print('Order:\nCheese Pizza: '+str(numCheesePizza)+'\nPrice: '+str(priceWithTax))
+        print('Order:\nCheese Pizza: '+str(numCheesePizza)+'\nPrice: '+str(priceWithTax1))
         order.append(priceWithTax1)
         cheesePizza(numCheesePizza)
-        sheet['D'+str(cusID)].value = numCheesePizza
+        #sheet['D'+str(cusID)].value = numCheesePizza
 
 
 
@@ -119,10 +123,10 @@ class Order(Toplevel):
         price2 = menu_prices['PEPPERONI PIZZA']                           #Finds price of pizza in menu
         priceWithTax2 = calculateTax(price2)                              #calculates tax 
         priceWithTax2 = numPepperoniPizza * priceWithTax2
-        #print('Order:\nPepperoni Pizza: '+ str(numPepperoniPizza)+'\nPrice: '+str(priceWithTax))
+        print('Order:\nPepperoni Pizza: '+ str(numPepperoniPizza)+'\nPrice: '+str(priceWithTax2))
         order.append(priceWithTax2)
         pepperonniPizza(numPepperoniPizza)
-        sheet['E'+str(cusID)].value = numPepperoniPizza
+        #sheet['E'+str(cusID)].value = numPepperoniPizza
 
 
 
@@ -138,10 +142,10 @@ class Order(Toplevel):
         price3 = menu_prices['HAWAIIAN PIZZA']                             #Finds price of pizza in menu
         priceWithTax3 = calculateTax(price3)                                #calculates tax
         priceWithTax3 = priceWithTax3 * numHawaiianPizza
-        #print('Order:\nHawaiian Pizza: '+str(numHawaiianPizza)+'\nPrice: '+str(priceWithTax))
+        print('Order:\nHawaiian Pizza: '+str(numHawaiianPizza)+'\nPrice: '+str(priceWithTax3))
         order.append(priceWithTax3)
         hawaiianPizza(numHawaiianPizza)
-        sheet['F'+str(cusID)].value = numHawaiianPizza
+        #sheet['F'+str(cusID)].value = numHawaiianPizza
 
 
 
@@ -157,10 +161,10 @@ class Order(Toplevel):
         price4 = menu_prices['MEAT LOVERS PIZZA']                            #Finds price of pizza in menu
         priceWithTax4 = calculateTax(price4)                                 #calculates tax
         priceWithTax4 = priceWithTax4 * numMeatLoversPizza
-        #print('Order:\nMeat Lovers Pizza: '+str(numMeatLoversPizza)+'\nPrice: '+str(priceWithTax))
+        print('Order:\nMeat Lovers Pizza: '+str(numMeatLoversPizza)+'\nPrice: '+str(priceWithTax4))
         order.append(priceWithTax4)
         meatLoversPizza(numMeatLoversPizza)
-        sheet['G'+str(cusID)].value = numMeatLoversPizza
+        #sheet['G'+str(cusID)].value = numMeatLoversPizza
 
 
 
@@ -171,22 +175,23 @@ class Order(Toplevel):
                 total = total + index
         total = round(total,2)  # round total to 2 decimals 
 
+        saveOrder(cusID,numCheesePizza,numPepperoniPizza,numHawaiianPizza,numMeatLoversPizza,total)
+        
+        
+        #sheet['H'+str(cusID)].value = total
+        #book.save('customerTransactions.xlsx')
+        print(total)
+        print(order)
 
-        sheet['H'+str(cusID)].value = total
-        book.save('customerTransactions.xlsx')
-        #print(total)
-        #print(order)
-
-        Checkout(self)
-        self.forget(self)
+        
+        
+        #Checkout(self)
+        self.destroy()
 
 
 
 
 
-
-
-#order = Order(window)
 
 
 

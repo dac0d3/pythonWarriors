@@ -6,7 +6,7 @@ from tkinter import *
 from updateInventory import *
 
 from customer import Customer
-
+from checkout import Checkout
 
 
 book = load_workbook('customerTransactions.xlsx')
@@ -39,15 +39,20 @@ class CustomerTransaction(Tk):
         
     def closeKiosk(self):
         self.destroy() 
-        print("Kiosk is now closed.")   
+        print("Kiosk is now closed.")  
+         
         
     def startTransaction(self):
         Customer(self)
+        #Checkout(self)
+    
+    #if statement here 
 
     def resetInventory(self):
         restockInventory()
         print('Inventory has been restocked!')
-        
+
+
         
 run = CustomerTransaction()
 run.mainloop()

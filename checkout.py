@@ -7,6 +7,7 @@ from tkinter import *
 from updateInventory import *
 import openpyxl
 from openpyxl import Workbook, load_workbook
+from updateTransaction import *
 
 
 book = load_workbook('customerTransactions.xlsx')       # get values to show on display for customer from excel
@@ -14,14 +15,19 @@ sheet = book.active
 
 
 
+
+
 class Checkout(Toplevel):
     
-    def __init__(self,parent):
-        super().__init__(parent)
+    
+    
+    def __init__(self):
+        super().__init__()
         
-        from customer import cusID      #gets the id and row for customer 
-
-        self.geometry('1440x900')
+        from customer import cusID     #gets the id and row for customer 
+        print(cusID)
+        
+        self.geometry('1440x500')
         self.title('Checkout')
 
         numCP = sheet['D'+str(cusID)].value   

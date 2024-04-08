@@ -7,22 +7,24 @@ from tkinter import messagebox
 import openpyxl
 from openpyxl import Workbook, load_workbook
 from order import Order
-
+from updateTransaction import *
 
 book = load_workbook('customerTransactions.xlsx')
 sheet = book.active
     
-
-cusID = sheet['A2'].value
+cusID = 2
 cusID = int(cusID)
 print('Customer ID: '+str(cusID))
+
     
 class Customer(Toplevel):
     
     def __init__(self,parent):
         super().__init__(parent)
+       
         
-        self.geometry('1440x900')
+        
+        self.geometry('1440x500')   #900
         self.title('Customer Registration')
         
         self.nameVal = StringVar
@@ -64,18 +66,19 @@ class Customer(Toplevel):
             #self.nameEntry.config(state = DISABLED)
             #self.emailEntry.config(state = DISABLED)
             
-            sheet['B'+str(cusID)].value = name               # stores name in excel 
-            sheet['C'+str(cusID)].value = email              # stores email in excel
-            book.save('customerTransactions.xlsx')
+            saveValues(cusID,name,email)
             
-            print("Name:", name)
-            print("Email:", email)
+            #print("Name:", name)
+            #print("Email:", email)
         
             Order(self)         # srats order in order class
             self.forget(self)   # hides customer sign in for next customer 
-            
-            
+             
         else:
             messagebox.showwarning('Error',"You missed an entry!")
+        
+
+        
+        
         
         
