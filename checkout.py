@@ -13,79 +13,72 @@ book = load_workbook('customerTransactions.xlsx')       # get values to show on 
 sheet = book.active
 
 
-window2 = Tk()
-window2.geometry('1440x900')
-window2.title('Checkout')
+
+class Checkout(Toplevel):
     
-    
-
-from customer import cusID      #gets the id and row for customer 
-
-numCP = sheet['D'+str(cusID)].value   
-numPP = sheet['E'+str(cusID)].value  
-numHP = sheet['F'+str(cusID)].value  
-numMP = sheet['G'+str(cusID)].value
-
-print(numCP,numPP,numHP,numMP)  
-
-
-
-heading = Label(window2,text = "Order",font = 'ar 20 bold').grid(row = 0,column = 1)
-
-
-    
-# label with pizza order and another label with number of pizzas 
-
-label1 = Label(window2,text = 'Cheese Pizzas: ')    
-label1.grid(row = 1,column = 1)  
-label1Num = Label(window2,text = str(numCP))    
-label1Num.grid(row = 1,column = 2)
-    
-label2 = Label(window2,text = "Pepperoni Pizzas: ")    
-label2.grid(row = 2,column = 1)  
-label2Num = Label(window2,text = str(numPP))    
-label2Num.grid(row = 2,column = 2)
-    
-label3 = Label(window2,text = "Hawaiian Pizzas: ")    
-label3.grid(row = 3,column = 1) 
-label3Num = Label(window2,text = str(numHP))    
-label3Num.grid(row = 3,column = 2) 
-    
-label4 = Label(window2,text = "Meat Lovers Pizzas: ")    
-label4.grid(row = 4,column = 1)  
-label4Num = Label(window2,text = str(numMP))    
-label4Num.grid(row = 4,column = 2)
-
-
-
-def orderComplete():
-    print('Order Submitted')
-    
-    from customer import cusID                  # sets the order ID for next customer transaction and saves to excel
-    cusID = int(cusID)
-    cusID = cusID + 1
-    sheet['A'+str(cusID)].value = cusID
-    
-    book.save('customerTransactions.xlsx')
-    # start new customer transaction
+    def __init__(self,parent):
+        super().__init__(parent)
         
-    
-    window2.destroy()
-    
-    
-checkoutButton = Button(window2,text = 'Complete Order',command = orderComplete )
-checkoutButton.grid(row = 10,column=10)
-        
-       
-    
+        from customer import cusID      #gets the id and row for customer 
 
-    
-        
-        
+        self.geometry('1440x900')
+        self.title('Checkout')
 
- 
-window2.mainloop()
-        
+        numCP = sheet['D'+str(cusID)].value   
+        numPP = sheet['E'+str(cusID)].value  
+        numHP = sheet['F'+str(cusID)].value  
+        numMP = sheet['G'+str(cusID)].value
+
+        print(numCP,numPP,numHP,numMP)  
+
+
+        self.heading = Label(self,text = "Order",font = 'ar 20 bold').grid(row = 0,column = 1)
+
+
+
+        # label with pizza order and another label with number of pizzas 
+
+        self.label1 = Label(self,text = 'Cheese Pizzas: ')    
+        self.label1.grid(row = 1,column = 1)  
+        self.label1Num = Label(self,text = str(numCP))    
+        self.label1Num.grid(row = 1,column = 2)
+
+        self.label2 = Label(self,text = "Pepperoni Pizzas: ")    
+        self.label2.grid(row = 2,column = 1)  
+        self.label2Num = Label(self,text = str(numPP))    
+        self.label2Num.grid(row = 2,column = 2)
+
+        self.label3 = Label(self,text = "Hawaiian Pizzas: ")    
+        self.label3.grid(row = 3,column = 1) 
+        self.label3Num = Label(self,text = str(numHP))    
+        self.label3Num.grid(row = 3,column = 2) 
+
+        self.label4 = Label(self,text = "Meat Lovers Pizzas: ")    
+        self.label4.grid(row = 4,column = 1)  
+        self.label4Num = Label(self,text = str(numMP))    
+        self.label4Num.grid(row = 4,column = 2)
+
+
+        self.checkoutButton = Button(self,text = 'Complete Order',command = self.orderComplete )
+        self.checkoutButton.grid(row = 10,column=10)
+
+
+    def orderComplete(self):
+        print('Order Submitted')
+
+        from customer import cusID                  # sets the order ID for next customer transaction and saves to excel
+        cusID = int(cusID)
+        cusID = cusID + 1
+        sheet['A'+str(cusID)].value = cusID
+
+        book.save('customerTransactions.xlsx')
+        # start new customer transaction
+
+
+        self.destroy()
+
+
+   
         
         
 

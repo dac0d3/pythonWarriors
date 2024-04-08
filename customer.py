@@ -3,84 +3,102 @@
 #doc string documentation ?
 from tkinter import *
 from tkinter.tix import LabelEntry
+from tkinter import messagebox
 import openpyxl
 from openpyxl import Workbook, load_workbook
+from order import Order
 
-#from main import Main,cusID
+
+
     
 
 book = load_workbook('customerTransactions.xlsx')
 sheet = book.active
 
 
-window = Tk()
-window.geometry('1440x900')
-window.title('Customer Registration')
+
+#windowCustomer = Tk()
+#windowCustomer.geometry('1440x900')
+#windowCustomer.title('Customer Registration')
+
     
 
 cusID = sheet['A2'].value
 cusID = int(cusID)
 print('Customer ID: '+str(cusID))
     
-class Customer:
+class Customer(Toplevel):
+    
+    def __init__(self,parent):
+        super().__init__(parent)
+        
+        self.geometry('1440x900')
+        self.title('Customer Registration')
+        
+        self.nameVal = StringVar
+        self.emailVal = StringVar
 
-    def __init__(self,window):
-        
-        nameVal = StringVar
-        emailVal = StringVar
-        
         #Heading 
-        Label(window,text = "Customer Registration",font = 'ar 20 bold').grid(row = 0,column = 3)
-        
-        
+        Label(self,text = "Customer Registration",font = 'ar 20 bold').grid(row = 0,column = 3)
+
+
         #Field Name
-        self.name = Label(window,text = "Name")
-        self.email = Label(window,text = "Email")
-        
+        self.name = Label(self,text = "Name")
+        self.email = Label(self,text = "Email")
+
         self.name.grid(row = 1,column = 2)
         self.email.grid(row = 2,column = 2)
-        
-        
+
+
         #Creating Entry Field
-        self.nameEntry = Entry(window,textvariable=nameVal)
-        self.emailEntry = Entry(window,textvariable=emailVal)
-    
-    
+        self.nameEntry = Entry(self,textvariable=self.nameVal)
+        self.emailEntry = Entry(self,textvariable=self.emailVal)
+
+
         #Packing Entry Fields
         self.nameEntry.grid(row = 1,column = 3)
         self.emailEntry.grid(row = 2,column = 3)
-        
+
         #Submit Button
-        self.checkoutButton = Button(window,text = 'Submit',command = self.getVals)
+        self.checkoutButton = Button(self,text = 'Submit',command = self.getVals)
         self.checkoutButton.grid(row = 7,column = 3)
         
         
-        
-        
-    
+            
+       
     # gets values for name and email from customer when confirm button is clicked 
     def getVals(self):
         
-        self.nameVal = self.nameEntry.get()     #nameEntry
-        self.emailVal = self.emailEntry.get()
-        self.nameEntry.config(state = DISABLED)
-        self.emailEntry.config(state = DISABLED)
+        if self.nameEntry.get() and self.emailEntry.get():
+            name = self.nameEntry.get()     
+            email = self.emailEntry.get()
+            #self.nameEntry.config(state = DISABLED)
+            #self.emailEntry.config(state = DISABLED)
+            
+            sheet['B'+str(cusID)].value = name               # stores name in excel 
+            sheet['C'+str(cusID)].value = email              # stores email in excel
+            book.save('customerTransactions.xlsx')
+            
+            print("Name:", name)
+            print("Email:", email)
+        
+            Order(self)         # srats order in order class
+            self.forget(self)   # hides customer sign in for next customer 
+            
+            
+        else:
+            messagebox.showwarning('Error',"You missed an entry!")
+        
+        
+        
     
-        sheet['B'+str(cusID)].value = self.nameVal               # stores name in excel 
-        sheet['C'+str(cusID)].value = self.emailVal              # stores email in excel
-        book.save('customerTransactions.xlsx')
+        
     
+        #windowCustomer.destroy()
         #print(nameVal,emailVal)
-        window.destroy()            #close window here 
-        #import order #  <-- call class for order here
+        
     
 
 
-    
-    
-    
-customer = Customer(window) 
 
-  
-window.mainloop()
 
