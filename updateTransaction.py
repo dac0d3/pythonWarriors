@@ -71,26 +71,40 @@ def addOneCust():
 
 
 # fix whle loop
-#def resetTransactions():
-#    row = 2
-#    value = sheet['A'+str(row)].value
-#    
-#    
-#    while value != 0:
-#        
-#        sheet['A'+str(row)].value = 0
-#        sheet['B'+str(row)].value = 0
-#        sheet['C'+str(row)].value = 0
-#        sheet['D'+str(row)].value = 0
-#        sheet['E'+str(row)].value = 0
-#        sheet['F'+str(row)].value = 0
-#        sheet['G'+str(row)].value = 0
-#        sheet['H'+str(row)].value = 0
-#        
-#        row = row+1
-#        value = sheet['A'+str(row)].value
-#        print(1)
-#        book.save('customerTransactions.xlsx')
-#    
-#    print('Transactions Reset!')
+def resetTransactions():
+    row = 2
+    value = sheet['A'+str(row)].value
+    #name = str(name)
+    
+    while value != None:
         
+        if row ==2:
+            sheet['B'+str(row)].value = None
+            sheet['C'+str(row)].value = None
+            sheet['D'+str(row)].value = None
+            sheet['E'+str(row)].value = None
+            sheet['F'+str(row)].value = None
+            sheet['G'+str(row)].value = None
+            sheet['H'+str(row)].value = None
+        else:
+            sheet['A'+str(row)].value = None
+            sheet['B'+str(row)].value = None
+            sheet['C'+str(row)].value = None
+            sheet['D'+str(row)].value = None
+            sheet['E'+str(row)].value = None
+            sheet['F'+str(row)].value = None
+            sheet['G'+str(row)].value = None
+            sheet['H'+str(row)].value = None
+        
+        row = row+1
+        value = sheet['A'+str(row)].value
+        book.save('customerTransactions.xlsx')
+        
+        print(value)
+        
+    sheet['A'+str(row+1)].value = None
+    sheet['A'+str(row+2)].value = None
+    book.save('customerTransactions.xlsx')
+    
+    print('Transactions Reset!')
+
