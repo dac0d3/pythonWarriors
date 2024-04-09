@@ -7,14 +7,20 @@ from tkinter import *
 
 from updateInventory import *
 from customer import Customer
+from updateTransaction import *
 
 
 
-book = load_workbook('customerTransactions.xlsx')
-sheet = book.active
+#book = load_workbook('customerTransactions.xlsx')
+#sheet = book.active
 
 
+#sheet['A2'].value = 2
+cusID = sheet['A2'].value
+cusID = int(cusID)
+book.save('customerTransactions.xlsx')
 
+print('Customer ID: '+str(cusID))
 
 
 class CustomerTransaction(Tk):
@@ -36,13 +42,19 @@ class CustomerTransaction(Tk):
         self.button3 = Button(self,text = 'Restock Inventory',command = self.resetInventory)
         self.button3.pack()
         
+        #This will be a manager exclusive method call
+        #self.button4 = Button(self,text = 'Reset Transactions',command = self.resetTrans)
+        #self.button4.pack()
+        
         
     def closeKiosk(self):
         self.destroy() 
+        resetCusID()
         print("Kiosk is now closed.")  
          
         
     def startTransaction(self):
+        addOneCust()
         Customer(self)
         
         
@@ -51,7 +63,8 @@ class CustomerTransaction(Tk):
         print('Inventory has been restocked!')
 
 
-
+    #def resetTrans(self):
+        #resetTransactions()
         
 run = CustomerTransaction()
 run.mainloop()

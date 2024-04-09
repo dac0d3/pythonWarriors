@@ -1,11 +1,17 @@
 import openpyxl
 from openpyxl import Workbook, load_workbook
-from checkout import Checkout
 
 
-book = load_workbook('customerTransactions.xlsx')           # excel sheet for inventory
+
+book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
 sheet = book.active
 
+
+cus = []
+
+#cusID = sheet['A2'].value
+#print('Customer ID: '+str(cusID))
+#cusID = int(cusID)
 
 def saveValues(cusID,name,email):
         
@@ -42,13 +48,10 @@ def saveOrder(cusID,numCP,numPP,numHP,numMP,total):
     book.save('customerTransactions.xlsx')
     
     
-    
+# finds cus ID by adding up the number of trnsactions in list and adding one
 def getCusID():
-    cusID = sheet['A2'].value
-    print('Customer ID: '+str(cusID))
-    cusID = int(cusID)
-    
-    return cusID
+
+    return len(cus)+1
    
     
     
@@ -57,3 +60,37 @@ def updateCusID(cusID):
     
     return cusID
 
+def resetCusID():
+    cusID = 2
+    
+def addOneCust():
+    cus.append(1)
+
+# each cus ID will be one more than the customer transaction
+
+
+
+# fix whle loop
+#def resetTransactions():
+#    row = 2
+#    value = sheet['A'+str(row)].value
+#    
+#    
+#    while value != 0:
+#        
+#        sheet['A'+str(row)].value = 0
+#        sheet['B'+str(row)].value = 0
+#        sheet['C'+str(row)].value = 0
+#        sheet['D'+str(row)].value = 0
+#        sheet['E'+str(row)].value = 0
+#        sheet['F'+str(row)].value = 0
+#        sheet['G'+str(row)].value = 0
+#        sheet['H'+str(row)].value = 0
+#        
+#        row = row+1
+#        value = sheet['A'+str(row)].value
+#        print(1)
+#        book.save('customerTransactions.xlsx')
+#    
+#    print('Transactions Reset!')
+        

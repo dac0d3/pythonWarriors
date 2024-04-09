@@ -248,13 +248,14 @@ class Checkout2(Toplevel):
 
     def orderComplete(self):
         print('Order Submitted')
-        cusID = getCusID()               # sets the order ID for next customer transaction and saves to excel
+        
+        cusID = getCusID()               
         newCusID = updateCusID(cusID)
-    
-        sheet['A'+str(cusID)].value = newCusID
+
+        sheet['A'+str(newCusID)].value = newCusID   # sets the order ID for next customer transaction and saves to excel
         book.save('customerTransactions.xlsx')
         # start new customer transaction
-    
+
         self.destroy()
     
     
