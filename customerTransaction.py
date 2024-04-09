@@ -28,7 +28,7 @@ class CustomerTransaction(Tk):
     def __init__(self):
         super().__init__()
         
-        self.title('Main1')  # Set title using method, not property
+        self.title('Customer Transaction')  # Set title using method, not property
         self.geometry('1440x500')
 
         self.button1 = Button(self,text = 'Start Transaction',command = self.startTransaction)
