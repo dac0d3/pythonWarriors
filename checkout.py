@@ -24,7 +24,7 @@ class Checkout(Toplevel):
     def __init__(self):
         super().__init__()
         
-        from customer import cusID     #gets the id and row for customer 
+        cusID = getCusID()    #gets the id and row for customer 
         print(cusID)
         
         self.geometry('1440x500')
@@ -72,14 +72,15 @@ class Checkout(Toplevel):
     def orderComplete(self):
         print('Order Submitted')
 
-        from customer import cusID                  # sets the order ID for next customer transaction and saves to excel
-        cusID = int(cusID)
-        cusID = cusID + 1
-        sheet['A'+str(cusID)].value = cusID
+        cusID = getCusID()               # sets the order ID for next customer transaction and saves to excel
+        newCusID = updateCusID(cusID)
+        
+        sheet['A'+str(cusID)].value = newCusID
 
         book.save('customerTransactions.xlsx')
         # start new customer transaction
 
+        
 
         self.destroy()
 

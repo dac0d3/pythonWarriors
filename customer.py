@@ -4,20 +4,20 @@
 from tkinter import *
 from tkinter.tix import LabelEntry
 from tkinter import messagebox
+
 import openpyxl
 from openpyxl import Workbook, load_workbook
+
 from order import Order
 from updateTransaction import *
 
 book = load_workbook('customerTransactions.xlsx')
 sheet = book.active
     
-cusID = 2
-cusID = int(cusID)
-print('Customer ID: '+str(cusID))
 
     
 class Customer(Toplevel):
+    
     
     def __init__(self,parent):
         super().__init__(parent)
@@ -59,6 +59,8 @@ class Customer(Toplevel):
        
     # gets values for name and email from customer when confirm button is clicked 
     def getVals(self):
+        
+        cusID = getCusID()
         
         if self.nameEntry.get() and self.emailEntry.get():
             name = self.nameEntry.get()     

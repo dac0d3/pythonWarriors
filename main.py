@@ -2,20 +2,19 @@
 
 import openpyxl
 from openpyxl import Workbook, load_workbook
-from tkinter import *
-from updateInventory import *
 
+from tkinter import *
+
+from updateInventory import *
 from customer import Customer
-from checkout import Checkout
+
 
 
 book = load_workbook('customerTransactions.xlsx')
 sheet = book.active
 
 
-#cusID = sheet['A2'].value
-#cusID = int(cusID)
-#print('Customer ID: '+str(cusID))
+
 
 
 class CustomerTransaction(Tk):
@@ -37,6 +36,7 @@ class CustomerTransaction(Tk):
         self.button3 = Button(self,text = 'Restock Inventory',command = self.resetInventory)
         self.button3.pack()
         
+        
     def closeKiosk(self):
         self.destroy() 
         print("Kiosk is now closed.")  
@@ -44,13 +44,12 @@ class CustomerTransaction(Tk):
         
     def startTransaction(self):
         Customer(self)
-        #Checkout(self)
-    
-    #if statement here 
-
+        
+        
     def resetInventory(self):
         restockInventory()
         print('Inventory has been restocked!')
+
 
 
         
