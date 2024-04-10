@@ -1,5 +1,6 @@
 from tkinter import *
 
+from managerSignIn import ManagerSignIn
 
 class Main(Tk):
     
@@ -28,7 +29,7 @@ class Main(Tk):
         #self.destroy()
     
     def managerSign(self):
-        from managerSignIn import ManagerSignIn
+        ManagerSignIn(self)
         #self.forget(self)
 
 

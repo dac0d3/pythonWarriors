@@ -1,13 +1,17 @@
 from tkinter import *
+from tkinter import messagebox
 
-username = 'username'
-password = 'password'
+from updateInventory import *
+from updateTransaction import *
+
+username = 'u'
+password = 'p'
 
 
 
-class ManagerSignIn(Tk):
-    def __init__(self):
-        super().__init__()
+class ManagerSignIn(Toplevel):
+    def __init__(self,parent):
+        super().__init__(parent)
         
         self.geometry('1400x500')
         self.title('Manager Sign In')
@@ -30,13 +34,42 @@ class ManagerSignIn(Tk):
     
     
     def checkCredentials(self):
-        pass
+        usName = self.entry1.get()
+        passW = self.entry2.get()
+        
+        if usName == username and passW == password:
+            print('Manager Signed in!')
+            ManagerHomePage(self)
+            self.forget(self)
+        else:
+            messagebox.showwarning('Error',"Incorrect password or username")
     
     
     
-    print('Manager Signed in')
+    
+
+class ManagerHomePage(Toplevel):
+    def __init__(self,parent):
+        super().__init__(parent)
+        
+        self.title('Manager HomePage')
+        self.geometry('1400x500')
+
+        self.button1 = Button(self,text = 'Restock Inventory',command = self.resetInventory)
+        self.button1.pack()
+        
+        self.button2 = Button(self,text = 'Reset Transactions', command = self.resetTrans)
+        self.button2.pack()
     
     
     
-run = ManagerSignIn()
-run.mainloop()
+    def resetInventory(self):
+        restockInventory()
+        print('Inventory has been restocked!')
+        
+    def resetTrans(self):
+        resetTransactions()
+        
+        
+#run = ManagerSignIn()
+#run.mainloop()

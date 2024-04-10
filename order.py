@@ -256,7 +256,8 @@ class Checkout2(Toplevel):
         book.save('customerTransactions.xlsx')
         # start new customer transaction
 
-        self.destroy()
+        #self.destroy()
+        self.forget(self)
     
     
 

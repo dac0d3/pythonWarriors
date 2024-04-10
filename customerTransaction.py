@@ -34,14 +34,6 @@ class CustomerTransaction(Tk):
         self.button1 = Button(self,text = 'Start Transaction',command = self.startTransaction)
         self.button1.pack()
         
-        #This will be a manager exclusive method call
-        self.button3 = Button(self,text = 'Restock Inventory',command = self.resetInventory)
-        self.button3.pack(pady = 20)
-        
-        #This will be a manager exclusive method call
-        self.button4 = Button(self,text = 'Reset Transactions',command = self.resetTrans)
-        self.button4.pack()
-        
         self.button2 = Button(self,text = 'Close Kiosk',command = self.closeKiosk)
         self.button2.pack(pady = 20)
         
@@ -57,13 +49,7 @@ class CustomerTransaction(Tk):
         Customer(self)
         
         
-    def resetInventory(self):
-        restockInventory()
-        print('Inventory has been restocked!')
-
-
-    def resetTrans(self):
-        resetTransactions()
+    
         
 run = CustomerTransaction()
 run.mainloop()
