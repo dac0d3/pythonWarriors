@@ -60,8 +60,12 @@ class ManagerHomePage(Toplevel):
         
         self.button2 = Button(self,text = 'Reset Transactions', command = self.resetTrans)
         self.button2.pack()
-    
-    
+
+        self.button3 = Button(self,text = 'Check Revenue',command = self.checkRev)
+        self.button3.pack()
+        
+        self.button4 = Button(self,text = 'Exit',command = self.closeWindow)
+        self.button4.pack()
     
     def resetInventory(self):
         restockInventory()
@@ -70,6 +74,39 @@ class ManagerHomePage(Toplevel):
     def resetTrans(self):
         resetTransactions()
         
+    def closeWindow(self):
+        self.forget(self)
+    
+    def checkRev(self):
+        CheckRevenue(self)
+        self.forget(self)
+        
+        
+    
+    
+class CheckRevenue(Toplevel):
+    def __init__(self,parent):
+        super().__init__(parent)
+        
+        # get revenue from revenue file 
+        
+        self.geometry('1400x900')
+        self.title('Check Revenue')
+        
+        self.button1 = Button(self,text = 'Return',command = self.backToHP)
+        self.button1.pack()
+        
+        
+        
+    def backToHP(self):
+        ManagerHomePage(self)
+        self.forget(self)
+
+    
+    
+    
+    
+    
         
 #run = ManagerSignIn()
 #run.mainloop()
