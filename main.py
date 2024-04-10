@@ -7,6 +7,7 @@ class Main(Tk):
         super().__init__()
         
         self.geometry('1400x500')
+        self.title('Main')
         
         self.button1 = Button(self,text = 'Start Cus Order',command = self.startCustT)
         self.button1.pack()
@@ -20,15 +21,15 @@ class Main(Tk):
 
     def startCustT(self):
         from customerTransaction import CustomerTransaction
-        #self.forget()
+        #self.destroy()
     
     def employeeSign(self):
         from employeeSingIn import EmployeeSingIn
-        #self.forget()
+        #self.destroy()
     
     def managerSign(self):
         from managerSignIn import ManagerSignIn
-        #self.forget()
+        #self.forget(self)
 
 
 
