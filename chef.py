@@ -10,7 +10,13 @@ from openpyxl import Workbook, load_workbook
 
 class Chef(Toplevel):
     
-    pass
+    def __init__(self,parent):
+        super().__init__(parent)
+        
+        self.title('Chef GUI')
+        self.geometry('1400x500')
+        
+    
 
 
 
