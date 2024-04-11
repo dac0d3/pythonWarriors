@@ -3,6 +3,7 @@ from tkinter import messagebox
 
 from updateInventory import *
 from updateTransaction import *
+from revenue import *
 
 username = 'u'
 password = 'p'
@@ -32,6 +33,9 @@ class ManagerSignIn(Toplevel):
         self.submit = Button(self,text = "Submit",command = self.checkCredentials)
         self.submit.grid(row = 3,column = 2)
     
+        self.returnButton = Button(self,text = 'Back',command = self.goBack)
+        self.returnButton.grid(row = 10,column = 1)
+    
     
     def checkCredentials(self):
         usName = self.entry1.get()
@@ -45,7 +49,8 @@ class ManagerSignIn(Toplevel):
             messagebox.showwarning('Error',"Incorrect password or username")
     
     
-    
+    def goBack(self):
+        self.forget(self)
     
 
 class ManagerHomePage(Toplevel):

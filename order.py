@@ -244,7 +244,9 @@ class Checkout2(Toplevel):
         
         self.checkoutButton = Button(self,text = 'Complete Order',command = self.orderComplete )
         self.checkoutButton.grid(row = 10,column=10)
-
+        
+        self.backButton = Button(self,text = 'Back',command = self.back)
+        self.backButton.grid(row = 10,column = 9)
 
     def orderComplete(self):
         print('Order Submitted')
@@ -259,8 +261,10 @@ class Checkout2(Toplevel):
         #self.destroy()
         self.forget(self)
     
-    
-
+    def back(self):
+        # this button will allow customer to go back to change order, need to implement the update inventory to allow changed to 
+        # be made before giving this button functionality
+        pass
         
         
 

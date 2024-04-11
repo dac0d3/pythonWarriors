@@ -23,10 +23,10 @@ book.save('customerTransactions.xlsx')
 print('Customer ID: '+str(cusID))
 
 
-class CustomerTransaction(Tk):
+class CustomerTransaction(Toplevel):
     
-    def __init__(self):
-        super().__init__()
+    def __init__(self,parent):
+        super().__init__(parent)
         
         self.title('Customer Transaction')  # Set title using method, not property
         self.geometry('1440x500')
@@ -34,14 +34,13 @@ class CustomerTransaction(Tk):
         self.button1 = Button(self,text = 'Start Transaction',command = self.startTransaction)
         self.button1.pack()
         
-        self.button2 = Button(self,text = 'Close Kiosk',command = self.closeKiosk)
+        self.button2 = Button(self,text = 'Stop Taking Orders',command = self.stopTransactions)
         self.button2.pack(pady = 20)
         
         
-    def closeKiosk(self):
-        self.destroy() 
-        resetCusID()
-        print("Kiosk is now closed.")  
+    def stopTransactions(self):
+        self.forget(self) 
+        
          
         
     def startTransaction(self):
@@ -51,5 +50,5 @@ class CustomerTransaction(Tk):
         
     
         
-run = CustomerTransaction()
-run.mainloop()
+#run = CustomerTransaction()
+#run.mainloop()

@@ -4,20 +4,5 @@
 from tkinter import *
 
 
-
-window = Tk()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-window.mainloop()
+class Runner(Toplevel):
+    pass
