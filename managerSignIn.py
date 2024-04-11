@@ -45,6 +45,7 @@ class ManagerSignIn(Toplevel):
             print('Manager Signed in!')
             ManagerHomePage(self)
             self.forget(self)
+            
         else:
             messagebox.showwarning('Error',"Incorrect password or username")
     

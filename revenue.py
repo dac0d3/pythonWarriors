@@ -3,10 +3,26 @@
 import math
 
 
+revenue = []
+
+
 def calculateTax (price):                  
     total = price + (price * .0725)             # calculates tax 
     math.trunc(total)                           # truncates decimals past 100s
     return total
 
+
+# adds total for order in list 
 def addToRevenue(total):
-    pass
+    revenue.append(total)
+    
+    
+# calculates total revenue
+def getRevenue():
+    
+    revTotal = 0
+    
+    for i in len(revenue):
+        total = total + revenue[i]
+
+    return revTotal

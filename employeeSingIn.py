@@ -16,7 +16,7 @@ class EmployeeSingIn(Toplevel):
     def __init__(self,parent):
         super().__init__(parent)
         
-        self.title('Chef GUI')
+        self.title('Python Parlor Employee')
         self.geometry('1400x500')
         
         self.chefButton = Button(self,text = 'Chef Sign In',command = self.chefSign)
@@ -31,9 +31,11 @@ class EmployeeSingIn(Toplevel):
   
     def chefSign(self):
         ChefSignIn(self)
+        self.forget(self)
            
     def runnerSign(self):
         RunnerSignIn(self)
+        self.forget(self)
         
     def goBack(self):
         self.forget(self)   

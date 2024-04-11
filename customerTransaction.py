@@ -23,10 +23,10 @@ book.save('customerTransactions.xlsx')
 print('Customer ID: '+str(cusID))
 
 
-class CustomerTransaction(Toplevel):
+class CustomerTransaction(Tk):
     
-    def __init__(self,parent):
-        super().__init__(parent)
+    def __init__(self,):
+        super().__init__()
         
         self.title('Customer Transaction')  # Set title using method, not property
         self.geometry('1440x500')
@@ -39,7 +39,10 @@ class CustomerTransaction(Toplevel):
         
         
     def stopTransactions(self):
-        self.forget(self) 
+        
+        # open new window to input manager credentials and then if correct kiosk will close 
+        
+        self.destroy() 
         
          
         
@@ -50,5 +53,5 @@ class CustomerTransaction(Toplevel):
         
     
         
-#run = CustomerTransaction()
-#run.mainloop()
+run = CustomerTransaction()
+run.mainloop()
