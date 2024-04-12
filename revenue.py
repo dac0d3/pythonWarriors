@@ -2,8 +2,11 @@
 # adds total + tax to revenue after order is confirmed 
 import math
 
+import openpyxl
+from openpyxl import Workbook, load_workbook
 
-revenue = []
+book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
+sheet = book.active
 
 
 def calculateTax (price):                  
@@ -12,17 +15,21 @@ def calculateTax (price):
     return total
 
 
-# adds total for order in list 
-def addToRevenue(total):
-    revenue.append(total)
-    
-    
+
+
 # calculates total revenue
 def getRevenue():
     
-    revTotal = 0
+    revenue = 0.0
+    num = 2
+    total = sheet['H'+str(num)].value
     
-    for i in len(revenue):
-        total = total + revenue[i]
+    while total is not None:
+        total = sheet['H'+str(num)].value
+        if total is not None:   
+            total = float(total)
+            revenue = total + revenue
+        num += 1
+    
+    return revenue
 
-    return revTotal

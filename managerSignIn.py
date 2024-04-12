@@ -102,6 +102,10 @@ class CheckRevenue(Toplevel):
         self.button1 = Button(self,text = 'Return',command = self.backToHP)
         self.button1.pack()
         
+        rev = getRevenue()
+        
+        self.label = Label(self,text = 'Current Revenue: '+str(rev))
+        self.label.pack()
         
         
     def backToHP(self):

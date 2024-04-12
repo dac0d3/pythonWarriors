@@ -6,6 +6,7 @@ from openpyxl import Workbook, load_workbook
 book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
 sheet = book.active
 
+# column H is for total
 
 cus = []
 

@@ -11,7 +11,7 @@ from openpyxl import Workbook, load_workbook
 
 from tkinter import *
 
-from revenue import calculateTax
+from revenue import *
 from updateInventory import *
 from updateTransaction import *
 
@@ -66,7 +66,7 @@ class Order(Toplevel):
         
         
         # button that will get order and open window to checkout screen 
-        self.checkoutButton = Button(self,text = "Checkout",command = self.getValues)
+        self.checkoutButton = Button(self,text = "Proceed to checkout",command = self.getValues)
         self.checkoutButton.grid(row = 12,column = 1)
         
         self.CPlabel = Label(self,text = 'Cheese Pizza')
@@ -180,7 +180,7 @@ class Order(Toplevel):
                 total = total + index
                 
         total = round(total,2)  # round total to 2 decimals 
-       
+        
         saveOrder(cusID,numCheesePizza,numPepperoniPizza,numHawaiianPizza,numMeatLoversPizza,total)
         
         
