@@ -52,6 +52,6 @@ class CustomerTransaction(Tk):
         
         
     
-        
+       
 run = CustomerTransaction()
 run.mainloop()

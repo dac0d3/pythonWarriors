@@ -92,6 +92,7 @@ class Order(Toplevel):
         cusID = getCusID()
         print ('Customer ID:' +str(cusID))
 
+        global total
         total = 0
         order = []
 
@@ -111,7 +112,7 @@ class Order(Toplevel):
         priceWithTax1 = priceWithTax1 * numCheesePizza
         #print('Order:\nCheese Pizza: '+str(numCheesePizza)+'\nPrice: '+str(priceWithTax1))
         order.append(priceWithTax1)
-        cheesePizza(numCheesePizza)
+        #cheesePizza(numCheesePizza)
         #sheet['D'+str(cusID)].value = numCheesePizza
 
 
@@ -130,7 +131,7 @@ class Order(Toplevel):
         priceWithTax2 = numPepperoniPizza * priceWithTax2
         #print('Order:\nPepperoni Pizza: '+ str(numPepperoniPizza)+'\nPrice: '+str(priceWithTax2))
         order.append(priceWithTax2)
-        pepperonniPizza(numPepperoniPizza)
+        #pepperonniPizza(numPepperoniPizza)
         #sheet['E'+str(cusID)].value = numPepperoniPizza
 
 
@@ -149,7 +150,7 @@ class Order(Toplevel):
         priceWithTax3 = priceWithTax3 * numHawaiianPizza
         #print('Order:\nHawaiian Pizza: '+str(numHawaiianPizza)+'\nPrice: '+str(priceWithTax3))
         order.append(priceWithTax3)
-        hawaiianPizza(numHawaiianPizza)
+        #hawaiianPizza(numHawaiianPizza)
         #sheet['F'+str(cusID)].value = numHawaiianPizza
 
 
@@ -168,17 +169,17 @@ class Order(Toplevel):
         priceWithTax4 = priceWithTax4 * numMeatLoversPizza
         #print('Order:\nMeat Lovers Pizza: '+str(numMeatLoversPizza)+'\nPrice: '+str(priceWithTax4))
         order.append(priceWithTax4)
-        meatLoversPizza(numMeatLoversPizza)
+        #meatLoversPizza(numMeatLoversPizza)
         #sheet['G'+str(cusID)].value = numMeatLoversPizza
 
 
-
+        
         for index in order:
             if total == 0:
                 total = index
             else:
                 total = total + index
-                
+        
         total = round(total,2)  # round total to 2 decimals 
         
         saveOrder(cusID,numCheesePizza,numPepperoniPizza,numHawaiianPizza,numMeatLoversPizza,total)
@@ -205,12 +206,16 @@ class Checkout2(Toplevel):
     def __init__(self,parent):
         super().__init__(parent)
         
+        global numCP,numPP,numHP,numMP,total
+        
         cusID = getCusID()    #gets the id and row for customer 
         print(cusID)
        
         self.geometry('1440x500')
         self.title('Checkout')
-        
+
+        #total = float(total)
+            
         numCP = sheet['D'+str(cusID)].value   
         numPP = sheet['E'+str(cusID)].value  
         numHP = sheet['F'+str(cusID)].value  
@@ -242,29 +247,50 @@ class Checkout2(Toplevel):
         self.label4Num = Label(self,text = str(numMP))    
         self.label4Num.grid(row = 4,column = 2)
         
+        self.totalLabel = Label(self,text = 'Total: '+str(total))
+        self.totalLabel.grid(row = 10,column = 1)
+        
         self.checkoutButton = Button(self,text = 'Complete Order',command = self.orderComplete )
         self.checkoutButton.grid(row = 10,column=10)
         
         self.backButton = Button(self,text = 'Back',command = self.back)
         self.backButton.grid(row = 10,column = 9)
+        
+        
 
     def orderComplete(self):
         print('Order Submitted')
+        
+        global numCP,numPP,numHP,numMP
         
         cusID = getCusID()               
         newCusID = updateCusID(cusID)
 
         sheet['A'+str(newCusID)].value = newCusID   # sets the order ID for next customer transaction and saves to excel
         book.save('customerTransactions.xlsx')
-        # start new customer transaction
+        
+        # change values to int to pass into the updateinventory
+        numCP = int(numCP)
+        numPP = int(numPP)
+        numHP = int(numHP)
+        numMP = int(numMP)
+        
+        
+        #Update Inventory calls 
+        cheesePizza(numCP)
+        pepperonniPizza(numPP)
+        hawaiianPizza(numHP)
+        meatLoversPizza(numMP)
 
+    
         #self.destroy()
         self.forget(self)
     
     def back(self):
         # this button will allow customer to go back to change order, need to implement the update inventory to allow changed to 
         # be made before giving this button functionality
-        pass
+        Order(self)
+        self.forget(self)
         
         
 
