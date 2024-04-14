@@ -213,7 +213,9 @@ class Checkout2(Toplevel):
        
         self.geometry('1440x500')
         self.title('Checkout')
-
+        self.config(bg = '#387FC8')
+        #self.wm_attributes('-transparentcolor', '#387FC8')
+        
         #total = float(total)
             
         numCP = sheet['D'+str(cusID)].value   
@@ -223,39 +225,75 @@ class Checkout2(Toplevel):
        
         print(numCP,numPP,numHP,numMP)  
         
-        self.heading = Label(self,text = "Order",font = 'ar 20 bold').grid(row = 0,column = 1)
+        self.heading = Label(self,text = "Order",bg = '#387FC8',font = 'ar 20 bold').pack()
+        #grid(row = 0,column = 1)
        
         # label with pizza order and another label with number of pizzas 
         
-        self.label1 = Label(self,text = 'Cheese Pizzas: ')    
-        self.label1.grid(row = 1,column = 1)  
-        self.label1Num = Label(self,text = str(numCP))    
-        self.label1Num.grid(row = 1,column = 2)
+        self.label1 = Label(self,text = 'Cheese Pizzas: ',bg = '#387FC8')    
+        #self.label1.grid(row = 1,column = 1)  
+        self.label1.pack()
+        self.label1Num = Label(self,text = str(numCP),bg = '#387FC8')    
+        #self.label1Num.grid(row = 1,column = 2)
+        self.label1Num.pack()
         
-        self.label2 = Label(self,text = "Pepperoni Pizzas: ")    
-        self.label2.grid(row = 2,column = 1)  
-        self.label2Num = Label(self,text = str(numPP))    
-        self.label2Num.grid(row = 2,column = 2)
+        self.label2 = Label(self,text = "Pepperoni Pizzas: ",bg = '#387FC8')   
+        #self.label2.grid(row = 2,column = 1)  
+        self.label2.pack()
+        self.label2Num = Label(self,text = str(numPP),bg = '#387FC8')    
+        #self.label2Num.grid(row = 2,column = 2)
+        self.label2Num.pack()
        
-        self.label3 = Label(self,text = "Hawaiian Pizzas: ")    
-        self.label3.grid(row = 3,column = 1) 
-        self.label3Num = Label(self,text = str(numHP))    
-        self.label3Num.grid(row = 3,column = 2) 
+        self.label3 = Label(self,text = "Hawaiian Pizzas: ",bg = '#387FC8')    
+        #self.label3.grid(row = 3,column = 1) 
+        self.label3.pack()
+        self.label3Num = Label(self,text = str(numHP),bg = '#387FC8')    
+        #self.label3Num.grid(row = 3,column = 2) 
+        self.label3Num.pack()
        
-        self.label4 = Label(self,text = "Meat Lovers Pizzas: ")    
-        self.label4.grid(row = 4,column = 1)  
-        self.label4Num = Label(self,text = str(numMP))    
-        self.label4Num.grid(row = 4,column = 2)
+        self.label4 = Label(self,text = "Meat Lovers Pizzas: ",bg = '#387FC8')    
+        #self.label4.grid(row = 4,column = 1)  
+        self.label4.pack()
+        self.label4Num = Label(self,text = str(numMP),bg = '#387FC8')    
+        #self.label4Num.grid(row = 4,column = 2)
+        self.label4Num.pack()
         
-        self.totalLabel = Label(self,text = 'Total: '+str(total))
-        self.totalLabel.grid(row = 10,column = 1)
+        self.totalLabel = Label(self,text = 'Total: '+str(total),bg = '#387FC8')
+        #self.totalLabel.grid(row = 9,column = 1)
+        self.totalLabel.pack()
         
-        self.checkoutButton = Button(self,text = 'Complete Order',command = self.orderComplete )
-        self.checkoutButton.grid(row = 10,column=10)
+        self.orderNum = Label(self,text = 'Order: # '+str(cusID),bg = '#387FC8')
+        #self.orderNum.grid(row = 10, column = 1)
+        self.orderNum.pack()
         
-        self.backButton = Button(self,text = 'Back',command = self.back)
-        self.backButton.grid(row = 10,column = 9)
+        self.checkoutButton = Button(self,text = 'Complete Order',command = self.orderComplete ,bg = '#387FC8')
+        #self.checkoutButton.grid(row =11,column=2)
+        self.checkoutButton.pack()
         
+        self.backButton = Button(self,text = 'Back',command = self.back,bg = '#387FC8')
+        #self.backButton.grid(row = 12,column = 1)
+        self.backButton.pack()
+        
+        
+        # This is the menu that shows the items and prices 
+        self.menuFrame = Frame(self,bg = '#F3B552',padx = 40,pady = 40)
+        self.menuFrame.pack(padx = 50,pady= 0.3)
+        
+        
+        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#F3B552')
+        self.menuLabel.pack()
+        
+        self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#F3B552')
+        self.chLabel.pack()
+        
+        self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#F3B552')
+        self.ppLabel.pack()
+        
+        self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#F3B552')
+        self.hpLabel.pack()
+        
+        self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#F3B552')
+        self.mpLabel.pack()
         
 
     def orderComplete(self):
