@@ -1,8 +1,9 @@
 from tkinter import *
 from customtkinter import *
 from tkinter import messagebox
+from PIL import ImageTk,Image
+import ttkbootstrap as tb
 
-#from customerTransaction import CustomerTransaction
 
 import openpyxl
 from openpyxl import Workbook, load_workbook
@@ -31,10 +32,19 @@ class CustomerTransaction(Toplevel):
     
     def __init__(self,parent):
         super().__init__(parent)
-        
         self.title('Customer Transaction')  # Set title using method, not property
         self.geometry('1440x500')
-
+        
+ 
+        self.logo = Image.open('pythonLogo.png')
+        self.resized = self.logo.resize((510,400))
+        self.logoNew = ImageTk.PhotoImage(self.resized)
+        
+        self.photoLabel = Label(self, image = self.logoNew)
+        self.photoLabel.pack()
+        
+        
+        
         self.button1 = Button(self,text = 'Start Transaction',command = self.startTransaction)
         self.button1.pack()
         
@@ -63,10 +73,24 @@ class OpenKiosk(Tk):
         
         self.geometry('1400x500')
         self.title('Open Kiosk')
+        self.config(bg = '#d9472a')
         
-        self.button1 = Button(self,text = 'Open Kiosk',command = self.startCustT)
-        self.button1.pack()
+        #self.frame = Frame(self,bg = '#d9472a')
+        #self.frame.place(x = 100,y = 0)
         
+        self.logo = Image.open('pythonLogo.png')
+        self.resized = self.logo.resize((500,400))
+        self.logoNew = ImageTk.PhotoImage(self.resized)
+        
+        
+        self.photoLabel = Label(self, image = self.logoNew,compound = 'bottom', bg = '#d9472a')
+        #self.photoLabel.grid(row = 1,column = 1)
+        self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
+        
+        self.button1 = Button(self,text = 'Open Kiosk',command = self.startCustT,font =('Montserrat',17),activebackground = '#d9472a',
+                              bd = 0)
+        #self.button1.grid(row = 2,column = 1)
+        self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
         #place(anchor = CENTER)
         
         #self.button2 = Button(self,text = 'Close Kiosk',command = self.closeKiosk)
