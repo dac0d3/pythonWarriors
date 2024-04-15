@@ -31,7 +31,7 @@ class CustomerTransaction(customtkinter.CTk):
     
     def __init__(self):
         super().__init__()
-        self.title('Customer Transaction')  # Set title using method, not property
+        self.title('Customer Transaction')  
         self.geometry('1440x500')
         self.config(bg = '#d9472a')
  
@@ -44,14 +44,13 @@ class CustomerTransaction(customtkinter.CTk):
         
         
         self.button1 = customtkinter.CTkButton(self,text = 'Start your Order',command = self.startTransaction,bg_color ='#d9472a',
-                              font= ('arial',17),corner_radius=10,fg_color = 'black')
+                                                font= ('arial',17),corner_radius=10,fg_color = 'black')
         
         self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
         
         self.button2 = customtkinter.CTkButton(self,text = 'Manager Only',command = self.stopTransactions,bg_color ='#d9472a',
-                              font= ('arial',5),corner_radius=10,fg_color='black',height=4,width=5 )
-        
-        
+                                                font= ('arial',5),corner_radius=10,fg_color='black',height=4,width=5 )
+       
         self.button2.place( relx = 0,rely = 1,anchor = SW)
         
         
@@ -87,7 +86,7 @@ class OpenKiosk(customtkinter.CTk):
         
         
         self.photoLabel = Label(self, image = self.logoNew,compound = 'bottom', bg = '#d9472a')
-        self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
+        self.photoLabel.place(relx = 0.5,rely = 0.5)
         
         
         

@@ -27,9 +27,9 @@ class Main(Tk):
         self.button2.pack()
         #self.button2.place(rely =0.35,relx = 0.161,anchor =CENTER)
         
-        self.closeButton = Button(self,text = 'X',command = self.closeScreen)
-        self.closeButton.place(anchor = NW)
-        self.closeButton.config()
+        #self.closeButton = Button(self,text = 'X',command = self.closeScreen)
+        #self.closeButton.place(anchor = NW)
+        #self.closeButton.config()
 
     def employeeSign(self):
         EmployeeSingIn(self)
