@@ -78,6 +78,7 @@ class ManagerHomePage(Toplevel):
         
         rev = getRevenue()
         
+        rev = round(rev,2)
         self.label = Label(self,text = 'Current Revenue: '+str(rev))
         self.label.pack()
         

@@ -48,17 +48,17 @@ class CustomerTransaction(customtkinter.CTk):
         
         self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
         
-        self.button2 = customtkinter.CTkButton(self,text = 'Manager Only',command = self.stopTransactions,bg_color ='#d9472a',
-                                                font= ('arial',5),corner_radius=10,fg_color='black',height=4,width=5 )
+        #self.button2 = customtkinter.CTkButton(self,text = 'Manager Only',command = self.stopTransactions,bg_color ='#d9472a',
+         #                                       font= ('arial',5),corner_radius=10,fg_color='black',height=6,width=6 )
        
-        self.button2.place( relx = 0,rely = 1,anchor = SW)
+        #self.button2.place( relx = 0,rely = 1,anchor = SW)
         
         
     def stopTransactions(self):
         
         # open new window to input manager credentials and then if correct kiosk will close 
         ManagerClose(self)
-        self.forget(self) 
+        #self.forget(self) 
         
          
         
@@ -66,6 +66,9 @@ class CustomerTransaction(customtkinter.CTk):
         addOneCust()
         Customer(self)
         #self.forget(self)
+        
+    def closeKiosk(self):
+        self.destroy()
         
 
 

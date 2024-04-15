@@ -37,21 +37,21 @@ class Customer(Toplevel):
 
         #Heading 
         #Label(self,text = "Customer Registration",font = 'ar 45 bold',bg = '#d9472a').place(relx = 0.105,rely = 0.065,anchor = W,fg = 'black')
-        Label(self,text = "Customer Registration",font = 'ar 45 bold',bg = 'black').place(relx = 0.1,rely = 0.06,anchor = W)
-        
+        self.custRegTitle = customtkinter.CTkLabel(self,text = "Enter Infromation",font = ('arial',30),bg_color = '#d9472a')
+        self.custRegTitle.place(relx = 0.1,rely = 0.03,anchor = W)
 
 
         #Field Name
-        self.name = Label(self,text = "Name",bg='#d9472a',font = ('arial',15))
-        self.email = Label(self,text = "Email",bg = '#d9472a',font = ('arial',15))
+        self.name = customtkinter.CTkLabel(self,text = "Name: ",bg_color='#d9472a',font = ('arial',15))
+        self.email = customtkinter.CTkLabel(self,text = "Email: ",bg_color = '#d9472a',font = ('arial',15))
 
         self.name.place(relx = 0.1,rely = 0.2,anchor = W)
         self.email.place(relx = 0.1,rely = 0.3,anchor = W)
 
 
         #Creating Entry Field
-        self.nameEntry = Entry(self,textvariable=self.nameVal,bd=0 ,bg ='black')    #bg_color='#d9472a',corner_radius=10                                      
-        self.emailEntry = Entry(self,textvariable=self.emailVal, bd=0,bg='black' )
+        self.nameEntry = customtkinter.CTkEntry(self,border_width=0 ,bg_color='#d9472a',corner_radius=5,fg_color='black')    #bg_color='#d9472a',corner_radius=10    ,textvariable=self.nameVal                                  
+        self.emailEntry = customtkinter.CTkEntry(self, border_width=0,bg_color='#d9472a',corner_radius=5,fg_color='black')       #,textvariable=self.emailVal
 
 
         #Packing Entry Fields

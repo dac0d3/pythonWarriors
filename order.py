@@ -55,21 +55,54 @@ class Order(Toplevel):
         
         
         
-        # Displays images for each pizza 
+        # Displays images for Cheese pizza 
         self.cheesePizzaIm = Image.open('360_F_26257008_Amvaw8kdz8KViXR1Gc3fNgl2sfubDV8E.webp')
         self.resized = self.cheesePizzaIm.resize((100,100))
         self.cheesePizzaImNew = ImageTk.PhotoImage(self.resized)
+        self.cheesePhotoLabel = Label(self,image = self.cheesePizzaImNew,bg ='#d9472a')
+        self.cheesePhotoLabel.place(relx = 0.8,rely = 0.7,anchor = E)
         
+        
+        
+        # Displays images for peperoni pizza 
         self.pepPizzaIm = Image.open('stock-photo-homemade-cheese-pizza-salami-delicious-pizza-cheddar-italian-food.webp')
         self.resized = self.pepPizzaIm.resize((100,100))
         self.pepPizzaImNew = ImageTk.PhotoImage(self.resized)
-        
-        self.cheesePhotoLabel = Label(self,image = self.cheesePizzaImNew,bg ='#d9472a')
-        self.cheesePhotoLabel.place(relx = 0.8,rely = 0.5,anchor = E)
-        
         self.pepPhotoLabel = Label(self, image = self.pepPizzaImNew,bg ='#d9472a')
-        self.pepPhotoLabel.place(relx = 0.9,rely = 0.5,anchor = E)
+        self.pepPhotoLabel.place(relx = 0.9,rely = 0.7,anchor = E)
 
+
+
+        # Displays images for hawaiian pizza 
+        self.hawaiianPizzaIm = Image.open('360_F_26257008_Amvaw8kdz8KViXR1Gc3fNgl2sfubDV8E.webp')
+        self.resized = self.hawaiianPizzaIm.resize((100,100))
+        self.hawaiianPizzaImNew = ImageTk.PhotoImage(self.resized)
+        self.hawaiianPhotoLabel = Label(self, image = self.hawaiianPizzaImNew,bg ='#d9472a')
+        self.hawaiianPhotoLabel.place(relx = 0.8,rely = 0.3,anchor = E)
+        
+        
+        
+        # Displays images for meatlovers pizza 
+        self.mlPizzaIm = Image.open('360_F_26257008_Amvaw8kdz8KViXR1Gc3fNgl2sfubDV8E.webp')
+        self.resized = self.mlPizzaIm.resize((100,100))
+        self.mlPizzaImNew = ImageTk.PhotoImage(self.resized)
+        self.mlPhotoLabel = Label(self, image = self.mlPizzaImNew,bg ='#d9472a')
+        self.mlPhotoLabel.place(relx = 0.9,rely = 0.3,anchor = E)
+        
+        
+        
+        # These are the labels for the type of pizzas alligned with pictures  
+        self.CPPicturelabel = customtkinter.CTkLabel(self,text = 'Cheese Pizza: ')
+        self.CPPicturelabel.place(relx = 0.8,rely = 0.85,anchor = E)
+        
+        self.PPPicturelabel = customtkinter.CTkLabel(self,text = 'Pepperoni Pizza: ')
+        self.PPPicturelabel.place(relx = 0.9,rely = 0.85,anchor = E)
+        
+        self.HPPicturelabel = customtkinter.CTkLabel(self,text = 'Hawaiian Pizza: ')
+        self.HPPicturelabel.place(relx = 0.8,rely = 0.45,anchor = E)
+        
+        self.MPPicturelabel = customtkinter.CTkLabel(self,text = 'Meat-Lovers Pizza: ')
+        self.MPPicturelabel.place(relx = 0.9,rely = 0.45,anchor = E)
         
         
         
@@ -78,20 +111,22 @@ class Order(Toplevel):
         
         
         #entry for Cheese pizzas 
-        self.entryCP = Entry(self)
+        self.entryCP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black',border_width=0)
         self.entryCP.place(relx = 0.1,rely = 0.2,anchor = W)
 
         #entry for Pepperoni pizzas 
-        self.entryPP = Entry(self)
+        self.entryPP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black',border_width=0)
         self.entryPP.place(relx = 0.1,rely = 0.3,anchor = W)
 
         #entry for Hawaiian pizzas 
-        self.entryHP = Entry(self)
+        self.entryHP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black',border_width=0)
         self.entryHP.place(relx = 0.1,rely = 0.4,anchor = W)
 
         #entry for Meat Lovers pizzas 
-        self.entryMP = Entry(self)
+        self.entryMP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black',border_width=0)
         self.entryMP.place(relx = 0.1,rely = 0.5,anchor = W)
+        
+        
         
         
         
@@ -100,26 +135,27 @@ class Order(Toplevel):
                                                       bg_color= '#d9472a',hover_color='gray',corner_radius=10,fg_color='black')
         self.checkoutButton.place(relx = 0.1,rely = 0.8,anchor = SW)
         
-        self.CPlabel = Label(self,text = 'Cheese Pizza')
+        
+        # These are the labels for the type of pizzas alligned with entry boxes 
+        self.CPlabel = customtkinter.CTkLabel(self,text = 'Cheese Pizza: ')
         self.CPlabel.place(relx = 0.015,rely = 0.2,anchor = W)
         
-        
-        self.PPlabel = Label(self,text = 'Pepperoni Pizza')
+        self.PPlabel = customtkinter.CTkLabel(self,text = 'Pepperoni Pizza: ')
         self.PPlabel.place(relx = 0.015,rely = 0.3,anchor = W)
         
-        
-        self.HPlabel = Label(self,text = 'Hawaiian Pizza')
+        self.HPlabel = customtkinter.CTkLabel(self,text = 'Hawaiian Pizza: ')
         self.HPlabel.place(relx = 0.015,rely = 0.4,anchor = W)
         
-        
-        self.MPlabel = Label(self,text = 'Meat Lovers Pizza')
+        self.MPlabel = customtkinter.CTkLabel(self,text = 'Meat Lovers Pizza: ')
         self.MPlabel.place(relx = 0.015,rely = 0.5,anchor = W)
         
 
 
+
+
         # This is the menu that shows the items and prices 
-        self.menuFrame = Frame(self,bg = '#F3B552',padx = 40,pady = 40)
-        self.menuFrame.place(relx = 0.5,rely = 0.36,anchor = CENTER)
+        self.menuFrame = Frame(self,bg = '#F3B552',padx = 70,pady = 70,)
+        self.menuFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
         self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#F3B552')
@@ -136,6 +172,11 @@ class Order(Toplevel):
         
         self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#F3B552')
         self.mpLabel.pack()
+
+
+
+
+
 
 
     def getValues(self):
@@ -277,70 +318,67 @@ class Checkout2(Toplevel):
         print(numCP,numPP,numHP,numMP)  
         
         
-        self.orderFrame = Frame(self,bg='black',padx = 50,pady = 70)
+        
+        
+        
+        # This is the frame and everything that goes inside 
+        self.orderFrame = Frame(self,bg = '#F3B552',padx = 70,pady = 70,)
         self.orderFrame.place(relx = 0.1,rely =0.4,anchor = W)
         
-        
-        
-        self.heading = Label(self.orderFrame,text = "Order",bg = '#387FC8',font = 'ar 20 bold')
+        self.heading = Label(self.orderFrame,text = "Order",bg = '#F3B552',font = 'ar 20 bold')
         self.heading.pack()
         #.place(relx = 0.1,rely =0.07,anchor = W)
 
-       
         # label with pizza order and another label with number of pizzas 
-        
-        self.label1 = Label(self.orderFrame,text = 'Cheese Pizzas: ',bg = '#387FC8')             
+        self.label1 = Label(self.orderFrame,text = 'Cheese Pizzas: ',bg = '#F3B552')             
         self.label1.pack()
         #place(relx = 0.1,rely =0.2,anchor = W)
-        self.label1Num = Label(self.orderFrame,text = str(numCP),bg = '#387FC8')    
+        self.label1Num = Label(self.orderFrame,text = str(numCP),bg = '#F3B552')    
         self.label1Num.pack()
         #place(relx = 0.1,rely =0.25,anchor = W)
         
-        
-        
-        self.label2 = Label(self.orderFrame,text = "Pepperoni Pizzas: ",bg = '#387FC8')   
+        self.label2 = Label(self.orderFrame,text = "Pepperoni Pizzas: ",bg = '#F3B552')   
         self.label2.pack()
         #place(relx = 0.1,rely =0.3,anchor = W)
-        self.label2Num = Label(self.orderFrame,text = str(numPP),bg = '#387FC8')    
+        self.label2Num = Label(self.orderFrame,text = str(numPP),bg = '#F3B552')    
         self.label2Num.pack()
         #place(relx = 0.1,rely =0.35,anchor = W)
        
-       
-       
-        self.label3 = Label(self.orderFrame,text = "Hawaiian Pizzas: ",bg = '#387FC8')    
+        self.label3 = Label(self.orderFrame,text = "Hawaiian Pizzas: ",bg = '#F3B552')    
         self.label3.pack()
         #place(relx = 0.1,rely =0.4,anchor = W)
-        self.label3Num = Label(self.orderFrame,text = str(numHP),bg = '#387FC8')    
+        self.label3Num = Label(self.orderFrame,text = str(numHP),bg = '#F3B552')    
         self.label3Num.pack()
         #place(relx = 0.1,rely =0.45,anchor = W)
        
-       
-       
-        self.label4 = Label(self.orderFrame,text = "Meat Lovers Pizzas: ",bg = '#387FC8')    
+        self.label4 = Label(self.orderFrame,text = "Meat Lovers Pizzas: ",bg = '#F3B552')    
         self.label4.pack()
         #place(relx = 0.1,rely =0.5,anchor = W)
-        self.label4Num = Label(self.orderFrame,text = str(numMP),bg = '#387FC8')    
+        self.label4Num = Label(self.orderFrame,text = str(numMP),bg = '#F3B552')    
         self.label4Num.pack()
         #place(relx = 0.1,rely =0.55,anchor = W)
         
         
         
-        self.totalLabel = Label(self,text = 'Total: '+str(total),bg = '#387FC8')
+        
+        
+        # Displays the total to customer
+        self.totalLabel = customtkinter.CTkLabel(self,text = 'Total: $'+str(total),bg_color = '#d9472a',font = ('arial',20))
         self.totalLabel.place(relx = 0.4,rely =0.6,anchor = W)
         
-        
-        
-        self.orderNum = Label(self,text = 'Order: # '+str(cusID),bg = '#387FC8')
+        # Displys the customers order number 
+        self.orderNum = customtkinter.CTkLabel(self,text = 'Order: # '+str(cusID),bg_color = '#d9472a',font = ('arial',20))
         self.orderNum.place(relx = 0.4,rely =0.65,anchor = W)
         
         
-        
-        self.checkoutButton = customtkinter.CTkButton(self,text = 'Complete Order',command = self.orderComplete ,bg_color = '#d9472a')
+        # Button to end the transaction and go back to the order screen
+        self.checkoutButton = customtkinter.CTkButton(self,text = 'Complete Order',command = self.orderComplete ,bg_color = '#d9472a'
+                                                      ,fg_color='black')
         self.checkoutButton.place(relx = 0.8,rely =0.95,anchor = W)
         
         
-        
-        self.backButton = customtkinter.CTkButton(self,text = 'Back',command = self.back,bg_color = '#d9472a')
+        # Button to go back to the order screen and change order 
+        self.backButton = customtkinter.CTkButton(self,text = 'Back',command = self.back,bg_color = '#d9472a',fg_color='black')
         self.backButton.place(relx = 0.05,rely =0.95,anchor = W)
         
         

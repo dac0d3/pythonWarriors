@@ -46,8 +46,8 @@ class ManagerClose(Toplevel):
         
         if usName == username and passW == password:
             print('Manager Signed in!')
-            CloseKiosk(self)
-            self.forget(self)
+            #CloseKiosk(self)
+            self.closeKiosk(self)
             
         else:
             messagebox.showwarning('Error',"Incorrect password or username")
