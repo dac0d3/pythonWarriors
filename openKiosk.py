@@ -1,5 +1,8 @@
+# currently skipping open kiosk class and going straight to customer placing order srceen
+
+
 from tkinter import *
-from customtkinter import *
+import customtkinter
 from tkinter import messagebox
 from PIL import ImageTk,Image
 import ttkbootstrap as tb
@@ -24,32 +27,32 @@ print('Customer ID: '+str(cusID))
 
 
 
-#book = load_workbook('customerTransactions.xlsx')
-#sheet = book.active
-
-
-class CustomerTransaction(Toplevel):
+class CustomerTransaction(customtkinter.CTk):
     
-    def __init__(self,parent):
-        super().__init__(parent)
+    def __init__(self):
+        super().__init__()
         self.title('Customer Transaction')  # Set title using method, not property
         self.geometry('1440x500')
-        
+        self.config(bg = '#d9472a')
  
         self.logo = Image.open('pythonLogo.png')
         self.resized = self.logo.resize((510,400))
         self.logoNew = ImageTk.PhotoImage(self.resized)
         
-        self.photoLabel = Label(self, image = self.logoNew)
-        self.photoLabel.pack()
+        self.photoLabel = Label(self, image = self.logoNew,bg ='#d9472a')
+        self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
+        self.button1 = customtkinter.CTkButton(self,text = 'Start your Order',command = self.startTransaction,bg_color ='#d9472a',
+                              font= ('arial',17),corner_radius=10,fg_color = 'black')
         
-        self.button1 = Button(self,text = 'Start Transaction',command = self.startTransaction)
-        self.button1.pack()
+        self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
         
-        self.button2 = Button(self,text = 'Exit',command = self.stopTransactions)
-        self.button2.pack(pady = 20)
+        self.button2 = customtkinter.CTkButton(self,text = 'Manager Only',command = self.stopTransactions,bg_color ='#d9472a',
+                              font= ('arial',5),corner_radius=10,fg_color='black',height=4,width=5 )
+        
+        
+        self.button2.place( relx = 0,rely = 1,anchor = SW)
         
         
     def stopTransactions(self):
@@ -67,16 +70,16 @@ class CustomerTransaction(Toplevel):
         
 
 
-class OpenKiosk(Tk):
+class OpenKiosk(customtkinter.CTk):
     def __init__(self):
         super().__init__()
+        
+        
         
         self.geometry('1400x500')
         self.title('Open Kiosk')
         self.config(bg = '#d9472a')
-        
-        #self.frame = Frame(self,bg = '#d9472a')
-        #self.frame.place(x = 100,y = 0)
+
         
         self.logo = Image.open('pythonLogo.png')
         self.resized = self.logo.resize((500,400))
@@ -84,34 +87,23 @@ class OpenKiosk(Tk):
         
         
         self.photoLabel = Label(self, image = self.logoNew,compound = 'bottom', bg = '#d9472a')
-        #self.photoLabel.grid(row = 1,column = 1)
         self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
-        self.button1 = Button(self,text = 'Open Kiosk',command = self.startCustT,font =('Montserrat',17),activebackground = '#d9472a',
-                              bd = 0)
-        #self.button1.grid(row = 2,column = 1)
-        self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
-        #place(anchor = CENTER)
         
-        #self.button2 = Button(self,text = 'Close Kiosk',command = self.closeKiosk)
-        #self.button2.pack()
+        
+        self.button1 = customtkinter.CTkButton(self,text = 'Open Kiosk',command = self.startCustT,font =('Montserrat',17),
+                                                corner_radius=10,hover_color = 'gray',bg_color='#d9472a',
+                                                fg_color='black')
+        
+        self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
+        
         
         
         
     def startCustT(self):
         CustomerTransaction(self)
-        #self.forget(self)
-        
-    #def closeKiosk(self):
-     #   self.destroy() 
-      #  resetCusID()
-       # print("Kiosk is now closed.")  
-        
 
-  
-       
-#run = CustomerTransaction()
-#run.mainloop()
+        
     
-run = OpenKiosk()
+run = CustomerTransaction()
 run.mainloop()

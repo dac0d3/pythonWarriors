@@ -4,6 +4,7 @@
 from tkinter import *
 from tkinter.tix import LabelEntry
 from tkinter import messagebox
+import customtkinter
 
 import openpyxl
 from openpyxl import Workbook, load_workbook
@@ -26,34 +27,40 @@ class Customer(Toplevel):
         
         self.geometry('1440x500')   #900
         self.title('Customer Registration')
+        self.config(bg = '#d9472a')
+        
         
         self.nameVal = StringVar
         self.emailVal = StringVar
 
         #Heading 
-        Label(self,text = "Customer Registration",font = 'ar 20 bold').grid(row = 0,column = 3)
+        Label(self,text = "Customer Registration",font = 'ar 45 bold',bg = '#d9472a').place(relx = 0.1,rely = 0.06,anchor = W)
 
 
         #Field Name
-        self.name = Label(self,text = "Name")
-        self.email = Label(self,text = "Email")
+        self.name = Label(self,text = "Name",bg='#d9472a',font = ('arial',15))
+        self.email = Label(self,text = "Email",bg = '#d9472a',font = ('arial',15))
 
-        self.name.grid(row = 1,column = 2)
-        self.email.grid(row = 2,column = 2)
+        self.name.place(relx = 0.1,rely = 0.2,anchor = W)
+        self.email.place(relx = 0.1,rely = 0.3,anchor = W)
 
 
         #Creating Entry Field
-        self.nameEntry = Entry(self,textvariable=self.nameVal)
-        self.emailEntry = Entry(self,textvariable=self.emailVal)
+        self.nameEntry = Entry(self,textvariable=self.nameVal, )    #bg_color='#d9472a',corner_radius=10
+                                                
+                                                
+        self.emailEntry = Entry(self,textvariable=self.emailVal,  )
 
 
         #Packing Entry Fields
-        self.nameEntry.grid(row = 1,column = 3)
-        self.emailEntry.grid(row = 2,column = 3)
+        self.nameEntry.place(relx = 0.1,rely = 0.25,anchor = W)
+        self.emailEntry.place(relx = 0.1,rely = 0.35,anchor = W)
 
         #Submit Button
-        self.checkoutButton = Button(self,text = 'Submit',command = self.getVals)
-        self.checkoutButton.grid(row = 7,column = 3)
+        self.submitButton = customtkinter.CTkButton(self,text = 'Submit',command = self.getVals,
+                                                    corner_radius=10,bg_color='#d9472a',
+                                                    hover_color='gray',fg_color='black')
+        self.submitButton.place(relx = 0.1,rely = 0.5,anchor = W)
         
             
        
