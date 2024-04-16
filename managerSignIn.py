@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import customtkinter
 
 from updateInventory import *
 from updateTransaction import *
@@ -16,25 +17,25 @@ class ManagerSignIn(Toplevel):
         
         self.geometry('1400x500')
         self.title('Manager Sign In')
+        self.config(bg = '#d9472a')
         
+        self.user = customtkinter.CTkLabel(self,text = 'Enter Username: ' )
+        self.user.place(relx = 0.1,rely = 0.2,anchor = W)
         
-        self.user = Label(self,text = 'Enter Username: ' )
-        self.user.grid(row =1,column = 1)
+        self.entry1= customtkinter.CTkEntry(self)
+        self.entry1.place(relx = 0.2,rely = 0.2,anchor = W)
         
-        self.entry1= Entry(self)
-        self.entry1.grid(row = 1,column = 2)
+        self.passw = customtkinter.CTkLabel(self,text = 'Enter Password: ' )
+        self.passw.place(relx = 0.1,rely = 0.3,anchor = W)
         
-        self.passw = Label(self,text = 'Enter Password: ' )
-        self.passw.grid(row =2,column = 1)
+        self.entry2 = customtkinter.CTkEntry(self)
+        self.entry2.place(relx = 0.2,rely = 0.3,anchor = W)
         
-        self.entry2 = Entry(self)
-        self.entry2.grid(row = 2,column = 2)
-        
-        self.submit = Button(self,text = "Submit",command = self.checkCredentials)
-        self.submit.grid(row = 3,column = 2)
+        self.submit = customtkinter.CTkButton(self,text = "Submit",command = self.checkCredentials)
+        self.submit.place(relx = 0.2,rely = 0.4,anchor = W)
     
-        self.returnButton = Button(self,text = 'Back',command = self.goBack)
-        self.returnButton.grid(row = 10,column = 1)
+        self.returnButton = customtkinter.CTkButton(self,text = 'Back',command = self.goBack)
+        self.returnButton.place(relx = 0.1,rely = 0.4,anchor = W)
     
     
     def checkCredentials(self):
