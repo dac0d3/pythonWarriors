@@ -1,5 +1,7 @@
 from tkinter import *
-from customtkinter import *
+import customtkinter
+from PIL import ImageTk,Image
+
 
 from managerSignIn import ManagerSignIn
 from employeeSingIn import EmployeeSingIn
@@ -9,27 +11,29 @@ class Main(Tk):
     def __init__(self):
         super().__init__()
         
-        self.config(bg = '#387FC8')
+        
         self.geometry('1400x500')
         self.title('Main')
+        self.config(bg = '#d9472a') 
         
-        self.optionFrame = Frame(self,bg = '#F3B552',padx = 20,pady = 30)
-        #self.optionFrame.size('50x50')
-        self.optionFrame.pack(padx = 1 ,pady = 60)
-    
-        self.button1 = Button(self.optionFrame,text = 'Employee Sign-in',command = self.employeeSign,background = 'blue')
-        #self.button1.config(font =('Arial',50))
-        self.button1.pack()
-        #self.button1.place(rely = 0.5,relx = 0.16,anchor =CENTER)
+        self.logo = Image.open('pythonLogo.png')
+        self.resized = self.logo.resize((510,400))
+        self.logoNew = ImageTk.PhotoImage(self.resized)
         
-        self.button2 = Button(self.optionFrame,text = 'Manager Sign-in',command = self.managerSign)
-        #self.button2.config(font =('Arial',50) )
-        self.button2.pack()
-        #self.button2.place(rely =0.35,relx = 0.161,anchor =CENTER)
+        self.photoLabel = Label(self, image = self.logoNew,bg ='#d9472a')
+        self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
+
+
+
+        self.button1 = customtkinter.CTkButton(self,text = 'Employee Sign-in',command = self.employeeSign,bg_color= '#d9472a',
+                                               fg_color='black',height = 40,width=20)
+        self.button1.place(relx = 0.41,rely = 0.6,anchor = W)
         
-        #self.closeButton = Button(self,text = 'X',command = self.closeScreen)
-        #self.closeButton.place(anchor = NW)
-        #self.closeButton.config()
+        
+        self.button2 = customtkinter.CTkButton(self,text = 'Manager Sign-in',command = self.managerSign,bg_color= '#d9472a',
+                                               fg_color='black',height = 40,width=20)
+        self.button2.place(relx = 0.61,rely = 0.6,anchor = E)
+        
 
     def employeeSign(self):
         EmployeeSingIn(self)

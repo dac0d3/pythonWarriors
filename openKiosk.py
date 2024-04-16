@@ -31,6 +31,7 @@ class CustomerTransaction(customtkinter.CTk):
     
     def __init__(self):
         super().__init__()
+        
         self.title('Customer Transaction')  
         self.geometry('1440x500')
         self.config(bg = '#d9472a')
