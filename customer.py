@@ -37,8 +37,9 @@ class Customer(Toplevel):
 
         #Heading 
         #Label(self,text = "Customer Registration",font = 'ar 45 bold',bg = '#d9472a').place(relx = 0.105,rely = 0.065,anchor = W,fg = 'black')
-        self.custRegTitle = customtkinter.CTkLabel(self,text = "Enter Infromation",font = ('arial',30),bg_color = '#d9472a')
-        self.custRegTitle.place(relx = 0.1,rely = 0.03,anchor = W)
+        self.custRegTitle = customtkinter.CTkLabel(self,text = "Enter your information below",font = ('arial',30,'bold'),bg_color = '#d9472a',fg_color='#d9472a',text_color='#31120c',
+                                                   height=40)
+        self.custRegTitle.place(relx = 0.1,rely = 0.05,anchor = W)
 
 
         #Field Name
@@ -50,8 +51,8 @@ class Customer(Toplevel):
 
 
         #Creating Entry Field
-        self.nameEntry = customtkinter.CTkEntry(self,border_width=0 ,bg_color='#d9472a',corner_radius=5,fg_color='black')    #bg_color='#d9472a',corner_radius=10    ,textvariable=self.nameVal                                  
-        self.emailEntry = customtkinter.CTkEntry(self, border_width=0,bg_color='#d9472a',corner_radius=5,fg_color='black')       #,textvariable=self.emailVal
+        self.nameEntry = customtkinter.CTkEntry(self,border_width=0 ,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b')    #bg_color='#d9472a',corner_radius=10    ,textvariable=self.nameVal                                  
+        self.emailEntry = customtkinter.CTkEntry(self, border_width=0,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b')       #,textvariable=self.emailVal
 
 
         #Packing Entry Fields
@@ -62,7 +63,7 @@ class Customer(Toplevel):
         #Submit Button
         self.submitButton = customtkinter.CTkButton(self,text = 'Submit',command = self.getVals,
                                                     corner_radius=10,bg_color='#d9472a',
-                                                    hover_color='gray',fg_color='black')
+                                                    hover_color='gray',fg_color='#31120c')
         self.submitButton.place(relx = 0.1,rely = 0.5,anchor = W)
         
             

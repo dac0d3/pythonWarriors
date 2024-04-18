@@ -13,6 +13,7 @@ from tkinter import *
 import customtkinter
 from PIL import ImageTk,Image
 import ttkbootstrap as tb
+from tkinter import messagebox
 
 from revenue import *
 from updateInventory import *
@@ -111,19 +112,19 @@ class Order(Toplevel):
         
         
         #entry for Cheese pizzas 
-        self.entryCP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black',border_width=0)
+        self.entryCP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
         self.entryCP.place(relx = 0.1,rely = 0.2,anchor = W)
 
         #entry for Pepperoni pizzas 
-        self.entryPP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black',border_width=0)
+        self.entryPP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
         self.entryPP.place(relx = 0.1,rely = 0.3,anchor = W)
 
         #entry for Hawaiian pizzas 
-        self.entryHP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black',border_width=0)
+        self.entryHP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
         self.entryHP.place(relx = 0.1,rely = 0.4,anchor = W)
 
         #entry for Meat Lovers pizzas 
-        self.entryMP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black',border_width=0)
+        self.entryMP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
         self.entryMP.place(relx = 0.1,rely = 0.5,anchor = W)
         
         
@@ -132,7 +133,7 @@ class Order(Toplevel):
         
         # button that will get order and open window to checkout screen 
         self.checkoutButton = customtkinter.CTkButton(self,text = "Proceed to checkout",command = self.getValues,
-                                                      bg_color= '#d9472a',hover_color='gray',corner_radius=10,fg_color='black')
+                                                      bg_color= '#d9472a',hover_color='gray',corner_radius=10,fg_color='#31120c')
         self.checkoutButton.place(relx = 0.1,rely = 0.8,anchor = SW)
         
         
@@ -154,7 +155,7 @@ class Order(Toplevel):
 
 
         # This is the menu that shows the items and prices 
-        self.menuFrame = Frame(self,bg = '#F3B552',padx = 70,pady = 70,)
+        self.menuFrame = Frame(self,bg = '#9f3a2d',padx = 70,pady = 70,)
         self.menuFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
@@ -282,10 +283,11 @@ class Order(Toplevel):
         print(total)
         print(order)
 
-        
-       
-        Checkout2(self)
-        self.forget(self)
+        if total == 0:
+            messagebox.showwarning('Error',"You entered no Pizzas!")
+        else:
+            Checkout2(self)
+            self.forget(self)
         
         #checkOrderPass(orderPass)
         

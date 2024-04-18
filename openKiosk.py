@@ -34,18 +34,18 @@ class CustomerTransaction(customtkinter.CTk):
         
         self.title('Customer Transaction')  
         self.geometry('1440x500')
-        self.config(bg = '#d9472a')
+        self.config(bg = '#bf3c22')
  
         self.logo = Image.open('pythonLogo.png')
         self.resized = self.logo.resize((510,400))
         self.logoNew = ImageTk.PhotoImage(self.resized)
         
-        self.photoLabel = Label(self, image = self.logoNew,bg ='#d9472a')
+        self.photoLabel = Label(self, image = self.logoNew,bg ='#bf3c22')
         self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
-        self.button1 = customtkinter.CTkButton(self,text = 'Start your Order',command = self.startTransaction,bg_color ='#d9472a',
-                                                font= ('arial',17),corner_radius=10,fg_color = 'black')
+        self.button1 = customtkinter.CTkButton(self,text = 'Start your Order',command = self.startTransaction,bg_color ='#bf3c22',
+                                                font= ('arial',17),corner_radius=10,fg_color = '#31120c')
         
         self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
         
