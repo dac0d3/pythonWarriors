@@ -159,7 +159,7 @@ class Order(Toplevel):
         self.menuFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
-        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#F3B552')
+        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#9f3a2d')
         self.menuLabel.pack()
         
         self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#F3B552')
