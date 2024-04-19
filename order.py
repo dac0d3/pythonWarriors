@@ -65,7 +65,7 @@ class Order(Toplevel):
         
         
         # Displays images for peperoni pizza 
-        self.pepPizzaIm = Image.open('AdobeStock_144066594.jpeg')
+        self.pepPizzaIm = Image.open('AdobeStock_223971020.jpeg')
         self.resized = self.pepPizzaIm.resize((100,100))
         self.pepPizzaImNew = ImageTk.PhotoImage(self.resized)
         self.pepPhotoLabel = Label(self, image = self.pepPizzaImNew,bg ='#d9472a')
@@ -83,7 +83,7 @@ class Order(Toplevel):
         
         
         # Displays images for meatlovers pizza 
-        self.mlPizzaIm = Image.open('AdobeStock_223971020.jpeg')
+        self.mlPizzaIm = Image.open('AdobeStock_144066594.jpeg')
         self.resized = self.mlPizzaIm.resize((100,100))
         self.mlPizzaImNew = ImageTk.PhotoImage(self.resized)
         self.mlPhotoLabel = Label(self, image = self.mlPizzaImNew,bg ='#d9472a')
