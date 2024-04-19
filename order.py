@@ -65,7 +65,7 @@ class Order(Toplevel):
         
         
         # Displays images for peperoni pizza 
-        self.pepPizzaIm = Image.open('stock-photo-homemade-cheese-pizza-salami-delicious-pizza-cheddar-italian-food.webp')
+        self.pepPizzaIm = Image.open('AdobeStock_144066594.jpeg')
         self.resized = self.pepPizzaIm.resize((100,100))
         self.pepPizzaImNew = ImageTk.PhotoImage(self.resized)
         self.pepPhotoLabel = Label(self, image = self.pepPizzaImNew,bg ='#d9472a')
@@ -74,7 +74,7 @@ class Order(Toplevel):
 
 
         # Displays images for hawaiian pizza 
-        self.hawaiianPizzaIm = Image.open('360_F_26257008_Amvaw8kdz8KViXR1Gc3fNgl2sfubDV8E.webp')
+        self.hawaiianPizzaIm = Image.open('AdobeStock_89727055.jpeg')
         self.resized = self.hawaiianPizzaIm.resize((100,100))
         self.hawaiianPizzaImNew = ImageTk.PhotoImage(self.resized)
         self.hawaiianPhotoLabel = Label(self, image = self.hawaiianPizzaImNew,bg ='#d9472a')
@@ -83,7 +83,7 @@ class Order(Toplevel):
         
         
         # Displays images for meatlovers pizza 
-        self.mlPizzaIm = Image.open('360_F_26257008_Amvaw8kdz8KViXR1Gc3fNgl2sfubDV8E.webp')
+        self.mlPizzaIm = Image.open('AdobeStock_223971020.jpeg')
         self.resized = self.mlPizzaIm.resize((100,100))
         self.mlPizzaImNew = ImageTk.PhotoImage(self.resized)
         self.mlPhotoLabel = Label(self, image = self.mlPizzaImNew,bg ='#d9472a')
