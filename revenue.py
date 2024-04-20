@@ -5,13 +5,16 @@ import math
 import openpyxl
 from openpyxl import Workbook, load_workbook
 
-book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
+# excel sheet for transactions
+book = load_workbook('customerTransactions.xlsx')           
 sheet = book.active
 
 
+# calculates tax 
+# truncates decimals past 100s
 def calculateTax (price):                  
-    total = price + (price * .0725)             # calculates tax 
-    math.trunc(total)                           # truncates decimals past 100s
+    total = price + (price * .0725)             
+    math.trunc(total)                           
     return total
 
 

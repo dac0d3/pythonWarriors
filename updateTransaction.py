@@ -2,30 +2,29 @@ import openpyxl
 from openpyxl import Workbook, load_workbook
 
 
-
-book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
+# excel sheet for transactions
+book = load_workbook('customerTransactions.xlsx')           
 sheet = book.active
 
-# column H is for total
 
 cus = []
 
-#cusID = sheet['A2'].value
-#print('Customer ID: '+str(cusID))
-#cusID = int(cusID)
 
 def saveValues(cusID,name,email):
         
     name = str(name)
     email = str(email)
-    
-    sheet['B'+str(cusID)].value = name               # stores name in excel 
-    sheet['C'+str(cusID)].value = email              # stores email in excel
+    # stores name in excel 
+    sheet['B'+str(cusID)].value = name  
+    # stores email in excel             
+    sheet['C'+str(cusID)].value = email              
         
     book.save('customerTransactions.xlsx')
         
-    excelName = sheet['B'+str(cusID)].value               # gets name in excel 
-    excelEmail = sheet['C'+str(cusID)].value            # gets email in excel
+    # gets name in excel 
+    excelName = sheet['B'+str(cusID)].value  
+    # gets email in excel             
+    excelEmail = sheet['C'+str(cusID)].value            
         
     print(excelName,excelEmail)
     
@@ -54,8 +53,6 @@ def getCusID():
 
     return len(cus)+1
    
-    
-    
 def updateCusID(cusID):
     cusID = cusID +1
     
@@ -63,7 +60,7 @@ def updateCusID(cusID):
 
 def resetCusID():
     cusID = 2
-    
+   
 def addOneCust():
     cus.append(1)
 
@@ -71,11 +68,10 @@ def addOneCust():
 
 
 
-# fix whle loop
+
 def resetTransactions():
     row = 2
     value = sheet['A'+str(row)].value
-    #name = str(name)
     
     while value != None:
         

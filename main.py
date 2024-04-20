@@ -26,14 +26,14 @@ class Main(Tk):
 
 
 
-        self.button1 = customtkinter.CTkButton(self,text = 'Employee Sign-in',command = self.employeeSign,bg_color= '#d9472a',
+        self.employeeButton = customtkinter.CTkButton(self,text = 'Employee Sign-in',command = self.employeeSign,bg_color= '#d9472a',
                                                fg_color='black',height = 40,width=20)
-        self.button1.place(relx = 0.41,rely = 0.6,anchor = W)
+        self.employeeButton.place(relx = 0.41,rely = 0.6,anchor = W)
         
         
-        self.button2 = customtkinter.CTkButton(self,text = 'Manager Sign-in',command = self.managerSign,bg_color= '#d9472a',
+        self.managerButton = customtkinter.CTkButton(self,text = 'Manager Sign-in',command = self.managerSign,bg_color= '#d9472a',
                                                fg_color='black',height = 40,width=20)
-        self.button2.place(relx = 0.61,rely = 0.6,anchor = E)
+        self.managerButton.place(relx = 0.61,rely = 0.6,anchor = E)
         
 
     def employeeSign(self):

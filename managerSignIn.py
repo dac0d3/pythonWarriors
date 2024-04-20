@@ -30,7 +30,6 @@ class ManagerSignIn(Toplevel):
         
         
         #Heading 
-        #Label(self,text = "Customer Registration",font = 'ar 45 bold',bg = '#d9472a').place(relx = 0.105,rely = 0.065,anchor = W,fg = 'black')
         self.managerTitle = customtkinter.CTkLabel(self,text = "Manager Sign-In",font = ('arial',30),bg_color = '#d9472a')
         self.managerTitle.place(relx = 0.1,rely = 0.05,anchor = W)
         
@@ -99,16 +98,12 @@ class ManagerHomePage(Toplevel):
         self.button2 = customtkinter.CTkButton(self,text = 'Reset Transactions', command = self.resetTrans,
                                                bg_color='#d9472a',fg_color='black')
         self.button2.place(relx = 0.5,rely = 0.5,anchor = W)
-
-        #self.button3 = Button(self,text = 'Check Revenue',command = self.checkRev)
-        #self.button3.pack()
         
         self.button4 = customtkinter.CTkButton(self,text = 'Exit',command = self.closeWindow,
                                                bg_color='#d9472a',fg_color='black')
         self.button4.place(relx = 0.5,rely = 0.6,anchor = W)
         
-        #self.button1 = Button(self,text = 'Return',command = self.backToHP)
-        #self.button1.pack()
+
         
         rev = getRevenue()
         
@@ -128,30 +123,3 @@ class ManagerHomePage(Toplevel):
     def closeWindow(self):
         self.forget(self)
     
-    #def checkRev(self):
-     #   CheckRevenue(self)
-      #  self.forget(self)
-        
-        
-    
-    
-#class CheckRevenue(Toplevel):
-#    def __init__(self,parent):
-#        super().__init__(parent)
-#        
-#        # get revenue from revenue file 
-#        
-#        self.geometry('1400x900')
-#        self.title('Check Revenue')
-#        
-#        
-#        
-#        
-#    def backToHP(self):
-#        ManagerHomePage(self)
-#        self.forget(self)
-
-
-        
-#run = ManagerSignIn()
-#run.mainloop()
