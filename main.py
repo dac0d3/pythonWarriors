@@ -5,6 +5,7 @@ from PIL import ImageTk,Image
 
 from managerSignIn import ManagerSignIn
 from employeeSingIn import EmployeeSingIn
+from chef import Chef
 
 class Main(Tk):
     
