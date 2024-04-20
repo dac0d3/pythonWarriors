@@ -49,11 +49,6 @@ class CustomerTransaction(customtkinter.CTk):
         
         self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
         
-        #self.button2 = customtkinter.CTkButton(self,text = 'Manager Only',command = self.stopTransactions,bg_color ='#d9472a',
-         #                                       font= ('arial',5),corner_radius=10,fg_color='black',height=6,width=6 )
-       
-        #self.button2.place( relx = 0,rely = 1,anchor = SW)
-        
         
     def stopTransactions(self):
         
@@ -62,7 +57,6 @@ class CustomerTransaction(customtkinter.CTk):
         #self.forget(self) 
         
          
-        
     def startTransaction(self):
         addOneCust()
         Customer(self)
@@ -73,38 +67,38 @@ class CustomerTransaction(customtkinter.CTk):
         
 
 
-class OpenKiosk(customtkinter.CTk):
-    def __init__(self):
-        super().__init__()
-        
-        
-        
-        self.geometry('1400x500')
-        self.title('Open Kiosk')
-        self.config(bg = '#d9472a')
-
-        
-        self.logo = Image.open('pythonLogo.png')
-        self.resized = self.logo.resize((500,400))
-        self.logoNew = ImageTk.PhotoImage(self.resized)
-        
-        
-        self.photoLabel = Label(self, image = self.logoNew,compound = 'bottom', bg = '#d9472a')
-        self.photoLabel.place(relx = 0.5,rely = 0.5)
-        
-        
-        
-        self.button1 = customtkinter.CTkButton(self,text = 'Open Kiosk',command = self.startCustT,font =('Montserrat',17),
-                                                corner_radius=10,hover_color = 'gray',bg_color='#d9472a',
-                                                fg_color='black')
-        
-        self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
-        
-        
-        
-        
-    def startCustT(self):
-        CustomerTransaction(self)
+   # class OpenKiosk(customtkinter.CTk):
+   #    def __init__(self):
+   #        super().__init__()
+   #        
+   #        
+   #        
+   #        self.geometry('1400x500')
+   #        self.title('Open Kiosk')
+   #        self.config(bg = '#d9472a')
+   # 
+   #        
+   #        self.logo = Image.open('pythonLogo.png')
+   #        self.resized = self.logo.resize((500,400))
+   #        self.logoNew = ImageTk.PhotoImage(self.resized)
+   #        
+   #        
+   #        self.photoLabel = Label(self, image = self.logoNew,compound = 'bottom', bg = '#d9472a')
+   #        self.photoLabel.place(relx = 0.5,rely = 0.5)
+   #        
+   #        
+   #        
+   #        self.button1 = customtkinter.CTkButton(self,text = 'Open Kiosk',command = self.startCustT,font =('Montserrat',17),
+   #                                                corner_radius=10,hover_color = 'gray',bg_color='#d9472a',
+   #                                                fg_color='black')
+   #        
+   #        self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
+   #        
+   #        
+   #        
+   #        
+   #    def startCustT(self):
+   #        CustomerTransaction(self)
 
         
     
