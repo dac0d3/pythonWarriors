@@ -8,6 +8,7 @@ from openpyxl import Workbook, load_workbook
 from managerSignIn import *
 
 
+
 book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
 sheet = book.active
 
@@ -26,6 +27,7 @@ class Chef(Toplevel):
         self.photoLabel = Label(self, image = self.logoNew,bg ='#d9472a')
         self.photoLabel.place(relx = 1,rely = 1,anchor = SE)
 
+    
         # List to order labels
         self.order_labels = []
 
@@ -37,9 +39,9 @@ class Chef(Toplevel):
 
       
 
-        for idx, row_data in enumerate(self.pizza_data, start=2):
+        for idx, row_data in enumerate(self.order_data, start=2):
             #function call
-            btn = Button(self, text=f"Order {idx}", command=lambda i=idx: self.display_row(i),bg='#d9472a',fg='black', highlightbackground='#d9472a',
+            btn = Button(self, text=f"Order {idx - 1}", command=lambda i=idx: self.display_row(i),bg='#d9472a',fg='black', highlightbackground='#d9472a',
             highlightcolor='#d9472a')
             btn.pack()
             
@@ -64,15 +66,19 @@ class Chef(Toplevel):
                 self.order_data.append(f"Cheese Pizza(s):{CP} | Pepporoni Pizza(s):{PP} | Hawaiian Pizza(s):{HP} | Meat Lovers Pizza(s):{MLP}")
     
     def display_row(self, row_num):
+        #get widget value
         current_text = self.selected_row_label.cget("text")  
-        new_text = f"ORDER#{row_num}: {self.order_data[row_num-2]}"  
+        #adjusting list by 2 b/c excel index starting at 2 and 
+        new_text = f"ORDER#{row_num -1}: {self.order_data[row_num-2]}"  
 
         if current_text == new_text: 
             self.selected_row_label.config(text="", bg='#FFC902', fg='black')
         else: 
             self.selected_row_label.config(text=new_text, bg='#FFC902', fg='black')
 
-
+root = Tk()
+chef_window = Chef(root)
+chef_window.mainloop()
 
 
 
