@@ -203,10 +203,8 @@ class Order(Toplevel):
         price1 = menu_prices['CHEESE PIZZA']                             #Finds price of pizza in menu
         priceWithTax1 = calculateTax(price1)                              #calculates tax
         priceWithTax1 = priceWithTax1 * numCheesePizza
-        #print('Order:\nCheese Pizza: '+str(numCheesePizza)+'\nPrice: '+str(priceWithTax1))
         order.append(priceWithTax1)
-        #cheesePizza(numCheesePizza)
-        #sheet['D'+str(cusID)].value = numCheesePizza
+        
 
 
 
@@ -222,10 +220,7 @@ class Order(Toplevel):
         price2 = menu_prices['PEPPERONI PIZZA']                           #Finds price of pizza in menu
         priceWithTax2 = calculateTax(price2)                              #calculates tax 
         priceWithTax2 = numPepperoniPizza * priceWithTax2
-        #print('Order:\nPepperoni Pizza: '+ str(numPepperoniPizza)+'\nPrice: '+str(priceWithTax2))
         order.append(priceWithTax2)
-        #pepperonniPizza(numPepperoniPizza)
-        #sheet['E'+str(cusID)].value = numPepperoniPizza
 
 
 
@@ -241,10 +236,8 @@ class Order(Toplevel):
         price3 = menu_prices['HAWAIIAN PIZZA']                             #Finds price of pizza in menu
         priceWithTax3 = calculateTax(price3)                                #calculates tax
         priceWithTax3 = priceWithTax3 * numHawaiianPizza
-        #print('Order:\nHawaiian Pizza: '+str(numHawaiianPizza)+'\nPrice: '+str(priceWithTax3))
         order.append(priceWithTax3)
-        #hawaiianPizza(numHawaiianPizza)
-        #sheet['F'+str(cusID)].value = numHawaiianPizza
+
 
 
 
@@ -260,10 +253,8 @@ class Order(Toplevel):
         price4 = menu_prices['MEAT LOVERS PIZZA']                            #Finds price of pizza in menu
         priceWithTax4 = calculateTax(price4)                                 #calculates tax
         priceWithTax4 = priceWithTax4 * numMeatLoversPizza
-        #print('Order:\nMeat Lovers Pizza: '+str(numMeatLoversPizza)+'\nPrice: '+str(priceWithTax4))
         order.append(priceWithTax4)
-        #meatLoversPizza(numMeatLoversPizza)
-        #sheet['G'+str(cusID)].value = numMeatLoversPizza
+
 
 
         
@@ -278,8 +269,7 @@ class Order(Toplevel):
         saveOrder(cusID,numCheesePizza,numPepperoniPizza,numHawaiianPizza,numMeatLoversPizza,total)
         
         
-        #sheet['H'+str(cusID)].value = total
-        #book.save('customerTransactions.xlsx')
+
         print(total)
         print(order)
 
@@ -289,7 +279,7 @@ class Order(Toplevel):
             Checkout2(self)
             self.forget(self)
         
-        #checkOrderPass(orderPass)
+
         
         
         
@@ -384,28 +374,6 @@ class Checkout2(Toplevel):
         self.backButton.place(relx = 0.05,rely =0.95,anchor = W)
         
         
-        
-        
-        ## This is the menu that shows the items and prices 
-        #self.menuFrame = Frame(self,bg = '#F3B552',padx = 40,pady = 40)
-        #self.menuFrame.pack(padx = 50,pady= 0.3)
-        #
-        #
-        #self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#F3B552')
-        #self.menuLabel.pack()
-        #
-        #self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#F3B552')
-        #self.chLabel.pack()
-        #
-        #self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#F3B552')
-        #self.ppLabel.pack()
-        #
-        #self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#F3B552')
-        #self.hpLabel.pack()
-        #
-        #self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#F3B552')
-        #self.mpLabel.pack()
-        
 
     def orderComplete(self):
         print('Order Submitted')
@@ -436,19 +404,8 @@ class Checkout2(Toplevel):
         self.forget(self)
     
     def back(self):
-        # this button will allow customer to go back to change order, need to implement the update inventory to allow changed to 
-        # be made before giving this button functionality
         Order(self)
         self.forget(self)
         
         
-
-
-
-
-
-
-
-
-
 

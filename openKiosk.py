@@ -15,10 +15,9 @@ from updateInventory import *
 from customer import Customer
 from updateTransaction import *
 from managerClose import ManagerClose
-#from kiosk import ManagerOpenClose
 
 
-#sheet['A2'].value = 2
+
 cusID = sheet['A2'].value
 cusID = int(cusID)
 book.save('customerTransactions.xlsx')
@@ -44,29 +43,38 @@ class CustomerTransaction(customtkinter.CTk):
         self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
-        self.button1 = customtkinter.CTkButton(self,text = 'Start your Order',command = self.startTransaction,bg_color ='#bf3c22',
+        self.startButton = customtkinter.CTkButton(self,text = 'Start your Order',command = self.startTransaction,bg_color ='#bf3c22',
                                                 font= ('arial',17),corner_radius=10,fg_color = '#31120c')
         
-        self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
+        self.startButton.place(relx = 0.51,rely = 0.6, anchor = CENTER)
         
-        
-    def stopTransactions(self):
-        
-        # open new window to input manager credentials and then if correct kiosk will close 
-        ManagerClose(self)
-        #self.forget(self) 
-        
-         
     def startTransaction(self):
         addOneCust()
         Customer(self)
         #self.forget(self)
         
-    def closeKiosk(self):
-        self.destroy()
         
+        
+        
+        
+        
+        
+        
+          
+   #def stopTransactions(self):
+   #    
+   #    # open new window to input manager credentials and then if correct kiosk will close 
+   #    ManagerClose(self)
+   #    #self.forget(self) 
+   #    
+   #     
+   #
+   #    
+   #def closeKiosk(self):
+   #    self.destroy()
+   #    
 
-
+   #
    # class OpenKiosk(customtkinter.CTk):
    #    def __init__(self):
    #        super().__init__()

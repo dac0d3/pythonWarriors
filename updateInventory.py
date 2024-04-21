@@ -2,6 +2,7 @@
 import openpyxl
 from openpyxl import Workbook, load_workbook
 
+
 book = load_workbook('pythonParlorInventory.xlsx')          # excel sheet for inventory
 sheet = book.active
 

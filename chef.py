@@ -76,9 +76,9 @@ class Chef(Toplevel):
         else: 
             self.selected_row_label.config(text=new_text, bg='#FFC902', fg='black')
 
-root = Tk()
-chef_window = Chef(root)
-chef_window.mainloop()
+#root = Tk()
+#chef_window = Chef(root)
+#chef_window.mainloop()
 
 
 
