@@ -2,10 +2,26 @@ from tkinter import *
 import customtkinter
 from PIL import ImageTk,Image
 
-
 from managerSignIn import ManagerSignIn
 from employeeSingIn import EmployeeSingIn
 from chef import Chef
+
+'''
+Class Name: main
+Documentation Date: 04/20/24
+Prog. Name: Diego Carbajal
+Class Descripion: 
+
+Important Functions: 
+
+
+
+
+'''
+
+
+
+
 
 class Main(Tk):
     
