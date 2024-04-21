@@ -7,13 +7,30 @@ from employeeSingIn import EmployeeSingIn
 from chef import Chef
 
 '''
+
+
 Class Name: main
 Documentation Date: 04/20/24
 Prog. Name: Diego Carbajal
+
 Class Descripion: 
+This class is what starts the Managerial sign in. It opens a window which prompts the user to 
+sign into their designated role whether that be as an employee or a manager. This main class will remain running even
+when the actor has signed in. Because of this, the actor will be able to come back to this page at any time. 
 
 Important Functions: 
 
+There are three functions in this class.
+
+The 'managerSign' function is the function called if the actor wants to 
+sign in as a manger. This function calls the 'ManagerSignIn' class which opens a new window for the user to input 
+their credentials. 
+
+The 'employeeSign' function is the function called if the actor wants to 
+sign in as an employee, either chef or runner. This function calls the 'EmployeeSignIn' class which opens a new window 
+for the user to input their credentials. 
+
+The 'closeScreen' function is pretty self explanatory, it simply closes the screen and ends the program. 
 
 
 
