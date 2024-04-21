@@ -1,6 +1,5 @@
 '''
 
-
 Class Name: main
 Documentation Date: 04/20/24
 Prog. Name: Diego Carbajal
@@ -22,8 +21,7 @@ their credentials.
 sign in as an employee, either chef or runner. This function calls the 'EmployeeSignIn' class which opens a new window 
 for the user to input their credentials. 
 
- 'closeScreen' : This function is pretty self explanatory, it simply closes the screen and ends the program. 
-
+'closeScreen' : This function is pretty self explanatory, it simply closes the screen and ends the program. 
 
 
 '''

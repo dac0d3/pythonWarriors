@@ -1,5 +1,27 @@
+
+'''
+
+Module Name: revenue
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
+
+Module Description: 
+
+Important Functions: 
+
+'''
+
+
+
+
+
+
+
 # calculates tax from total and sends to receipt file
 # adds total + tax to revenue after order is confirmed 
+
+
+
 import math
 
 import openpyxl
