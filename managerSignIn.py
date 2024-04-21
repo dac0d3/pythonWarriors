@@ -1,3 +1,48 @@
+'''
+
+Class Name: ManagerSignIn
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
+
+Class Descripion:
+When this class is called, it will promt the actor with a manager sign in window where he/she will
+see two entry boxes, one for their username and one for their password. If their credentials are correct, then they will
+move from the sign in screen to the home page will is called from the 'ManagerHomePage' class. 
+
+Important Functions: 
+There are two functions in this class, 'checkCredentials' and 'goBack'. 'checkCredentials' is the funcion that holds
+the logic for the authentication of the managers sign in credentials. It's a simple if statement that verifies that the
+username and password entered are correct. If so, the manager will get granted access to their homepage. If incorrect, there
+will be a error message box letting the actor know that either their password or username were incorrect. The other
+function, 'goBack' , is simply a function that allows the user to go back to the previous screen and close the manager sign
+in screen. 
+
+'''
+
+
+
+
+'''
+
+Class Name: ManagerHomePage
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
+
+Class Descripion: 
+
+Important Functions: 
+
+'''
+
+
+
+
+
+
+
+
+
+
 from tkinter import *
 from tkinter import messagebox
 import customtkinter

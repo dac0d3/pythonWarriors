@@ -1,11 +1,3 @@
-from tkinter import *
-import customtkinter
-from PIL import ImageTk,Image
-
-from managerSignIn import ManagerSignIn
-from employeeSingIn import EmployeeSingIn
-from chef import Chef
-
 '''
 
 
@@ -35,6 +27,18 @@ The 'closeScreen' function is pretty self explanatory, it simply closes the scre
 
 
 '''
+
+
+
+
+
+from tkinter import *
+import customtkinter
+from PIL import ImageTk,Image
+
+from managerSignIn import ManagerSignIn
+from employeeSingIn import EmployeeSingIn
+from chef import Chef
 
 
 
