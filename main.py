@@ -14,15 +14,15 @@ Important Functions:
 
 There are three functions in this class.
 
-The 'managerSign' function is the function called if the actor wants to 
+'managerSign' : This function is the function is called if the actor wants to 
 sign in as a manger. This function calls the 'ManagerSignIn' class which opens a new window for the user to input 
 their credentials. 
 
-The 'employeeSign' function is the function called if the actor wants to 
+'employeeSign' : This is the function called if the actor wants to 
 sign in as an employee, either chef or runner. This function calls the 'EmployeeSignIn' class which opens a new window 
 for the user to input their credentials. 
 
-The 'closeScreen' function is pretty self explanatory, it simply closes the screen and ends the program. 
+ 'closeScreen' : This function is pretty self explanatory, it simply closes the screen and ends the program. 
 
 
 
