@@ -16,6 +16,7 @@ class Chef(Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
         
+        #GUI for chef window
         self.title('Orders')
         self.geometry('1400x500')
         self.config(bg = '#d9472a')
