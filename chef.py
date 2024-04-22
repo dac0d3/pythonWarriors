@@ -9,7 +9,6 @@ from managerSignIn import *
 
 
 
-
 book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
 sheet = book.active
 
@@ -28,8 +27,6 @@ class Chef(Toplevel):
         # List to order labels
         self.order_labels = []
 
-        self.delete_buttons = [] 
-
         # list for order data
         self.order_data = []
 
@@ -46,11 +43,6 @@ class Chef(Toplevel):
             
             #adds button to list
             self.order_labels.append(btn)
-
-            delete_btn = Button(self, text=f"Delete Order {idx - 1}", command=lambda i=idx-2: self.delete_order(i),
-                                bg='red', fg='white')
-            delete_btn.pack()
-            self.delete_buttons.append(delete_btn)
 
         # Selected row label
         self.selected_row_label = Label(self, text="", bg='#d9472a')
@@ -79,12 +71,24 @@ class Chef(Toplevel):
             self.selected_row_label.config(text="", bg='#FFC902', fg='black')
         else: 
             self.selected_row_label.config(text=new_text, bg='#FFC902', fg='black')
-    
-    def delete_order(self, index):
-        if 0 <= index < len(self.order_labels):
-            self.order_labels[index].destroy()  
-            del self.order_data[index]  
-            self.selected_row_label.config(text="", bg='#d9472a', fg='black')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 root = Tk()
 chef_window = Chef(root)
