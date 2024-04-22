@@ -59,13 +59,13 @@ class Chef(Toplevel):
             MLP =sheet['G' + str(row)].value
 
             if CP is not None:  # if no data is available, then file has reached final order
-                self.order_data.append(f"Cheese Pizza(s):{CP} | Pepporoni Pizza(s):{PP} | Hawaiian Pizza(s):{HP} | Meat Lovers Pizza(s):{MLP}")
+                self.order_data.append(f"Cheese Pizza(s){CP}\nPepporoni Pizza(s):{PP}\nHawaiian Pizza(s):{HP}\nMeat Lovers Pizza(s):{MLP}")
     
     def display_row(self, row_num):
         #get widget value
         current_text = self.selected_row_label.cget("text")  
         #adjusting list by 2 b/c excel index starting at 2 and 
-        new_text = f"ORDER#{row_num -1}: {self.order_data[row_num-2]}"  
+        new_text = f"ORDER #{row_num -1}\n{self.order_data[row_num-2]}"  
 
         if current_text == new_text: 
             self.selected_row_label.config(text="", bg='#FFC902', fg='black')
