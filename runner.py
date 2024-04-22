@@ -1,3 +1,16 @@
+
+from tkinter import *
+import openpyxl
+from openpyxl import Workbook, load_workbook
+from managerSignIn import *
+import customtkinter
+
+
+# excel sheet for transactions
+book = load_workbook('customerTransactions.xlsx')           
+sheet = book.active
+
+
 '''
 Class Name: Runner
 
@@ -26,17 +39,6 @@ Algorithm: String Matching: The display_row() functon uses this algorithm to det
 associated with the button or to make the current order diissapear if it's no longer needed.
 '''
 
-
-from tkinter import *
-import openpyxl
-from openpyxl import Workbook, load_workbook
-from managerSignIn import *
-import customtkinter
-
-
-
-book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
-sheet = book.active
 
 class Runner(Toplevel):
     

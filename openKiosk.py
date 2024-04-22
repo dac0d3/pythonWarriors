@@ -1,3 +1,21 @@
+
+from tkinter import *
+import customtkinter
+from tkinter import messagebox
+from PIL import ImageTk,Image
+import ttkbootstrap as tb
+
+
+import openpyxl
+from openpyxl import Workbook, load_workbook
+
+from updateInventory import *
+from customer import Customer
+from updateTransaction import *
+
+
+
+
 '''
 
 Class Name: CustomerTransaction
@@ -18,32 +36,6 @@ And this function will call the 'Customer' class and also the 'addOneCust' metho
 
 
 '''
-
-
-from tkinter import *
-import customtkinter
-from tkinter import messagebox
-from PIL import ImageTk,Image
-import ttkbootstrap as tb
-
-
-import openpyxl
-from openpyxl import Workbook, load_workbook
-
-from updateInventory import *
-from customer import Customer
-from updateTransaction import *
-
-
-
-
-#cusID = sheet['A2'].value
-#cusID = int(cusID)
-#book.save('customerTransactions.xlsx')
-
-#print('Customer ID: '+str(cusID))
-
-
 
 class CustomerTransaction(customtkinter.CTk):
     
@@ -72,12 +64,7 @@ class CustomerTransaction(customtkinter.CTk):
         Customer(self)
         #self.forget(self)
         
-        
-        
-        
-        
-
-        
+           
     
 run = CustomerTransaction()
 run.mainloop()

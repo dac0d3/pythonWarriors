@@ -20,8 +20,6 @@ total values for every order saved in excel and adds them all up and returns it 
 
 
 
-
-
 import math
 
 import openpyxl

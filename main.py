@@ -1,6 +1,17 @@
+
+from tkinter import *
+import customtkinter
+from PIL import ImageTk,Image
+
+from managerSignIn import ManagerSignIn
+from employeeSingIn import EmployeeSingIn
+from chef import Chef
+from runner import Runner
+
+
 '''
 
-Class Name: main
+Class Name: Main
 Documentation Date: 04/20/24
 Prog. Name: Diego Carbajal
 
@@ -22,23 +33,8 @@ for the user to input their credentials.
 'closeScreen' : This function is pretty self explanatory, it simply closes the screen and ends the program. 
 
 '__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+
 '''
-
-
-
-
-
-from tkinter import *
-import customtkinter
-from PIL import ImageTk,Image
-
-from managerSignIn import ManagerSignIn
-from employeeSingIn import EmployeeSingIn
-from chef import Chef
-from runner import Runner
-
-
-
 
 
 class Main(Tk):

@@ -25,10 +25,6 @@ the resupplying of the restaurants inventory.
 
 
 
-
-
-
-
 import openpyxl
 from openpyxl import Workbook, load_workbook
 

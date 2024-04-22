@@ -1,5 +1,18 @@
+
+from tkinter import *
+import openpyxl
+from openpyxl import Workbook, load_workbook
+from managerSignIn import *
+import customtkinter
+
+
+# excel sheet for transactions
+book = load_workbook('customerTransactions.xlsx')           
+sheet = book.active
+
+
 '''
-Class Name: chef
+Class Name: Chef
 
 Date: 4/21/2024
 
@@ -24,19 +37,9 @@ Data Structure(s): Lists
 
 Algorithm: String Matching: The display_row() functon uses this algorithm to detect wether a change needs to be made to the order 
 associated with the button or to make the current order diissapear if it's no longer needed.
+
 '''
 
-
-from tkinter import *
-import openpyxl
-from openpyxl import Workbook, load_workbook
-from managerSignIn import *
-import customtkinter
-
-
-
-book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
-sheet = book.active
 
 class Chef(Toplevel):
     
@@ -97,38 +100,5 @@ class Chef(Toplevel):
             self.selected_row_label.config(text="", bg='#FFC902', fg='black',font=('Arial', 18))
         else: 
             self.selected_row_label.config(text=new_text, bg='#FFC902', fg='black',font=('Arial', 18))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

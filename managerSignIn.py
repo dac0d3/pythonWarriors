@@ -1,3 +1,17 @@
+
+from tkinter import *
+from tkinter import messagebox
+import customtkinter
+from PIL import ImageTk,Image
+
+from updateInventory import *
+from updateTransaction import *
+from revenue import *
+
+username = 'u'
+password = 'p'
+
+
 '''
 
 Class Name: ManagerSignIn
@@ -20,59 +34,6 @@ in screen.
 '__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
 
 '''
-
-
-
-
-'''
-
-Class Name: ManagerHomePage
-Documentation Date: 04/21/24
-Prog. Name: Diego Carbajal
-
-Class Descripion: When this class is called, the manager is now shown the manager home page. Here the manager can do 
-some tasks like reset customer transactions and resupply the inventory. The manager is also shown the total amount of money
-the restaurant has made thoughout the day. 
-
-Important Functions: 
-'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
-
-'resetInventory' : This functions calls another function called 'restockInventory', which is in the updateInventory module 
-that resets all the restaurants inventory back to it's full capacaity, essentially resupplying. 
-Further explanation on how this function works is explained in the updateInventory file. 
-
-'resetTrans' : This functions calls another function in the updateTransaction module called 
-'resetTransactions' that resets all the customer transactions for the day and 
-sets the excel sheet ready for the next day. Further explanation on how this function works
-is explained in the updateTransaction file. 
-
-
-'closeWindow' : This function essentially closes the window and logs the manager out of the home page. 
-
-'''
-
-
-
-
-
-
-
-
-
-
-from tkinter import *
-from tkinter import messagebox
-import customtkinter
-from PIL import ImageTk,Image
-
-from updateInventory import *
-from updateTransaction import *
-from revenue import *
-
-username = 'u'
-password = 'p'
-
-
 
 class ManagerSignIn(Toplevel):
     def __init__(self,parent):
@@ -133,6 +94,36 @@ class ManagerSignIn(Toplevel):
     def goBack(self):
         self.forget(self)
     
+    
+    
+    
+
+'''
+
+Class Name: ManagerHomePage
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
+
+Class Descripion: When this class is called, the manager is now shown the manager home page. Here the manager can do 
+some tasks like reset customer transactions and resupply the inventory. The manager is also shown the total amount of money
+the restaurant has made thoughout the day. 
+
+Important Functions: 
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+
+'resetInventory' : This functions calls another function called 'restockInventory', which is in the updateInventory module 
+that resets all the restaurants inventory back to it's full capacaity, essentially resupplying. 
+Further explanation on how this function works is explained in the updateInventory file. 
+
+'resetTrans' : This functions calls another function in the updateTransaction module called 
+'resetTransactions' that resets all the customer transactions for the day and 
+sets the excel sheet ready for the next day. Further explanation on how this function works
+is explained in the updateTransaction file. 
+
+
+'closeWindow' : This function essentially closes the window and logs the manager out of the home page. 
+
+'''
 
 class ManagerHomePage(Toplevel):
     def __init__(self,parent):

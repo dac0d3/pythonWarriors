@@ -1,9 +1,3 @@
-# provide menu 
-# send order to receipt file
-# get total from dictionary and sends it to revenue file
-# sends customer to checkout file
-# shows checkout screen, 
-
 
 import openpyxl
 from openpyxl import Workbook, load_workbook

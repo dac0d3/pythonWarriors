@@ -1,3 +1,17 @@
+
+from tkinter import *
+from tkinter import messagebox
+import customtkinter
+
+from chef import Chef
+from runner import Runner 
+
+chefUsername = 'u'
+chefPassword = 'p'
+
+runUsername = 'u'
+runPassword = 'p'
+
 '''
 Class Name: Employee Signin
 
@@ -15,20 +29,8 @@ statement, it will check if the password entered is authorized to procceed to th
 Data Structure(s): Lists
 
 Algorithm: String Matching: The checkInfo() uses this algorithm to identify if the users input matches with the accpeted passwords.
+
 '''
-
-from tkinter import *
-from tkinter import messagebox
-import customtkinter
-
-from chef import Chef
-from runner import Runner 
-
-chefUsername = 'u'
-chefPassword = 'p'
-
-runUsername = 'u'
-runPassword = 'p'
 
 
 class EmployeeSingIn(Toplevel):

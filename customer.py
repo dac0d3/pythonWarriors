@@ -1,3 +1,21 @@
+
+from tkinter import *
+from tkinter.tix import LabelEntry
+from tkinter import messagebox
+import customtkinter
+from PIL import ImageTk,Image
+import ttkbootstrap as tb
+
+import openpyxl
+from openpyxl import Workbook, load_workbook
+
+from order import Order
+from updateTransaction import *
+
+book = load_workbook('customerTransactions.xlsx')
+sheet = book.active
+    
+    
 '''
 Class Name: Customer
 Documentation Date: 04/21/24
@@ -16,28 +34,7 @@ along with the customers ID number are then sent to the 'saveValues' function in
 customer left an entry box empty, an error message box will display asking them to make sure they fill out every entry. 
 
 '''
-
-
-
-
-
-from tkinter import *
-from tkinter.tix import LabelEntry
-from tkinter import messagebox
-import customtkinter
-from PIL import ImageTk,Image
-import ttkbootstrap as tb
-
-import openpyxl
-from openpyxl import Workbook, load_workbook
-
-from order import Order
-from updateTransaction import *
-
-book = load_workbook('customerTransactions.xlsx')
-sheet = book.active
     
-
     
 class Customer(Toplevel):
     

@@ -18,11 +18,14 @@ number of pepperoni pizzas(int),nuumber of hawaiian pizzas(int), number of meat 
 Then using the given order number, it saves the values for the order into the correct row on the excel sheet which matches
 the row their name and email are on. 
 
-'getCusID' :
+'addOneCust' : This function is called when a customer decides to start their transaction, all it does is all increase 
+the length of the list by one to save the cusID for that new customer. 
 
-'updateCusID' : 
+'getCusID' : When this functio is called, it sets the customers ID by getting the length of the list and adding 1. The length
+of the list is the number of customers that have started a transaction. 
 
-'addOneCust' : 
+'updateCusID' : When this function is called with a single argument cusID (int),
+it adds one to the cusID then saves it on excel for the next customer. 
 
 'resetTransactions' : This function is only available to the manager from their home page. All it does is wipe out the 
 current excel sheet essentially making a brand new sheet avilable for another day of customer transactions. It uses a loop
