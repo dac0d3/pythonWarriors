@@ -11,8 +11,6 @@ when the actor has signed in. Because of this, the actor will be able to come ba
 
 Important Functions: 
 
-There are three functions in this class.
-
 'managerSign' : This function is the function is called if the actor wants to 
 sign in as a manger. This function calls the 'ManagerSignIn' class which opens a new window for the user to input 
 their credentials. 
