@@ -71,7 +71,7 @@ class ChefSignIn(Toplevel):
         self.entry2= customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black')
         self.entry2.grid(row = 2,column = 2)
         
-        self.submit = Button(self,text = "Submit",command = self.checkInfo)
+        self.submit = customtkinter.CTkButton(self,text = "Submit",command = self.checkInfo,bg_color='#d9472a',fg_color='black')
         self.submit.grid(row = 3,column = 2)
         
         self.returnButton = Button(self,text = 'Back',command = self.goBack)
