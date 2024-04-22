@@ -1,5 +1,12 @@
 '''
 
+Class Name: CustomerTransaction
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
+
+Class Descripion:
+
+Important Functions: 
 
 
 '''

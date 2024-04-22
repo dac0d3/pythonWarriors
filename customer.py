@@ -1,5 +1,11 @@
 '''
+Class Name: Customer
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
 
+Class Descripion:
+
+Important Functions: 
 
 '''
 
@@ -95,9 +101,4 @@ class Customer(Toplevel):
              
         else:
             messagebox.showwarning('Error',"You missed an entry!")
-        
-
-        
-        
-        
         

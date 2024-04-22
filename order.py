@@ -1,3 +1,28 @@
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+
+
+
+
+
+
+
 # provide menu 
 # send order to receipt file
 # get total from dictionary and sends it to revenue file
@@ -407,5 +432,3 @@ class Checkout2(Toplevel):
         Order(self)
         self.forget(self)
         
-        
-
