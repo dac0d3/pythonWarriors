@@ -33,7 +33,7 @@ from openpyxl import Workbook, load_workbook
 from updateInventory import *
 from customer import Customer
 from updateTransaction import *
-from managerClose import ManagerClose
+
 
 
 
