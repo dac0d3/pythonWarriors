@@ -1,41 +1,3 @@
-'''
-
-Class Name: Order
-Documentation Date: 04/21/24
-Prog. Name: Diego Carbajal
-
-Class Descripion:
-
-Important Functions: 
-
-'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
-
-'''
-
-
-
-
-'''
-
-Class Name: Checkout2
-Documentation Date: 04/21/24
-Prog. Name: Diego Carbajal
-
-Class Descripion:
-
-Important Functions: 
-
-'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
-
-
-'''
-
-
-
-
-
-
-
 # provide menu 
 # send order to receipt file
 # get total from dictionary and sends it to revenue file
@@ -69,8 +31,19 @@ numHawaiianPizza = IntVar
 numMeatLoversPizza = IntVar
 
 
+'''
 
+Class Name: Order
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
 
+Class Descripion:
+
+Important Functions: 
+
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+
+'''
 
 class Order(Toplevel):
 
@@ -315,10 +288,26 @@ class Order(Toplevel):
             self.forget(self)
         
 
+
+
+
+
         
-        
-        
-        
+'''
+
+Class Name: Checkout2
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
+
+Class Descripion:
+
+Important Functions: 
+
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+
+
+'''
+    
 class Checkout2(Toplevel):
     
     
