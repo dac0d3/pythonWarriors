@@ -12,24 +12,17 @@ chefPassword = 'p'
 runUsername = 'u'
 runPassword = 'p'
 
+
 '''
-Class Name: Employee Signin
+Class Name: EmployeeSignin
 
 Date: 4/21/2024
 
 Programmer's name: Diego Carbajal
 
-Class Description: This class adds a layer of security by implementing password authentication. The class also sets up 
-the GUI for for the sign in pages for chef and runner.
+Class Description: 
 
-Important Functions: The checkInfo() functions checks for the variables associated with the chef and runners password. By using an if-else
-statement, it will check if the password entered is authorized to procceed to the chrf/runner screen.
-
-
-Data Structure(s): Lists
-
-Algorithm: String Matching: The checkInfo() uses this algorithm to identify if the users input matches with the accpeted passwords.
-
+Important Functions: 
 '''
 
 
@@ -63,11 +56,22 @@ class EmployeeSingIn(Toplevel):
     def goBack(self):
         self.forget(self)   
     
+      
+      
+      
         
-        
-        
-        
-        
+'''
+Class Name: ChefSignin
+
+Date: 4/21/2024
+
+Programmer's name: Diego Carbajal
+
+Class Description:
+
+Important Functions: 
+'''
+              
         
 class ChefSignIn(Toplevel):
     
@@ -118,10 +122,19 @@ class ChefSignIn(Toplevel):
 
 
 
+'''
+Class Name: RunnerSignin
+
+Date: 4/21/2024
+
+Programmer's name: Adrian Ramos
+
+Class Description:
+
+Important Functions: 
 
 
-
-
+'''
 
 
 class RunnerSignIn(Toplevel):
