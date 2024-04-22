@@ -39,7 +39,7 @@ class Chef(Toplevel):
             #function call
             btn = Button(self, text=f"Order {idx - 1}", command=lambda i=idx: self.display_row(i),bg='#d9472a',fg='black', highlightbackground='#d9472a',
             highlightcolor='#d9472a')
-            btn.pack()
+            btn.pack(side=TOP, anchor=W)
             
             #adds button to list
             self.order_labels.append(btn)
