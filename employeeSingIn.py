@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import customtkinter
 
 from chef import Chef
 from runner import Runner 
@@ -20,13 +21,13 @@ class EmployeeSingIn(Toplevel):
         self.geometry('1400x500')
         self.config(bg = '#d9472a')
         
-        self.chefButton = Button(self,text = 'Chef Sign In',command = self.chefSign)
+        self.chefButton = customtkinter.CTkButton(self,text = 'Chef Sign In',command = self.chefSign,bg_color='#d9472a',fg_color='black')
         self.chefButton.pack()
         
-        self.runnerButton = Button(self,text = 'Runner Sign In',command = self.runnerSign)
+        self.runnerButton = customtkinter.CTkButton(self,text = 'Runner Sign In',command = self.runnerSign,bg_color='#d9472a',fg_color='black')
         self.runnerButton.pack()
         
-        self.backButton = Button(self,text = '<',command = self.goBack)
+        self.backButton = customtkinter.CTkButton(self,text = '<',command = self.goBack,bg_color='#d9472a',fg_color='black')
         self.backButton.pack(pady = 50)
         
   
