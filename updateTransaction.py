@@ -5,9 +5,25 @@ Module Name: updateTransaction
 Documentation Date: 04/21/24
 Prog. Name: Diego Carbajal
 
-Module Description: 
+Module Description: This is a utility module that holds the functions for anything related to updating, setting, or getting
+information regarding the customer transactions for the restaurant. 
 
 Important Functions: 
+
+'saveValues' : 
+
+'saveOrder' : 
+
+'getCusID' :
+
+'updateCusID' : 
+
+'resetCusID' : 
+
+'addOneCust' : 
+
+'resetTransactions' : 
+
 
 '''
 
@@ -47,6 +63,7 @@ def saveValues(cusID,name,email):
     
     
     
+    
 def saveOrder(cusID,numCP,numPP,numHP,numMP,total):
     
     numCP = int(numCP)
@@ -64,6 +81,8 @@ def saveOrder(cusID,numCP,numPP,numHP,numMP,total):
     
     book.save('customerTransactions.xlsx')
     
+   
+   
     
 # finds cus ID by adding up the number of trnsactions in list and adding one
 def getCusID():
@@ -81,7 +100,7 @@ def resetCusID():
 def addOneCust():
     cus.append(1)
 
-# each cus ID will be one more than the customer transaction
+
 
 
 

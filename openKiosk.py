@@ -1,4 +1,8 @@
-# currently skipping open kiosk class and going straight to customer placing order srceen
+'''
+
+
+
+'''
 
 
 from tkinter import *
@@ -57,56 +61,6 @@ class CustomerTransaction(customtkinter.CTk):
         
         
         
-        
-        
-        
-          
-   #def stopTransactions(self):
-   #    
-   #    # open new window to input manager credentials and then if correct kiosk will close 
-   #    ManagerClose(self)
-   #    #self.forget(self) 
-   #    
-   #     
-   #
-   #    
-   #def closeKiosk(self):
-   #    self.destroy()
-   #    
-
-   #
-   # class OpenKiosk(customtkinter.CTk):
-   #    def __init__(self):
-   #        super().__init__()
-   #        
-   #        
-   #        
-   #        self.geometry('1400x500')
-   #        self.title('Open Kiosk')
-   #        self.config(bg = '#d9472a')
-   # 
-   #        
-   #        self.logo = Image.open('pythonLogo.png')
-   #        self.resized = self.logo.resize((500,400))
-   #        self.logoNew = ImageTk.PhotoImage(self.resized)
-   #        
-   #        
-   #        self.photoLabel = Label(self, image = self.logoNew,compound = 'bottom', bg = '#d9472a')
-   #        self.photoLabel.place(relx = 0.5,rely = 0.5)
-   #        
-   #        
-   #        
-   #        self.button1 = customtkinter.CTkButton(self,text = 'Open Kiosk',command = self.startCustT,font =('Montserrat',17),
-   #                                                corner_radius=10,hover_color = 'gray',bg_color='#d9472a',
-   #                                                fg_color='black')
-   #        
-   #        self.button1.place(relx = 0.51,rely = 0.6, anchor = CENTER)
-   #        
-   #        
-   #        
-   #        
-   #    def startCustT(self):
-   #        CustomerTransaction(self)
 
         
     
