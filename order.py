@@ -308,9 +308,14 @@ Important Functions:
 '__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. This is 
 where the number of pizzas entered in the previous class will be retrieved and be used to show the customer their order. 
 
-'orderComplete' : 
+'orderComplete' : This function simply saves all the customers pizzas in excel. If the customer doesn't follow through 
+with their order and complete the chockout, then this function will never get called making sure only the pizzas that
+are payed for are taken account of in the inventory sheet. These values are saved by calling functions from 
+the 'updateInventory' file. Further details on  how the inventory is saved and tracked can be found in the 
+'updateInventory' file. 
 
-'back' : 
+'back' : This function allows simply allows the customer to close the checkout screen and go back to the previous page,
+and change thier order before checking out. 
 
 '''
     
@@ -411,10 +416,8 @@ class Checkout2(Toplevel):
         global numCP,numPP,numHP,numMP
         
         cusID = getCusID()               
-        newCusID = updateCusID(cusID)
-
-        sheet['A'+str(newCusID)].value = newCusID   # sets the order ID for next customer transaction and saves to excel
-        book.save('customerTransactions.xlsx')
+        updateCusID(cusID)
+        
         
         # change values to int to pass into the updateinventory
         numCP = int(numCP)

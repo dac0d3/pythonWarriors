@@ -10,19 +10,23 @@ information regarding the customer transactions for the restaurant.
 
 Important Functions: 
 
-'saveValues' : 
+'saveValues' : This functions is called with 3 arguments. The order number (int), name(String), and email(string). It then uses
+the order number to store the given name and email into the coresponding row in excel. 
 
-'saveOrder' : 
+'saveOrder' : This function is called with 5 arguments. These are the order number(int), number of cheese pizza(int),
+number of pepperoni pizzas(int),nuumber of hawaiian pizzas(int), number of meat lovers pizzas(int), and total (float). 
+Then using the given order number, it saves the values for the order into the correct row on the excel sheet which matches
+the row their name and email are on. 
 
 'getCusID' :
 
 'updateCusID' : 
 
-'resetCusID' : 
-
 'addOneCust' : 
 
-'resetTransactions' : 
+'resetTransactions' : This function is only available to the manager from their home page. All it does is wipe out the 
+current excel sheet essentially making a brand new sheet avilable for another day of customer transactions. It uses a loop
+to check if there is an order in that row, and if so, it will set all the values in that row to 'None'. 
 
 
 '''
@@ -84,19 +88,23 @@ def saveOrder(cusID,numCP,numPP,numHP,numMP,total):
    
    
     
-# finds cus ID by adding up the number of trnsactions in list and adding one
+# sets the customers ID by getting the length of the list and adding 1
 def getCusID():
 
     return len(cus)+1
-   
+
+# this method is called to add one to the cusID so that it can be saved for the next customer 
+# saves the order ID for next customer transaction in excel
 def updateCusID(cusID):
     cusID = cusID +1
     
+    
+    sheet['A'+str(cusID)].value = cusID   
+    book.save('customerTransactions.xlsx')
+    
     return cusID
 
-def resetCusID():
-    cusID = 2
-   
+# this method is called every time a new transaction starts to keep track of new customers
 def addOneCust():
     cus.append(1)
 

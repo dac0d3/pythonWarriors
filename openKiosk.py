@@ -37,11 +37,11 @@ from updateTransaction import *
 
 
 
-cusID = sheet['A2'].value
-cusID = int(cusID)
-book.save('customerTransactions.xlsx')
+#cusID = sheet['A2'].value
+#cusID = int(cusID)
+#book.save('customerTransactions.xlsx')
 
-print('Customer ID: '+str(cusID))
+#print('Customer ID: '+str(cusID))
 
 
 
