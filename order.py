@@ -43,6 +43,12 @@ Important Functions:
 
 '__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
 
+'getValues' : This function gets the values for the pizzas inputed by the customer and calculates the total for the order. 
+It finds the total from the dictionary and then send that number to the 'calculateTax' function in the 'revenue' file
+to get the new total with tax included. There are preventive if statements to make sure there is an order and will show 
+and error message if the customer tries to place an order that has no pizzas in it. And if the order is a valid one, then 
+the 'Checkout2' class gets calls closing the current window and openign the new one. 
+ 
 '''
 
 class Order(Toplevel):
@@ -201,32 +207,31 @@ class Order(Toplevel):
 
         #Update number of cheese pizzas
         numCheesePizza = self.entryCP.get()
-
         if len(numCheesePizza)== 0:
             numCheesePizza = 0
             numCheesePizza = float(numCheesePizza)
         else:
             numCheesePizza = float(numCheesePizza)
-
-        price1 = menu_prices['CHEESE PIZZA']                             #Finds price of pizza in menu
-        priceWithTax1 = calculateTax(price1)                              #calculates tax
+        #Finds price of pizza in menu
+        price1 = menu_prices['CHEESE PIZZA']                             
+        #calculates tax
+        priceWithTax1 = calculateTax(price1)                              
         priceWithTax1 = priceWithTax1 * numCheesePizza
         order.append(priceWithTax1)
         
 
 
-
         #Update number of cheese pizzas
         numPepperoniPizza = self.entryPP.get()
-
         if len(numPepperoniPizza)==0:
             numPepperoniPizza = 0
             numPepperoniPizza = float(numPepperoniPizza)
         else:
             numPepperoniPizza = float(numPepperoniPizza)
-
-        price2 = menu_prices['PEPPERONI PIZZA']                           #Finds price of pizza in menu
-        priceWithTax2 = calculateTax(price2)                              #calculates tax 
+        #Finds price of pizza in menu
+        price2 = menu_prices['PEPPERONI PIZZA']                           
+        #calculates tax 
+        priceWithTax2 = calculateTax(price2)                              
         priceWithTax2 = numPepperoniPizza * priceWithTax2
         order.append(priceWithTax2)
 
@@ -234,32 +239,31 @@ class Order(Toplevel):
 
         #update number of Hawaiian pizzas
         numHawaiianPizza = self.entryHP.get()
-
         if len(numHawaiianPizza)==0:
             numHawaiianPizza = 0
             numHawaiianPizza = float(numHawaiianPizza)
         else:
             numHawaiianPizza = float(numHawaiianPizza)
-
-        price3 = menu_prices['HAWAIIAN PIZZA']                             #Finds price of pizza in menu
-        priceWithTax3 = calculateTax(price3)                                #calculates tax
+        #Finds price of pizza in menu
+        price3 = menu_prices['HAWAIIAN PIZZA']   
+        #calculates tax                          
+        priceWithTax3 = calculateTax(price3)                                
         priceWithTax3 = priceWithTax3 * numHawaiianPizza
         order.append(priceWithTax3)
 
 
-
-
         #update nuumber of meat lovers pizzas
-        numMeatLoversPizza = self.entryMP.get()                                 #Gets num of pizza from entry
-
+        #Gets num of pizza from entry
+        numMeatLoversPizza = self.entryMP.get()                                 
         if len(numMeatLoversPizza)==0:
             numMeatLoversPizza = 0
             numMeatLoversPizza = float(numMeatLoversPizza)
         else:
             numMeatLoversPizza = float(numMeatLoversPizza) 
-
-        price4 = menu_prices['MEAT LOVERS PIZZA']                            #Finds price of pizza in menu
-        priceWithTax4 = calculateTax(price4)                                 #calculates tax
+        #Finds price of pizza in menu
+        price4 = menu_prices['MEAT LOVERS PIZZA']   
+        #calculates tax                         
+        priceWithTax4 = calculateTax(price4)                                 
         priceWithTax4 = priceWithTax4 * numMeatLoversPizza
         order.append(priceWithTax4)
 
@@ -272,17 +276,15 @@ class Order(Toplevel):
             else:
                 total = total + index
         
-        total = round(total,2)  # round total to 2 decimals 
-        
+        #Round total to 2 decimals 
+        total = round(total,2)  
         saveOrder(cusID,numCheesePizza,numPepperoniPizza,numHawaiianPizza,numMeatLoversPizza,total)
         
-        
-
         print(total)
         print(order)
-
+        
         if total == 0:
-            messagebox.showwarning('Error',"You entered no Pizzas!")
+            messagebox.showwarning('Error',"You entered no pizzas!")
         else:
             Checkout2(self)
             self.forget(self)
@@ -303,8 +305,12 @@ Class Descripion:
 
 Important Functions: 
 
-'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. This is 
+where the number of pizzas entered in the previous class will be retrieved and be used to show the customer their order. 
 
+'orderComplete' : 
+
+'back' : 
 
 '''
     
