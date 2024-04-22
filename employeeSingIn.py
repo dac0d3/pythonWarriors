@@ -20,9 +20,18 @@ Date: 4/21/2024
 
 Programmer's name: Diego Carbajal
 
-Class Description: 
+Class Description: This class will display a window that shows will let the actor choose the job/ shift he is working. 
+His options are between the chef and the runner. Later he will need to verify his position with a username and passoword 
+but in this screen all he does is click the position he want's to sign in for.
 
 Important Functions: 
+
+'chefSingIn' : 
+
+'runnerSignIn' : 
+
+'goBack' : 
+
 '''
 
 
@@ -36,13 +45,16 @@ class EmployeeSingIn(Toplevel):
         self.config(bg = '#d9472a')
         
         self.chefButton = customtkinter.CTkButton(self,text = 'Chef Sign In',command = self.chefSign,bg_color='#d9472a',fg_color='black')
-        self.chefButton.pack()
+        self.chefButton.place(relx = 0.4,rely = 0.4,anchor = CENTER)
         
         self.runnerButton = customtkinter.CTkButton(self,text = 'Runner Sign In',command = self.runnerSign,bg_color='#d9472a',fg_color='black')
-        self.runnerButton.pack()
+        self.runnerButton.place(relx = 0.5,rely = 0.4,anchor = CENTER)
         
-        self.backButton = customtkinter.CTkButton(self,text = '<',command = self.goBack,bg_color='#d9472a',fg_color='black')
-        self.backButton.pack(pady = 50)
+        self.backButton = customtkinter.CTkButton(self,text = 'Back',
+                                                  command = self.goBack,bg_color='#d9472a',
+                                                  fg_color='black',height=10,
+                                                  width = 10)
+        self.backButton.place(relx = 0.1,rely = 0.9,anchor = CENTER)
         
   
     def chefSign(self):
@@ -67,9 +79,22 @@ Date: 4/21/2024
 
 Programmer's name: Diego Carbajal
 
-Class Description:
+Class Description: When this class is called, it will promt the actor with a chef sign in window where he/she will
+see two entry boxes, one for their username and one for their password. If their credentials are correct, then they will
+move from the sign in screen to the home page will is called from the 'Chef' class. 
 
 Important Functions: 
+
+'checkCredentials' : is the funcion that holds the logic for the authentication of the chef sign in credentials.
+It's a simple if statement that verifies that the username and password entered are correct. 
+If so, the chef will get granted access to their homepage. If incorrect, there
+will be a error message box letting the actor know that either their password or username were incorrect.
+
+'goBack' : is simply a function that allows the user to go back to the previous screen and close the chef sign
+in screen. 
+
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+
 '''
               
         
@@ -129,10 +154,21 @@ Date: 4/21/2024
 
 Programmer's name: Adrian Ramos
 
-Class Description:
+Class Description: When this class is called, it will promt the actor with a runner sign in window where he/she will
+see two entry boxes, one for their username and one for their password. If their credentials are correct, then they will
+move from the sign in screen to the home page will is called from the 'Runner' class. 
 
 Important Functions: 
 
+'checkCredentials' : is the funcion that holds the logic for the authentication of the runner sign in credentials.
+It's a simple if statement that verifies that the username and password entered are correct. 
+If so, the runner will get granted access to their homepage. If incorrect, there
+will be a error message box letting the actor know that either their password or username were incorrect.
+
+'goBack' : is simply a function that allows the user to go back to the previous screen and close the runner sign
+in screen. 
+
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
 
 '''
 
