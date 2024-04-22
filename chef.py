@@ -90,9 +90,6 @@ class Chef(Toplevel):
 
 
 
-root = Tk()
-chef_window = Chef(root)
-chef_window.mainloop()
 
 
 

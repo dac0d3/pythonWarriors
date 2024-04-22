@@ -18,6 +18,7 @@ class EmployeeSingIn(Toplevel):
         
         self.title('Python Parlor Employee')
         self.geometry('1400x500')
+        self.config(bg = '#d9472a')
         
         self.chefButton = Button(self,text = 'Chef Sign In',command = self.chefSign)
         self.chefButton.pack()
