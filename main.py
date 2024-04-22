@@ -23,7 +23,7 @@ for the user to input their credentials.
 
 'closeScreen' : This function is pretty self explanatory, it simply closes the screen and ends the program. 
 
-
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
 '''
 
 

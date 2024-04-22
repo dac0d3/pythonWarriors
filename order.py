@@ -1,18 +1,31 @@
 '''
 
+Class Name: Order
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
+
+Class Descripion:
+
+Important Functions: 
+
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+
+'''
 
 
 
 
+'''
 
+Class Name: Checkout2
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
 
+Class Descripion:
 
+Important Functions: 
 
-
-
-
-
-
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
 
 
 '''
@@ -27,7 +40,6 @@
 # send order to receipt file
 # get total from dictionary and sends it to revenue file
 # sends customer to checkout file
-
 # shows checkout screen, 
 
 
@@ -45,8 +57,6 @@ from updateInventory import *
 from updateTransaction import *
 
 
-#book = load_workbook('customerTransactions.xlsx')
-#sheet = book.active
 
 
 menu = ['CHEESE PIZZA','PEPPERONI PIZZA','HAWAIIAN PIZZA','MEAT LOVERS PIZZA']

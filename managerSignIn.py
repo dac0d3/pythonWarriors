@@ -17,6 +17,8 @@ will be a error message box letting the actor know that either their password or
 function, 'goBack' , is simply a function that allows the user to go back to the previous screen and close the manager sign
 in screen. 
 
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+
 '''
 
 

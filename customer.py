@@ -7,6 +7,9 @@ Class Descripion:
 
 Important Functions: 
 
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+
+
 '''
 
 
