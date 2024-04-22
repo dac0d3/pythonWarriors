@@ -3,12 +3,17 @@ Class Name: Customer
 Documentation Date: 04/21/24
 Prog. Name: Diego Carbajal
 
-Class Descripion:
+Class Descripion: This class is called after the customer decides to start their transaction. This class will display a 
+GUI showing two entry boxes, one for the name and emial fo the customer. Once the customer has filled in their 
+information, they can move on to the next phase of their order by clicking the Submit button. 
 
 Important Functions: 
 
 '__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
 
+'getValues' : This function gets the customers name and email when the confirm button is clicked. The two string values
+along with the customers ID number are then sent to the 'saveValues' function in the 'updateTransaction' file. And if the 
+customer left an entry box empty, an error message box will display asking them to make sure they fill out every entry. 
 
 '''
 
@@ -91,15 +96,14 @@ class Customer(Toplevel):
         if self.nameEntry.get() and self.emailEntry.get():
             name = self.nameEntry.get()     
             email = self.emailEntry.get()
-            #self.nameEntry.config(state = DISABLED)
-            #self.emailEntry.config(state = DISABLED)
+            
             
             saveValues(cusID,name,email)
             
             #print("Name:", name)
             #print("Email:", email)
         
-            Order(self)         # srats order in order class
+            Order(self)         # strts order in order class
             self.forget(self)   # hides customer sign in for next customer 
              
         else:
