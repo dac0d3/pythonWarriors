@@ -59,7 +59,7 @@ class Order(Toplevel):
         
         self.geometry('1440x500') #900
         self.title('Order Screen')
-        self.config(bg = '#d9472a') 
+        self.config(bg = '#335BFF') 
         
         
         
@@ -163,23 +163,23 @@ class Order(Toplevel):
 
 
         # This is the menu that shows the items and prices 
-        self.menuFrame = Frame(self,bg = '#31120C',padx = 70,pady = 70,)
+        self.menuFrame = Frame(self,bg = '#FF7D33',padx = 70,pady = 70,)
         self.menuFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
         self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#9f3a2d')
         self.menuLabel.pack()
         
-        self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#F3B552')
+        self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#FFF633')
         self.chLabel.pack()
         
-        self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#F3B552')
+        self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#FFF633')
         self.ppLabel.pack()
         
-        self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#F3B552')
+        self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#FFF633')
         self.hpLabel.pack()
         
-        self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#F3B552')
+        self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#FFF633')
         self.mpLabel.pack()
 
 
