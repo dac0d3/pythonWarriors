@@ -299,7 +299,7 @@ Class Descripion:
 
 Important Functions: 
 
-'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. This is 
+'__init__' : This function creates the window and holds all the buttons and widgets dislayed in the GUI. This is 
 where the number of pizzas entered in the previous class will be retrieved and be used to show the customer their order. 
 
 'orderComplete' : This function simply saves all the customers pizzas in excel. If the customer doesn't follow through 
