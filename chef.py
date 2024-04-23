@@ -1,5 +1,14 @@
-# chef views, cooks, then completes order 
-# order is sent to runner 
+'''
+a) Module name or Class name in the Design
+b) Date of the code
+c) Programmer's name
+d) Brief description of the class/module
+e) Brief explanation of important functions in each class, including its input
+values and output values
+f) Any important data structure in class/methods
+g) Briefly describe any algorithm that you may have used and why did you
+select it upon other algorithms where more than one option exists.
+'''
 
 
 from tkinter import *
