@@ -167,19 +167,19 @@ class Order(Toplevel):
         self.menuFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
-        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#9f3a2d')
+        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#FFC0CB')
         self.menuLabel.pack()
         
-        self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#333333')
+        self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#FFF633')
         self.chLabel.pack()
         
-        self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#333333')
+        self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#FFF633')
         self.ppLabel.pack()
         
-        self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#333333')
+        self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#FFF633')
         self.hpLabel.pack()
         
-        self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#333333')
+        self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#FFF633')
         self.mpLabel.pack()
 
 
@@ -299,7 +299,7 @@ Class Descripion:
 
 Important Functions: 
 
-'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. This is 
+'__init__' : This function creates the window and holds all the buttons and widgets dislayed in the GUI. This is 
 where the number of pizzas entered in the previous class will be retrieved and be used to show the customer their order. 
 
 'orderComplete' : This function simply saves all the customers pizzas in excel. If the customer doesn't follow through 
@@ -433,4 +433,6 @@ class Checkout2(Toplevel):
     def back(self):
         Order(self)
         self.forget(self)
+        
+
         
