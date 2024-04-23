@@ -20,9 +20,9 @@ Date: 4/21/2024
 
 Programmer's name: Diego Carbajal
 
-Class Description: This class will display a window that shows will let the actor choose the job/ shift he is working. 
-His options are between the chef and the runner. Later he will need to verify his position with a username and passoword 
-but in this screen all he does is click the position he want's to sign in for.
+Class Description: This class will display a window that will let the actor choose the job/ shift he is working. 
+His options are between the chef and the runner. Later he will need to verify his position with a username and password 
+but in this screen all he does is click the position he wants to sign in for.
 
 Important Functions: 
 
