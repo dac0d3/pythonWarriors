@@ -22,7 +22,8 @@ diifferent order, or identical to the last order meaning no change is needed.
 
 f) Data Structure(s): Lists
 
-g) Algorithm: The linear Search algorithm
+g) Algorithm: String Matching: The display_row() functon uses this algorithm to detect wether a change needs to be made to the order 
+associated with the button or to make the current order diissapear if it's no longer needed.
 '''
 
 
