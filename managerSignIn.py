@@ -27,7 +27,7 @@ Important Functions:
 There are two functions in this class, 'checkCredentials' and 'goBack'. 'checkCredentials' is the funcion that holds
 the logic for the authentication of the managers sign in credentials. It's a simple if statement that verifies that the
 username and password entered are correct. If so, the manager will get granted access to their homepage. If incorrect, there
-will be a error message box letting the actor know that either their password or username were incorrect. The other
+will be an error message box letting the actor know that either their password or username were incorrect. The other
 function, 'goBack' , is simply a function that allows the user to go back to the previous screen and close the manager sign
 in screen. 
 

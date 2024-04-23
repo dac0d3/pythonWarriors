@@ -59,7 +59,7 @@ class Order(Toplevel):
         
         self.geometry('1440x500') #900
         self.title('Order Screen')
-        self.config(bg = '#d9472a') 
+        self.config(bg = '#335BFF') 
         
         
         
@@ -163,23 +163,23 @@ class Order(Toplevel):
 
 
         # This is the menu that shows the items and prices 
-        self.menuFrame = Frame(self,bg = '#9f3a2d',padx = 70,pady = 70,)
+        self.menuFrame = Frame(self,bg = '#FF7D33',padx = 70,pady = 70,)
         self.menuFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
-        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#9f3a2d')
+        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#0000FF')
         self.menuLabel.pack()
         
-        self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#F3B552')
+        self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#0000FF')
         self.chLabel.pack()
         
-        self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#F3B552')
+        self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#0000FF')
         self.ppLabel.pack()
         
-        self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#F3B552')
+        self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#0000FF')
         self.hpLabel.pack()
         
-        self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#F3B552')
+        self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#0000FF')
         self.mpLabel.pack()
 
 
@@ -299,17 +299,17 @@ Class Descripion:
 
 Important Functions: 
 
-'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. This is 
+'__init__' : This function creates the window and holds all the buttons and widgets dislayed in the GUI. This is 
 where the number of pizzas entered in the previous class will be retrieved and be used to show the customer their order. 
 
 'orderComplete' : This function simply saves all the customers pizzas in excel. If the customer doesn't follow through 
-with their order and complete the chockout, then this function will never get called making sure only the pizzas that
+with their order and complete the checkout, then this function will never get called making sure only the pizzas that
 are payed for are taken account of in the inventory sheet. These values are saved by calling functions from 
-the 'updateInventory' file. Further details on  how the inventory is saved and tracked can be found in the 
+the 'updateInventory' file. Further details on how the inventory is saved and tracked can be found in the 
 'updateInventory' file. 
 
-'back' : This function allows simply allows the customer to close the checkout screen and go back to the previous page,
-and change thier order before checking out. 
+'back' : This function simply allows the customer to close the checkout screen and go back to the previous page,
+and change their order before checking out. 
 
 '''
     
@@ -433,4 +433,6 @@ class Checkout2(Toplevel):
     def back(self):
         Order(self)
         self.forget(self)
+        
+
         

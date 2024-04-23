@@ -22,7 +22,7 @@ Documentation Date: 04/21/24
 Prog. Name: Diego Carbajal
 
 Class Descripion: This class is called after the customer decides to start their transaction. This class will display a 
-GUI showing two entry boxes, one for the name and emial fo the customer. Once the customer has filled in their 
+GUI showing two entry boxes, one for the name and email for the customer. Once the customer has filled in their 
 information, they can move on to the next phase of their order by clicking the Submit button. 
 
 Important Functions: 

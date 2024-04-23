@@ -11,7 +11,7 @@ revenue for the restaurant from excel.
 Important Functions: 
 
 'calculateTax' : This functions receives one argument which would be the calculated total price of an order and return 
-the new total with tax includd.(tax % is .0725)
+the new total with tax included.(tax % is .0725)
 
 'getRevenue' : This method is automatically called when the manager signs in to their home page. This function gets the 
 total values for every order saved in excel and adds them all up and returns it as the revenue. 

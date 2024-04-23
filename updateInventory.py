@@ -13,12 +13,12 @@ Important Functions:
 'cheesePizza' , 'pepperoniPizza' , 'hawaiianPizza' , and 'meatLoversPizza' : These functions may have different names but
 they all do the exact same thing. They receive one argument when called() which is the number of pizzas for that order) and 
 then subtract 1 package for every ingredient for every pizza in the order. For example, the cheesePizza function with an
-argument of 2 will subtract 2 units of cheese, dough, and tomatoe sauce from the inventory then update and save the new 
+argument of 2 will subtract 2 units of cheese, dough, and tomato sauce from the inventory then update and save the new 
 inventory value to keep the values up to date.
 
 
 'restockInventory' : This function is only available to be called by the manager from their homepage. This function
-essentially set all the values in the inventory back to 1000 which is the full capacity for the inventory. Basically simulating 
+essentially sets all the values in the inventory back to 1000 which is the full capacity for the inventory. Basically simulating 
 the resupplying of the restaurants inventory. 
 
 '''
