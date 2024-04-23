@@ -9,9 +9,16 @@ Class Description: This classe loops through the customer transactions excel she
 The same logic is used to make buttons that associate with a four pizza set. Once clicked a label will be showed with the amount of pizza
 for each combination. This class also handles the GUI for the chef window.
 
-Important Functions: The getOrders() function is the key to this class. It provides the data that will be used to create the buttons that 
+Important Functions: 
+The getOrders() function is the key to this class. It provides the data that will be used to create the buttons that 
 tell the chef what orders to cook. The for loop will place the int values to the CP, PP, HP, and MLP variables which are associated with
-a specific type of pizza.
+a specific type of pizza. 
+There is also a for loop in def __init__() that creates button and it's directly associate with the customers order
+by matching the index of the orders created in the getOrders() function. The self.order_labels.append(btn) handles this responsibility
+The display_row() functions allows the order GUI to dissapear and reappear as needed. It also handles the task of displaying the correct order
+depending on the button that is choosen. There is an if-else statment that handles this by comparing the text that is associated with the
+button. If it matches then the order will dissapear on the second click, if it's not, then the new text will display as it is either a 
+diifferent order, or identical to the last order meaning no change is needed.
 
 f) Data Structure(s): Lists
 
