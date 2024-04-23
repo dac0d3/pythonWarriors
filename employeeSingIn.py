@@ -109,24 +109,27 @@ class RunnerSignIn(Toplevel):
         super().__init__(parent)
         
         self.geometry('1400x500')
-        self.title('Runner Sign In')
+        self.title('Chef Sign In')
+        self.config(bg = '#d9472a')
         
-        self.user = Label(self,text = 'Enter Username: ' )
+        self.user = customtkinter.CTkLabel(self,text = 'Enter Username: ' )
         self.user.grid(row =1,column = 1)
         
         self.entry1= Entry(self)
+        self.entry1= customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black')
         self.entry1.grid(row = 1,column = 2)
         
-        self.passw = Label(self,text = 'Enter Password: ' )
+        self.passw = customtkinter.CTkLabel(self,text = 'Enter Password: ' )
         self.passw.grid(row =2,column = 1)
         
         self.entry2 = Entry(self)
+        self.entry2= customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black')
         self.entry2.grid(row = 2,column = 2)
         
-        self.submit = Button(self,text = "Submit",command = self.checkInfo)
+        self.submit = customtkinter.CTkButton(self,text = "Submit",command = self.checkInfo,bg_color='#d9472a',fg_color='black')
         self.submit.grid(row = 3,column = 2)
         
-        self.returnButton = Button(self,text = 'Back',command = self.goBack)
+        self.returnButton = customtkinter.CTkButton(self,text = 'Back',command = self.goBack,bg_color='#d9472a',fg_color='black')
         self.returnButton.grid(row = 10,column = 1)
     
     
