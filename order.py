@@ -163,7 +163,7 @@ class Order(Toplevel):
 
 
         # This is the menu that shows the items and prices 
-        self.menuFrame = Frame(self,bg = '#9f3a2d',padx = 70,pady = 70,)
+        self.menuFrame = Frame(self,bg = '#31120C',padx = 70,pady = 70,)
         self.menuFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
