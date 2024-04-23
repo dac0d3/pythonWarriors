@@ -170,16 +170,16 @@ class Order(Toplevel):
         self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#9f3a2d')
         self.menuLabel.pack()
         
-        self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '##333333')
+        self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#333333')
         self.chLabel.pack()
         
-        self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '##333333')
+        self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#333333')
         self.ppLabel.pack()
         
-        self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '##333333')
+        self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#333333')
         self.hpLabel.pack()
         
-        self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '##333333')
+        self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#333333')
         self.mpLabel.pack()
 
 
