@@ -303,13 +303,13 @@ Important Functions:
 where the number of pizzas entered in the previous class will be retrieved and be used to show the customer their order. 
 
 'orderComplete' : This function simply saves all the customers pizzas in excel. If the customer doesn't follow through 
-with their order and complete the chockout, then this function will never get called making sure only the pizzas that
+with their order and complete the checkout, then this function will never get called making sure only the pizzas that
 are payed for are taken account of in the inventory sheet. These values are saved by calling functions from 
-the 'updateInventory' file. Further details on  how the inventory is saved and tracked can be found in the 
+the 'updateInventory' file. Further details on how the inventory is saved and tracked can be found in the 
 'updateInventory' file. 
 
 'back' : This function simply allows the customer to close the checkout screen and go back to the previous page,
-and change thier order before checking out. 
+and change their order before checking out. 
 
 '''
     
