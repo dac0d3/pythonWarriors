@@ -1,13 +1,21 @@
 '''
-a) Module name or Class name in the Design
-b) Date of the code
-c) Programmer's name
-d) Brief description of the class/module
-e) Brief explanation of important functions in each class, including its input
-values and output values
-f) Any important data structure in class/methods
-g) Briefly describe any algorithm that you may have used and why did you
-select it upon other algorithms where more than one option exists.
+Class Name: chef
+
+Date: 4/21/2024
+
+Programmer's name: Adrian Ramos
+
+Class Description: This classe loops through the customer transactions excel sheet and puts all the orders into a list for reference.
+The same logic is used to make buttons that associate with a four pizza set. Once clicked a label will be showed with the amount of pizza
+for each combination. This class also handles the GUI for the chef window.
+
+Important Functions: The getOrders() function is the key to this class. It provides the data that will be used to create the buttons that 
+tell the chef what orders to cook. The for loop will place the int values to the CP, PP, HP, and MLP variables which are associated with
+a specific type of pizza.
+
+f) Data Structure(s): Lists
+
+g) Algorithm: The linear Search algorithm
 '''
 
 
@@ -46,7 +54,7 @@ class Chef(Toplevel):
 
         for idx, row_data in enumerate(self.order_data, start=2):
             #function call
-            btn = Button(self, text=f"Order {idx - 1}", command=lambda i=idx: self.display_row(i),bg='#d9472a',fg='black', highlightbackground='#d9472a',
+            btn = customtkinter.CTkButton(self, text=f"Order {idx - 1}", command=lambda i=idx: self.display_row(i),bg='#d9472a',fg='black', highlightbackground='#d9472a',
             highlightcolor='#d9472a')
             btn.pack(side=TOP, anchor=W)
             
