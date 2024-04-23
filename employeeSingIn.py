@@ -1,3 +1,22 @@
+'''
+Class Name: Employee Signin
+
+Date: 4/21/2024
+
+Programmer's name: Diego Carbajal
+
+Class Description: This class adds a layer of security by implementing password authentication. The class also sets up 
+the GUI for for the sign in pages for chef and runner.
+
+Important Functions: The checkInfo() functions checks for the variables associated with the chef and runners password. By using an if-else
+statement, it will check if the password entered is authorized to procceed to the chrf/runner screen.
+
+
+Data Structure(s): Lists
+
+Algorithm: String Matching: The checkInfo() uses this algorithm to identify if the users input matches with the accpeted passwords.
+'''
+
 from tkinter import *
 from tkinter import messagebox
 import customtkinter
