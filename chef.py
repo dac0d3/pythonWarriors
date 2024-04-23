@@ -20,9 +20,9 @@ depending on the button that is choosen. There is an if-else statment that handl
 button. If it matches then the order will dissapear on the second click, if it's not, then the new text will display as it is either a 
 diifferent order, or identical to the last order meaning no change is needed.
 
-f) Data Structure(s): Lists
+Data Structure(s): Lists
 
-g) Algorithm: String Matching: The display_row() functon uses this algorithm to detect wether a change needs to be made to the order 
+Algorithm: String Matching: The display_row() functon uses this algorithm to detect wether a change needs to be made to the order 
 associated with the button or to make the current order diissapear if it's no longer needed.
 '''
 
@@ -31,6 +31,7 @@ from tkinter import *
 import openpyxl
 from openpyxl import Workbook, load_workbook
 from managerSignIn import *
+import customtkinter
 
 
 
@@ -62,7 +63,7 @@ class Chef(Toplevel):
 
         for idx, row_data in enumerate(self.order_data, start=2):
             #function call
-            btn = customtkinter.CTkButton(self, text=f"Order {idx - 1}", command=lambda i=idx: self.display_row(i),bg='#d9472a',fg='black', highlightbackground='#d9472a',
+            btn = Button(self, text=f"Order {idx - 1}", command=lambda i=idx: self.display_row(i),bg='#d9472a',fg='black', highlightbackground='#d9472a',
             highlightcolor='#d9472a')
             btn.pack(side=TOP, anchor=W)
             

@@ -8,7 +8,7 @@ from managerSignIn import *
 book = load_workbook('customerTransactions.xlsx')           # excel sheet for transactions
 sheet = book.active
 
-class Chef(Toplevel):
+class Runner(Toplevel):
     
     def __init__(self, parent):
         super().__init__(parent)
