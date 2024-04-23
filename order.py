@@ -308,7 +308,7 @@ are payed for are taken account of in the inventory sheet. These values are save
 the 'updateInventory' file. Further details on  how the inventory is saved and tracked can be found in the 
 'updateInventory' file. 
 
-'back' : This function allows simply allows the customer to close the checkout screen and go back to the previous page,
+'back' : This function simply allows the customer to close the checkout screen and go back to the previous page,
 and change thier order before checking out. 
 
 '''
