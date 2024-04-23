@@ -10,8 +10,8 @@ information regarding the customer transactions for the restaurant.
 
 Important Functions: 
 
-'saveValues' : This functions is called with 3 arguments. The order number (int), name(String), and email(string). It then uses
-the order number to store the given name and email into the coresponding row in excel. 
+'saveValues' : This functions is called with 3 arguments; the order number (int), name(String), and email(string). It then uses
+the order number to store the given name and email into the corresponding row in excel. 
 
 'saveOrder' : This function is called with 5 arguments. These are the order number(int), number of cheese pizza(int),
 number of pepperoni pizzas(int),nuumber of hawaiian pizzas(int), number of meat lovers pizzas(int), and total (float). 
@@ -21,14 +21,14 @@ the row their name and email are on.
 'addOneCust' : This function is called when a customer decides to start their transaction, all it does is all increase 
 the length of the list by one to save the cusID for that new customer. 
 
-'getCusID' : When this functio is called, it sets the customers ID by getting the length of the list and adding 1. The length
+'getCusID' : When this function is called, it sets the customers ID by getting the length of the list and adding 1. The length
 of the list is the number of customers that have started a transaction. 
 
 'updateCusID' : When this function is called with a single argument cusID (int),
 it adds one to the cusID then saves it on excel for the next customer. 
 
 'resetTransactions' : This function is only available to the manager from their home page. All it does is wipe out the 
-current excel sheet essentially making a brand new sheet avilable for another day of customer transactions. It uses a loop
+current excel sheet, essentially making a brand new sheet avilable for another day of customer transactions. It uses a loop
 to check if there is an order in that row, and if so, it will set all the values in that row to 'None'. 
 
 
