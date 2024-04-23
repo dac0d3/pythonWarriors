@@ -77,9 +77,9 @@ class Chef(Toplevel):
         new_text = f"ORDER #{row_num -1}\n{self.order_data[row_num-2]}"  
 
         if current_text == new_text: 
-            self.selected_row_label.config(text="", bg='#FFC902', fg='black',font=('Arial', 20))
+            self.selected_row_label.config(text="", bg='#FFC902', fg='black',font=('Arial', 18))
         else: 
-            self.selected_row_label.config(text=new_text, bg='#FFC902', fg='black',font=('Arial', 20))
+            self.selected_row_label.config(text=new_text, bg='#FFC902', fg='black',font=('Arial', 18))
 
 
 
