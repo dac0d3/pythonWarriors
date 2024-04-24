@@ -37,13 +37,17 @@ And this function will call the 'Customer' class and also the 'addOneCust' metho
 
 '''
 
+
+
 class CustomerTransaction(customtkinter.CTk):
     
     def __init__(self):
         super().__init__()
         
         self.title('Customer Transaction')  
-        self.geometry('1440x500')
+        # make function to get resolution so that it adjusts to each window 
+        
+        self.geometry('500x300')
         self.config(bg = '#bf3c22')
  
         self.logo = Image.open('pythonLogo.png')
@@ -62,10 +66,9 @@ class CustomerTransaction(customtkinter.CTk):
     def startTransaction(self):
         addOneCust()
         Customer(self)
-        #self.forget(self)
+        self.forget(self)
         
            
     
-run = CustomerTransaction()
-run.mainloop()
+
 
