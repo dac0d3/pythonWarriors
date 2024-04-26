@@ -15,6 +15,7 @@ from updateTransaction import *
 
 
 
+
 menu = ['CHEESE PIZZA','PEPPERONI PIZZA','HAWAIIAN PIZZA','MEAT LOVERS PIZZA']
 menu_prices = {'CHEESE PIZZA':15,'PEPPERONI PIZZA':17,'HAWAIIAN PIZZA':16,'MEAT LOVERS PIZZA':19} 
 
@@ -197,15 +198,24 @@ class Order(Toplevel):
         total = 0
         order = []
 
-
+        numCheesePizza = self.entryCP.get()
+        numPepperoniPizza = self.entryPP.get()
+        numHawaiianPizza = self.entryHP.get()
+        numMeatLoversPizza = self.entryMP.get()  
+        
+        
 
         #Update number of cheese pizzas
-        numCheesePizza = self.entryCP.get()
         if len(numCheesePizza)== 0:
             numCheesePizza = 0
             numCheesePizza = float(numCheesePizza)
-        else:
+        
+        elif numCheesePizza.isdigit():
             numCheesePizza = float(numCheesePizza)
+        
+        else: 
+            messagebox.showwarning('Error',"Enter a valid number!")
+            
         #Finds price of pizza in menu
         price1 = menu_prices['CHEESE PIZZA']                             
         #calculates tax
@@ -215,13 +225,18 @@ class Order(Toplevel):
         
 
 
+
         #Update number of cheese pizzas
-        numPepperoniPizza = self.entryPP.get()
         if len(numPepperoniPizza)==0:
             numPepperoniPizza = 0
             numPepperoniPizza = float(numPepperoniPizza)
-        else:
+        
+        elif numPepperoniPizza.isdigit():
             numPepperoniPizza = float(numPepperoniPizza)
+        
+        else: 
+            messagebox.showwarning('Error',"Enter a valid number!")
+            
         #Finds price of pizza in menu
         price2 = menu_prices['PEPPERONI PIZZA']                           
         #calculates tax 
@@ -231,13 +246,19 @@ class Order(Toplevel):
 
 
 
+
+
         #update number of Hawaiian pizzas
-        numHawaiianPizza = self.entryHP.get()
         if len(numHawaiianPizza)==0:
             numHawaiianPizza = 0
             numHawaiianPizza = float(numHawaiianPizza)
-        else:
+        
+        elif numHawaiianPizza.isdigit():
             numHawaiianPizza = float(numHawaiianPizza)
+        
+        else: 
+            messagebox.showwarning('Error',"Enter a valid number!")
+            
         #Finds price of pizza in menu
         price3 = menu_prices['HAWAIIAN PIZZA']   
         #calculates tax                          
@@ -246,14 +267,19 @@ class Order(Toplevel):
         order.append(priceWithTax3)
 
 
-        #update nuumber of meat lovers pizzas
-        #Gets num of pizza from entry
-        numMeatLoversPizza = self.entryMP.get()                                 
+
+
+        #update nuumber of meat lovers pizzas                            
         if len(numMeatLoversPizza)==0:
             numMeatLoversPizza = 0
             numMeatLoversPizza = float(numMeatLoversPizza)
-        else:
-            numMeatLoversPizza = float(numMeatLoversPizza) 
+        
+        elif numMeatLoversPizza.isdigit():
+            numMeatLoversPizza = float(numMeatLoversPizza)
+        
+        else: 
+            messagebox.showwarning('Error',"Enter a valid number!")
+            
         #Finds price of pizza in menu
         price4 = menu_prices['MEAT LOVERS PIZZA']   
         #calculates tax                         
@@ -429,6 +455,10 @@ class Checkout2(Toplevel):
     
         #self.destroy()
         self.forget(self)
+        
+        from openKiosk import stopAndRun
+        
+        stopAndRun()
     
     def back(self):
         Order(self)

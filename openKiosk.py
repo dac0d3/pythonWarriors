@@ -10,7 +10,6 @@ import openpyxl
 from openpyxl import Workbook, load_workbook
 
 from updateInventory import *
-from customer import Customer
 from updateTransaction import *
 
 
@@ -39,10 +38,12 @@ And this function will call the 'Customer' class and also the 'addOneCust' metho
 
 
 
-class CustomerTransaction(customtkinter.CTk):
+class CustomerTransaction(Toplevel): #customtkinter.CTk
     
-    def __init__(self):
+    def __init__(self,):
         super().__init__()
+        
+        #parent.destroy()
         
         self.title('Customer Transaction')  
         # make function to get resolution so that it adjusts to each window 
@@ -64,11 +65,29 @@ class CustomerTransaction(customtkinter.CTk):
         self.startButton.place(relx = 0.51,rely = 0.6, anchor = CENTER)
         
     def startTransaction(self):
+        
+        from customer import Customer
         addOneCust()
         Customer(self)
+       
         self.forget(self)
+        #self.destroy()
         
            
+
+
+def start():
+    global run
+    
+    run = CustomerTransaction()
+    run.mainloop()
     
 
 
+def stopAndRun():
+      
+    run.forget(run)
+    start()
+    
+    
+start() 

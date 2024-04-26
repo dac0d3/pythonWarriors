@@ -9,7 +9,6 @@ import ttkbootstrap as tb
 import openpyxl
 from openpyxl import Workbook, load_workbook
 
-from order import Order
 from updateTransaction import *
 
 book = load_workbook('customerTransactions.xlsx')
@@ -38,6 +37,7 @@ customer left an entry box empty, an error message box will display asking them 
     
 class Customer(Toplevel):
     
+   
     
     def __init__(self,parent):
         super().__init__(parent)
@@ -87,6 +87,8 @@ class Customer(Toplevel):
        
     # gets values for name and email from customer when confirm button is clicked 
     def getVals(self):
+        
+        from order import Order
         
         cusID = getCusID()
         
