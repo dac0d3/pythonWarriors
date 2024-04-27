@@ -3,8 +3,7 @@ from tkinter import *
 import customtkinter
 from PIL import ImageTk,Image
 
-from managerSignIn import ManagerSignIn
-from employeeSingIn import EmployeeSingIn
+
 
 
 
@@ -66,18 +65,33 @@ class Main(Tk):
         
 
     def employeeSign(self):
+        from employeeSingIn import EmployeeSingIn
         EmployeeSingIn(self)
-      
-        #self.destroy()
+        #self.forget(self)
+    
     
     def managerSign(self):
+        from managerSignIn import ManagerSignIn
         ManagerSignIn(self)
         #self.forget(self)
+
 
     def closeScreen(self):
         self.destroy()
 
 
-run = Main()
-run.mainloop()
 
+def start():
+    global run
+    
+    run = Main()
+    run.mainloop()
+    
+
+def stopAndRun():
+      
+    run.forget(run)
+    start()
+    
+   
+start() 
