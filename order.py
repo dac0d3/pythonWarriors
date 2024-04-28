@@ -347,17 +347,12 @@ class Checkout2(Toplevel):
         
         global numCP,numPP,numHP,numMP,total
         
+
         cusID = getCusID()    #gets the id and row for customer 
         print(cusID)
-       
-       
-       
-        self.geometry('1440x500')
-        self.title('Checkout')
-        self.config(bg = '#d9472a')
-        
-        
-        #####   This is going to be where the program figures out the pizzas the customer chose and only shows the pizzas they ordered 
+                       
+        cusName = sheet['B'+str(cusID)].value
+        cusEmail = sheet['C'+str(cusID)].value
         
         numCP = sheet['D'+str(cusID)].value   
         numPP = sheet['E'+str(cusID)].value  
@@ -365,81 +360,80 @@ class Checkout2(Toplevel):
         numMP = sheet['G'+str(cusID)].value
         print(numCP,numPP,numHP,numMP)  
         
+        
         numCP = int(numCP)
         numPP = int(numPP)
         numHP = int(numHP)
-        numMP = int(numHP)
-        
-        order = [numCP,numPP,numHP,numMP]
-        newOrder = []
-        
-        for i in range(len(order)):
-            if order[i] != 0:
-                newOrder.append(order[i])
-
-        print('New Order: ')
-        for i in range(len(newOrder)):
-            print(newOrder[i])
-        
-        
-        #####
-        
-        
-        
-        
-        
-        
+        numMP = int(numMP)
+       
+       
+        self.geometry('1440x500')
+        self.title('Checkout')
+        self.config(bg = '#d9472a')
         
         
         
         # This is the frame and everything that goes inside 
-        self.orderFrame = Frame(self,bg = '#F3B552',padx = 70,pady = 70,)
+        self.orderFrame = Frame(self,bg = '#F3B552',padx = 100,pady = 100,)
         self.orderFrame.place(relx = 0.1,rely =0.4,anchor = W)
         
         self.heading = Label(self.orderFrame,text = "Order",bg = '#F3B552',font = 'ar 20 bold')
-        self.heading.pack()
-        #.place(relx = 0.1,rely =0.07,anchor = W)
+        self.heading.grid(row = 1,column=1)
 
-        # label with pizza order and another label with number of pizzas 
-        self.label1 = Label(self.orderFrame,text = 'Cheese Pizzas: ',bg = '#F3B552')             
-        self.label1.pack()
-        #place(relx = 0.1,rely =0.2,anchor = W)
-        self.label1Num = Label(self.orderFrame,text = str(numCP),bg = '#F3B552')    
-        self.label1Num.pack()
-        #place(relx = 0.1,rely =0.25,anchor = W)
+
+
+        # If the value for that pizza is >=1 then it will show on the order frame 
+        if numCP != 0:
+            self.label1 = Label(self.orderFrame,text = 'Cheese Pizzas: ',bg = '#F3B552')             
+            self.label1.grid(row = 2,column=1)
+            self.label1Num = Label(self.orderFrame,text = str(numCP),bg = '#F3B552')    
+            self.label1Num.grid(row = 2,column=2)
         
-        self.label2 = Label(self.orderFrame,text = "Pepperoni Pizzas: ",bg = '#F3B552')   
-        self.label2.pack()
-        #place(relx = 0.1,rely =0.3,anchor = W)
-        self.label2Num = Label(self.orderFrame,text = str(numPP),bg = '#F3B552')    
-        self.label2Num.pack()
-        #place(relx = 0.1,rely =0.35,anchor = W)
-       
-        self.label3 = Label(self.orderFrame,text = "Hawaiian Pizzas: ",bg = '#F3B552')    
-        self.label3.pack()
-        #place(relx = 0.1,rely =0.4,anchor = W)
-        self.label3Num = Label(self.orderFrame,text = str(numHP),bg = '#F3B552')    
-        self.label3Num.pack()
-        #place(relx = 0.1,rely =0.45,anchor = W)
-       
-        self.label4 = Label(self.orderFrame,text = "Meat Lovers Pizzas: ",bg = '#F3B552')    
-        self.label4.pack()
-        #place(relx = 0.1,rely =0.5,anchor = W)
-        self.label4Num = Label(self.orderFrame,text = str(numMP),bg = '#F3B552')    
-        self.label4Num.pack()
-        #place(relx = 0.1,rely =0.55,anchor = W)
+        
+        if numPP != 0:
+            self.label2 = Label(self.orderFrame,text = "Pepperoni Pizzas: ",bg = '#F3B552')   
+            self.label2.grid(row = 3,column=1)
+            self.label2Num = Label(self.orderFrame,text = str(numPP),bg = '#F3B552')    
+            self.label2Num.grid(row = 3,column=2)
+
+
+        if numHP != 0:
+            self.label3 = Label(self.orderFrame,text = "Hawaiian Pizzas: ",bg = '#F3B552')    
+            self.label3.grid(row = 4,column=1)
+            self.label3Num = Label(self.orderFrame,text = str(numHP),bg = '#F3B552')    
+            self.label3Num.grid(row = 4,column=2)
+
+
+        if numMP != 0:
+            self.label4 = Label(self.orderFrame,text = "Meat Lovers Pizzas: ",bg = '#F3B552')    
+            self.label4.grid(row = 5,column=1)
+            self.label4Num = Label(self.orderFrame,text = str(numMP),bg = '#F3B552')    
+            self.label4Num.grid(row = 5,column=2)
+
         
         
         
         
         
         # Displays the total to customer
-        self.totalLabel = customtkinter.CTkLabel(self,text = 'Total: $'+str(total),bg_color = '#d9472a',font = ('arial',20))
+        self.totalLabel = customtkinter.CTkLabel(self,text = 'Order Total: $'+str(total),bg_color = '#d9472a',font = ('arial',20))
         self.totalLabel.place(relx = 0.4,rely =0.6,anchor = W)
         
         # Displys the customers order number 
-        self.orderNum = customtkinter.CTkLabel(self,text = 'Order: # '+str(cusID),bg_color = '#d9472a',font = ('arial',20))
+        self.orderNum = customtkinter.CTkLabel(self,text = 'Order Number: '+str(cusID),bg_color = '#d9472a',font = ('arial',20))
         self.orderNum.place(relx = 0.4,rely =0.65,anchor = W)
+        
+        # Dislpays the customer name
+        self.totalLabel = customtkinter.CTkLabel(self,text = 'Customer Name: '+str(cusName),bg_color = '#d9472a',font = ('arial',20))
+        self.totalLabel.place(relx = 0.4,rely =0.7,anchor = W)
+        
+        # Displays the customer email
+        self.totalLabel = customtkinter.CTkLabel(self,text = 'Customer Email: '+str(cusEmail),bg_color = '#d9472a',font = ('arial',20))
+        self.totalLabel.place(relx = 0.4,rely =0.75,anchor = W)
+        
+        
+        
+        
         
         
         # Button to end the transaction and go back to the order screen
