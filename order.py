@@ -356,13 +356,37 @@ class Checkout2(Toplevel):
         self.title('Checkout')
         self.config(bg = '#d9472a')
         
-
-            
+        
+        #####   This is going to be where the program figures out the pizzas the customer chose and only shows the pizzas they ordered 
+        
         numCP = sheet['D'+str(cusID)].value   
         numPP = sheet['E'+str(cusID)].value  
         numHP = sheet['F'+str(cusID)].value  
         numMP = sheet['G'+str(cusID)].value
         print(numCP,numPP,numHP,numMP)  
+        
+        numCP = int(numCP)
+        numPP = int(numPP)
+        numHP = int(numHP)
+        numMP = int(numHP)
+        
+        order = [numCP,numPP,numHP,numMP]
+        newOrder = []
+        
+        for i in range(len(order)):
+            if order[i] != 0:
+                newOrder.append(order[i])
+
+        print('New Order: ')
+        for i in range(len(newOrder)):
+            print(newOrder[i])
+        
+        
+        #####
+        
+        
+        
+        
         
         
         
