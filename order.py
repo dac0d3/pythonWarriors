@@ -374,12 +374,12 @@ class Checkout2(Toplevel):
         
         
         # This is the frame and everything that goes inside 
-        self.orderFrame = Frame(self,bg = '#F3B552',padx = 100,pady = 100,)
+        self.orderFrame = Frame(self,bg = '#F3B552',padx = 100,pady = 300,)
         self.orderFrame.place(relx = 0.1,rely =0.4,anchor = W)
         
-        self.heading = Label(self.orderFrame,text = "Order",bg = '#F3B552',font = 'ar 20 bold')
+        # Label for customer ID 
+        self.heading = Label(self.orderFrame,text = "Order : "+str(cusID),bg = '#F3B552',font = 'ar 20 bold',fg = 'black')
         self.heading.grid(row = 1,column=1)
-
 
 
         # If the value for that pizza is >=1 then it will show on the order frame 
@@ -412,24 +412,20 @@ class Checkout2(Toplevel):
 
         
         
-        
-        
-        
         # Displays the total to customer
-        self.totalLabel = customtkinter.CTkLabel(self,text = 'Order Total: $'+str(total),bg_color = '#d9472a',font = ('arial',20))
-        self.totalLabel.place(relx = 0.4,rely =0.6,anchor = W)
+        self.totalLabel = customtkinter.CTkLabel(self,text = 'Total:   $'+str(total),bg_color = '#d9472a',font = ('arial',20))
+        self.totalLabel.grid()
+        #self.totalLabel.place(relx = 0.4,rely =0.6,anchor = W)
+
+        # Dislpays the thank you 
+        self.thankYouLabel = customtkinter.CTkLabel(self,text = 'Thank you for visiting',bg_color = '#d9472a',font = ('arial',20))
+        self.thankYouLabel.grid()
+        #self.totalLabel.place(relx = 0.4,rely =0.7,anchor = W)
         
-        # Displys the customers order number 
-        self.orderNum = customtkinter.CTkLabel(self,text = 'Order Number: '+str(cusID),bg_color = '#d9472a',font = ('arial',20))
-        self.orderNum.place(relx = 0.4,rely =0.65,anchor = W)
-        
-        # Dislpays the customer name
-        self.totalLabel = customtkinter.CTkLabel(self,text = 'Customer Name: '+str(cusName),bg_color = '#d9472a',font = ('arial',20))
-        self.totalLabel.place(relx = 0.4,rely =0.7,anchor = W)
-        
-        # Displays the customer email
-        self.totalLabel = customtkinter.CTkLabel(self,text = 'Customer Email: '+str(cusEmail),bg_color = '#d9472a',font = ('arial',20))
-        self.totalLabel.place(relx = 0.4,rely =0.75,anchor = W)
+        # Displays the restaurant Name
+        self.restaurantLabel = customtkinter.CTkLabel(self,text = 'Python Parlor',bg_color = '#d9472a',font = ('arial',20))
+        self.restaurantLabel.grid()
+        #self.totalLabel.place(relx = 0.45,rely =0.75,anchor = W)
         
         
         
