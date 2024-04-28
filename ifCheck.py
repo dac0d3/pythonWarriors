@@ -23,3 +23,5 @@ for i in range(len(order)):
 for i in range(len(newOrder)):
     print(newOrder[i])
     
+    
+    # if number > 0 add to frame
