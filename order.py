@@ -373,42 +373,55 @@ class Checkout2(Toplevel):
         
         
         
-        # This is the frame and everything that goes inside 
+        # This is the frame and everything to go inside 
         self.orderFrame = Frame(self,bg = '#F3B552',padx = 100,pady = 300,)
-        self.orderFrame.place(relx = 0.1,rely =0.4,anchor = W)
+        self.orderFrame.place(relx = 0.5,rely =0.5,anchor = W)
         
         # Label for customer ID 
         self.heading = Label(self.orderFrame,text = "Order : "+str(cusID),bg = '#F3B552',font = 'ar 20 bold',fg = 'black')
         self.heading.grid(row = 1,column=1)
 
-
+        
+        self.dateLabel = Label(self.heading,text = 'Date',bg = '#F3B552')
+        self.dateLabel.grid(row = 3, column = 0)
+        
+        self.timeLabel = Label(self.heading,text = 'Time',bg = '#F3B552')
+        self.timeLabel.grid(row = 3, column = 2)
+        
+        
+        
+        self.topLine = Label(self.heading,
+                             text = '---------------------------------------------------------------------------------------------------------------------------------------',
+                             bg = '#F3B552')
+        self.topLine.grid(row = 4,column = 1)
+        
         # If the value for that pizza is >=1 then it will show on the order frame 
         if numCP != 0:
             self.label1 = Label(self.orderFrame,text = 'Cheese Pizzas: ',bg = '#F3B552')             
-            self.label1.grid(row = 2,column=1)
+            self.label1.grid(row = 5,column=0)
             self.label1Num = Label(self.orderFrame,text = str(numCP),bg = '#F3B552')    
-            self.label1Num.grid(row = 2,column=2)
+            self.label1Num.grid(row = 5,column=2)
         
         
         if numPP != 0:
             self.label2 = Label(self.orderFrame,text = "Pepperoni Pizzas: ",bg = '#F3B552')   
-            self.label2.grid(row = 3,column=1)
+            self.label2.grid(row = 6,column=0)
             self.label2Num = Label(self.orderFrame,text = str(numPP),bg = '#F3B552')    
-            self.label2Num.grid(row = 3,column=2)
+            self.label2Num.grid(row = 6,column=2)
 
 
         if numHP != 0:
             self.label3 = Label(self.orderFrame,text = "Hawaiian Pizzas: ",bg = '#F3B552')    
-            self.label3.grid(row = 4,column=1)
+            self.label3.grid(row = 7,column=0)
             self.label3Num = Label(self.orderFrame,text = str(numHP),bg = '#F3B552')    
-            self.label3Num.grid(row = 4,column=2)
+            self.label3Num.grid(row = 7,column=2)
 
 
         if numMP != 0:
             self.label4 = Label(self.orderFrame,text = "Meat Lovers Pizzas: ",bg = '#F3B552')    
-            self.label4.grid(row = 5,column=1)
+            self.label4.grid(row = 8,column=0)
             self.label4Num = Label(self.orderFrame,text = str(numMP),bg = '#F3B552')    
-            self.label4Num.grid(row = 5,column=2)
+            self.label4Num.grid(row = 8,column=2)
 
         
         
