@@ -374,26 +374,26 @@ class Checkout2(Toplevel):
         
         
         # This is the frame and everything to go inside 
-        self.orderFrame = Frame(self,bg = '#F3B552',padx = 100,pady = 300,)
-        self.orderFrame.place(relx = 0.5,rely =0.5,anchor = W)
+        self.orderFrame = Frame(self,bg = '#F3B552',padx = 75,pady = 200,)
+        self.orderFrame.place(relx = 0.5,rely =0.5,anchor = CENTER)
         
         # Label for customer ID 
         self.heading = Label(self.orderFrame,text = "Order : "+str(cusID),bg = '#F3B552',font = 'ar 20 bold',fg = 'black')
-        self.heading.grid(row = 1,column=1)
+        self.heading.grid(row = 1,column=1,pady = 20)
 
         
-        self.dateLabel = Label(self.heading,text = 'Date',bg = '#F3B552')
-        self.dateLabel.grid(row = 3, column = 0)
+        self.itemLabel = Label(self.orderFrame,text = 'Item',bg = '#F3B552')
+        self.itemLabel.grid(row = 2, column = 0)
         
-        self.timeLabel = Label(self.heading,text = 'Time',bg = '#F3B552')
-        self.timeLabel.grid(row = 3, column = 2)
+        self.qtyLabel = Label(self.orderFrame,text = 'Qty',bg = '#F3B552')
+        self.qtyLabel.grid(row = 2, column = 2)
         
         
         
-        self.topLine = Label(self.heading,
-                             text = '---------------------------------------------------------------------------------------------------------------------------------------',
-                             bg = '#F3B552')
-        self.topLine.grid(row = 4,column = 1)
+        #self.topLine = Label(self.heading,
+          #                   text = '---------------------------------------------------------------------------------------------------------------------------------------',
+         #                    bg = '#F3B552')
+        #self.topLine.grid(row = 4,column = 1)
         
         # If the value for that pizza is >=1 then it will show on the order frame 
         if numCP != 0:
@@ -424,7 +424,7 @@ class Checkout2(Toplevel):
             self.label4Num.grid(row = 8,column=2)
 
         
-        
+        '''
         # Displays the total to customer
         self.totalLabel = customtkinter.CTkLabel(self,text = 'Total:   $'+str(total),bg_color = '#d9472a',font = ('arial',20))
         self.totalLabel.grid()
@@ -439,7 +439,7 @@ class Checkout2(Toplevel):
         self.restaurantLabel = customtkinter.CTkLabel(self,text = 'Python Parlor',bg_color = '#d9472a',font = ('arial',20))
         self.restaurantLabel.grid()
         #self.totalLabel.place(relx = 0.45,rely =0.75,anchor = W)
-        
+        '''
         
         
         
