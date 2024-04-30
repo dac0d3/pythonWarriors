@@ -74,20 +74,19 @@ class CustomerTransaction(Toplevel): #customtkinter.CTk
         #self.destroy()
         
            
-
-
+           
 def start():
     global run
     
     run = CustomerTransaction()
     run.mainloop()
     
-
-
 def stopAndRun():
       
     run.forget(run)
     start()
     
-    
 start() 
+    
+    
+
