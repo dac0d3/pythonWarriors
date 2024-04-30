@@ -8,7 +8,7 @@ import ttkbootstrap as tb
 from openKiosk import *
 
 
-run = CustomerTransaction()
-run.mainloop()
+#run = CustomerTransaction()
+#run.mainloop()
 
 
