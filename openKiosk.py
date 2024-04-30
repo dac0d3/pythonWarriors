@@ -38,7 +38,7 @@ And this function will call the 'Customer' class and also the 'addOneCust' metho
 
 
 
-class CustomerTransaction(Toplevel): #customtkinter.CTk
+class CustomerTransaction(Tk): #customtkinter.CTk #Toplevel
     
     def __init__(self,):
         super().__init__()
@@ -74,13 +74,15 @@ class CustomerTransaction(Toplevel): #customtkinter.CTk
         #self.destroy()
         
            
-           
+'''  
+# This function starts the customer transaction        
 def start():
     global run
     
     run = CustomerTransaction()
     run.mainloop()
     
+# This function stops the current transaction and calls a new one 'start()'
 def stopAndRun():
       
     run.forget(run)
@@ -88,5 +90,5 @@ def stopAndRun():
     
 start() 
     
-    
+''' 
 

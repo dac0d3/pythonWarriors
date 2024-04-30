@@ -560,11 +560,13 @@ class Checkout2(Toplevel):
     
         #self.destroy()
         self.forget(self)
-        
+       
+        # Calling this function stops the current transaction and starts a new one
+        '''
         from openKiosk import stopAndRun
         
         stopAndRun()
-    
+        '''
     def back(self):
         Order(self)
         self.forget(self)
