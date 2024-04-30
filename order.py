@@ -7,6 +7,7 @@ import customtkinter
 from PIL import ImageTk,Image
 import ttkbootstrap as tb
 from tkinter import messagebox
+from time import *
 
 from revenue import *
 from updateInventory import *
@@ -303,8 +304,11 @@ class Order(Toplevel):
         print(total)
         print(order)
         
+        totalNumPizza = numCheesePizza+numHawaiianPizza+numMeatLoversPizza+numPepperoniPizza
         if total == 0:
             messagebox.showwarning('Error',"You entered no pizzas!")
+        elif totalNumPizza > 20:
+            messagebox.showwarning('Error',"Number of pizzas may not exceed 20")
         else:
             Checkout2(self)
             self.forget(self)
@@ -396,13 +400,27 @@ class Checkout2(Toplevel):
         self.heading = Label(self.orderFrame,text = "Order :   "+str(cusID),bg = '#F3B552',font = 'ar 20 bold',fg = 'black')
         self.heading.grid(row = 1,column=0,columnspan=3)
 
+        # Space between labels
+        self.space = customtkinter.CTkLabel(self.orderFrame,text = ' ',bg_color = '#F3B552',)
+        self.space.grid(row = 2,column=0,pady = 8)
+        
+        # Label to display date
+        date_string = strftime("%B %d, %Y")
+        self.date = Label(self.orderFrame,text = date_string,font = ('arial',14),fg = 'black',bg = '#F3B552')
+        self.date.grid(row = 3,column=0)
+
+        
+        # Label to display time
+        time_string = strftime('%I:%M %p')
+        self.time = Label(self.orderFrame,text = time_string,font= ('arial',14),fg = 'black',bg = '#F3B552')
+        self.time.grid(row = 3,column=2)
 
 
 
         self.topLine = Label(self.orderFrame,
                              text = '---------------------------------------------------------',
                              bg = '#F3B552',fg='black')
-        self.topLine.grid(row = 4,column = 0,columnspan=3,pady = 8)
+        self.topLine.grid(row = 4,column = 0,columnspan=3,pady = 4)
         
         
         
@@ -463,6 +481,7 @@ class Checkout2(Toplevel):
             self.priceLabel1.grid(row = 9,column=2)
 
         
+
         
         self.bottomLine = Label(self.orderFrame,
                              text = '---------------------------------------------------------',
@@ -488,7 +507,7 @@ class Checkout2(Toplevel):
 
         # Space between labels
         self.space = customtkinter.CTkLabel(self.orderFrame,text = ' ',bg_color = '#F3B552',)
-        self.space.grid(row = 14,column=0,pady = 33)
+        self.space.grid(row = 14,column=0,pady = 15)
         
         # Dislpays the thank you 
         self.thankYouLabel = customtkinter.CTkLabel(self.orderFrame,text = 'Thank you for visiting',bg_color = '#F3B552',font = ('arial',17),text_color = 'black')
@@ -514,7 +533,7 @@ class Checkout2(Toplevel):
         self.backButton = customtkinter.CTkButton(self,text = 'Back',command = self.back,bg_color = '#d9472a',fg_color='black')
         self.backButton.place(relx = 0.05,rely =0.95,anchor = W)
         
-        
+    
 
     def orderComplete(self):
         print('Order Submitted')

@@ -96,14 +96,20 @@ class Customer(Toplevel):
             name = self.nameEntry.get()     
             email = self.emailEntry.get()
             
-            
-            saveValues(cusID,name,email)
-            
-            #print("Name:", name)
-            #print("Email:", email)
-        
-            Order(self)         # strts order in order class
-            self.forget(self)   # hides customer sign in for next customer 
+            if name.isalpha() == True:
+                if email.find('@csun.edu')!= -1 or email.find('@gmail.com')!= -1 or email.find('@icloud.com')!= -1 :
+                
+                    saveValues(cusID,name,email)
+
+                    #print("Name:", name)
+                    #print("Email:", email)
+
+                    Order(self)         # strts order in order class
+                    self.forget(self)   # hides customer sign in for next customer 
+                else:
+                    messagebox.showwarning('Error',"Enter your csun, gmail, or icloud email")
+            else:
+                messagebox.showwarning('Error',"Your name can only contain letters")
              
         else:
             messagebox.showwarning('Error',"You missed an entry!")
