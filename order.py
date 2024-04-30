@@ -365,8 +365,22 @@ class Checkout2(Toplevel):
         numPP = int(numPP)
         numHP = int(numHP)
         numMP = int(numMP)
-       
-       
+        
+        # Calculates price of items to display in checkout label
+        price = numCP *15
+        price2 = numPP *17
+        price3 = numHP *16
+        price4 = numMP *19
+        
+        # Gets total of order without tax, finds tax too 
+        totalNoTax = price+price2+price3+price4
+        tax = total-totalNoTax
+        tax = round(tax,2)
+        
+        print('total with tax :'+str(total))
+        print('total no tax: '+str(totalNoTax))
+        print('tax: '+str(tax))
+        
         self.geometry('1440x500')
         self.title('Checkout')
         self.config(bg = '#d9472a')
@@ -383,76 +397,107 @@ class Checkout2(Toplevel):
         self.heading.grid(row = 1,column=0,columnspan=3)
 
 
+
+
         self.topLine = Label(self.orderFrame,
                              text = '---------------------------------------------------------',
                              bg = '#F3B552',fg='black')
-        self.topLine.grid(row = 4,column = 0,columnspan=3)
+        self.topLine.grid(row = 4,column = 0,columnspan=3,pady = 8)
         
         
         
+
+        self.qtyLabel = Label(self.orderFrame,text = 'Qty',bg = '#F3B552',fg = 'black')
+        self.qtyLabel.grid(row = 5, column = 0,pady = 2)
         
+        self.itemLabel = Label(self.orderFrame,text = 'Item',bg = '#F3B552',fg = 'black')
+        self.itemLabel.grid(row = 5, column = 1,pady = 2)
         
-        self.qtyLabel = Label(self.orderFrame,text = 'Qty',bg = '#F3B552')
-        self.qtyLabel.grid(row = 5, column = 0)
-        
-        self.itemLabel = Label(self.orderFrame,text = 'Item',bg = '#F3B552')
-        self.itemLabel.grid(row = 5, column = 1)
-        
-        self.priceLabel = Label(self.orderFrame,text = 'Price',bg = '#F3B552')
-        self.priceLabel.grid(row = 5, column = 2)
+        self.priceLabel = Label(self.orderFrame,text = 'Price',bg = '#F3B552',fg = 'black')
+        self.priceLabel.grid(row = 5, column = 2,pady = 2)
         
         
         
         # If the value for that pizza is >=1 then it will show on the order frame 
         if numCP != 0:
-            self.label1 = Label(self.orderFrame,text = 'Cheese Pizzas ',bg = '#F3B552',font = ('arial',14))             
+            self.label1 = Label(self.orderFrame,text = 'Cheese Pizza',bg = '#F3B552',font = ('arial',14),fg = 'black')             
             self.label1.grid(row = 6,column=1)
-            self.label1Num = Label(self.orderFrame,text = str(numCP),bg = '#F3B552',font = ('arial',14))    
+            
+            self.label1Num = Label(self.orderFrame,text = str(numCP),bg = '#F3B552',font = ('arial',14),fg = 'black')    
             self.label1Num.grid(row = 6,column=0)
+            
+            self.priceLabel1 = Label(self.orderFrame,text = '$ '+str(price) ,bg = '#F3B552',font = ('arial',14),fg = 'black')
+            self.priceLabel1.grid(row = 6,column=2)
         
         
         if numPP != 0:
-            self.label2 = Label(self.orderFrame,text = "Pepperoni Pizzas ",bg = '#F3B552',font = ('arial',14))   
+            self.label2 = Label(self.orderFrame,text = "Pepperoni Pizza",bg = '#F3B552',font = ('arial',14),fg = 'black')   
             self.label2.grid(row = 7,column=1)
-            self.label2Num = Label(self.orderFrame,text = str(numPP),bg = '#F3B552',font = ('arial',14))    
+            
+            self.label2Num = Label(self.orderFrame,text = str(numPP),bg = '#F3B552',font = ('arial',14),fg = 'black')    
             self.label2Num.grid(row = 7,column=0)
+            
+            self.priceLabel1 = Label(self.orderFrame,text = '$ '+str(price2) ,bg = '#F3B552',font = ('arial',14),fg = 'black')
+            self.priceLabel1.grid(row = 7,column=2)
 
 
         if numHP != 0:
-            self.label3 = Label(self.orderFrame,text = "Hawaiian Pizzas ",bg = '#F3B552',font = ('arial',14))    
+            self.label3 = Label(self.orderFrame,text = "Hawaiian Pizza",bg = '#F3B552',font = ('arial',14),fg = 'black')    
             self.label3.grid(row = 8,column=1)
-            self.label3Num = Label(self.orderFrame,text = str(numHP),bg = '#F3B552',font = ('arial',14))    
+            
+            self.label3Num = Label(self.orderFrame,text = str(numHP),bg = '#F3B552',font = ('arial',14),fg = 'black')    
             self.label3Num.grid(row = 8,column=0)
+            
+            self.priceLabel1 = Label(self.orderFrame,text = '$ '+str(price3) ,bg = '#F3B552',font = ('arial',14),fg = 'black')
+            self.priceLabel1.grid(row = 8,column=2)
 
 
         if numMP != 0:
-            self.label4 = Label(self.orderFrame,text = "Meat Lovers Pizzas ",bg = '#F3B552',font = ('arial',14))    
+            self.label4 = Label(self.orderFrame,text = "Meat Lovers Pizza",bg = '#F3B552',font = ('arial',14),fg = 'black')    
             self.label4.grid(row = 9,column=1)
-            self.label4Num = Label(self.orderFrame,text = str(numMP),bg = '#F3B552',font = ('arial',14))    
+            
+            self.label4Num = Label(self.orderFrame,text = str(numMP),bg = '#F3B552',font = ('arial',14),fg = 'black')    
             self.label4Num.grid(row = 9,column=0)
+            
+            self.priceLabel1 = Label(self.orderFrame,text = '$ '+str(price4) ,bg = '#F3B552',font = ('arial',14),fg = 'black')
+            self.priceLabel1.grid(row = 9,column=2)
 
+        
         
         self.bottomLine = Label(self.orderFrame,
                              text = '---------------------------------------------------------',
                              bg = '#F3B552',fg='black')
-        self.bottomLine.grid(row = 10,column = 0,columnspan=3)  
+        self.bottomLine.grid(row = 10,column = 0,columnspan=3,pady = 10)  
         
         
-        # Displays the total to customer
-        self.totalLabel = customtkinter.CTkLabel(self.orderFrame,text = 'Total: $'+str(total),
+        
+        # Displays the subtotal to customer
+        self.total2Label = customtkinter.CTkLabel(self.orderFrame,text = 'Subtotal: $'+str(totalNoTax),
                                                  bg_color = '#F3B552',font = ('arial',14),text_color = 'black')
-        self.totalLabel.grid(row = 11,column=2,pady=40)
-        #self.totalLabel.place(relx = 0.4,rely =0.6,anchor = W)
+        self.total2Label.grid(row = 11,column=0)
+        
+        # Displays the tax to customer
+        self.taxLabel = customtkinter.CTkLabel(self.orderFrame,text = 'Tax: $'+str(tax),
+                                                 bg_color = '#F3B552',font = ('arial',14),text_color = 'black')
+        self.taxLabel.grid(row = 12,column=0)
+        
+        # Displays the total plus tax to customer
+        self.totalLabel = customtkinter.CTkLabel(self.orderFrame,text = 'Total: $'+str(total),
+                                                 bg_color = '#F3B552',font = ('arial',16),text_color = 'black')
+        self.totalLabel.grid(row = 13,column=0)
 
+        # Space between labels
+        self.space = customtkinter.CTkLabel(self.orderFrame,text = ' ',bg_color = '#F3B552',)
+        self.space.grid(row = 14,column=0,pady = 33)
+        
         # Dislpays the thank you 
         self.thankYouLabel = customtkinter.CTkLabel(self.orderFrame,text = 'Thank you for visiting',bg_color = '#F3B552',font = ('arial',17),text_color = 'black')
-        self.thankYouLabel.grid(row = 12,column=1,)
-        #self.totalLabel.place(relx = 0.4,rely =0.7,anchor = W)
+        self.thankYouLabel.grid(row = 15,column=0,columnspan = 3)
         
         # Displays the restaurant Name
         self.restaurantLabel = customtkinter.CTkLabel(self.orderFrame,text = 'Python Parlor',bg_color = '#F3B552',font = ('arial',17),text_color = 'black')
-        self.restaurantLabel.grid(row = 13,column=1)
-        #self.totalLabel.place(relx = 0.45,rely =0.75,anchor = W)
+        self.restaurantLabel.grid(row = 16,column=0,columnspan = 3)
+
         
         
         
