@@ -9,9 +9,14 @@ import ttkbootstrap as tb
 from tkinter import messagebox
 from time import *
 
+from email.message import EmailMessage
+import ssl 
+import smtplib
+
 from revenue import *
 from updateInventory import *
 from updateTransaction import *
+from emailConfirm import EmailMessage
 
 
 
@@ -355,8 +360,8 @@ class Checkout2(Toplevel):
         cusID = getCusID()    #gets the id and row for customer 
         print(cusID)
                        
-        cusName = sheet['B'+str(cusID)].value
-        cusEmail = sheet['C'+str(cusID)].value
+        #cusName = sheet['B'+str(cusID)].value
+        #cusEmail = sheet['C'+str(cusID)].value
         
         numCP = sheet['D'+str(cusID)].value   
         numPP = sheet['E'+str(cusID)].value  
@@ -540,7 +545,13 @@ class Checkout2(Toplevel):
         
         global numCP,numPP,numHP,numMP
         
-        cusID = getCusID()               
+        cusID = getCusID()  
+        
+        # This gets the customer email from excel and 
+        cusEmail = sheet['C'+str(cusID)].value
+        EmailMessage(cusEmail)
+        
+                  
         updateCusID(cusID)
         
         
@@ -556,15 +567,13 @@ class Checkout2(Toplevel):
         pepperonniPizza(numPP)
         hawaiianPizza(numHP)
         meatLoversPizza(numMP)
-
-    
+        
+        
         #self.destroy()
         self.forget(self)
        
         # Calling this function stops the current transaction and starts a new one
-        
         from openKiosk import stopAndRun
-        
         stopAndRun()
         
     def back(self):
