@@ -68,8 +68,8 @@ class Customer(Toplevel):
 
 
         #Creating Entry Field
-        self.nameEntry = customtkinter.CTkEntry(self,border_width=0 ,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b')    #bg_color='#d9472a',corner_radius=10    ,textvariable=self.nameVal                                  
-        self.emailEntry = customtkinter.CTkEntry(self, border_width=0,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b')       #,textvariable=self.emailVal
+        self.nameEntry = customtkinter.CTkEntry(self,border_width=0 ,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b',)    #bg_color='#d9472a',corner_radius=10    ,textvariable=self.nameVal                                  
+        self.emailEntry = customtkinter.CTkEntry(self, border_width=0,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b',)       #,textvariable=self.emailVal
 
 
         #Packing Entry Fields
