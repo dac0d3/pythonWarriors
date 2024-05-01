@@ -5,6 +5,7 @@ import customtkinter
 
 from chef import Chef
 from runner import Runner 
+#from main import Main
 
 chefUsername = 'u'
 chefPassword = 'p'
@@ -66,7 +67,9 @@ class EmployeeSingIn(Toplevel):
         self.forget(self)
         
     def goBack(self):
-        self.forget(self)   
+        self.withdraw()  
+        from main import stopAndRun
+        stopAndRun()
     
       
       
@@ -141,7 +144,11 @@ class ChefSignIn(Toplevel):
 
 
     def goBack(self):
-        self.forget(self)
+        self.withdraw()
+        EmployeeSingIn(self)
+        
+        
+        
 
 
 
@@ -216,4 +223,5 @@ class RunnerSignIn(Toplevel):
             messagebox.showwarning('Error',"Incorrect password or username")
 
     def goBack(self):
-        self.forget(self)
+        self.withdraw()
+        EmployeeSingIn(self)

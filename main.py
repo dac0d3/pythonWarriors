@@ -35,13 +35,14 @@ for the user to input their credentials.
 '''
 
 
-class Main(Tk):
+class Main(Toplevel):
     
     def __init__(self):
         super().__init__()
         
         
-        self.attributes('-fullscreen', True)
+        #self.attributes('-fullscreen', True)
+        self.geometry('1400x500')
         self.title('Main')
         self.config(bg = '#d9472a') 
         
@@ -67,13 +68,13 @@ class Main(Tk):
     def employeeSign(self):
         from employeeSingIn import EmployeeSingIn
         EmployeeSingIn(self)
-        #self.forget(self)
+        self.forget(self)
     
     
     def managerSign(self):
         from managerSignIn import ManagerSignIn
         ManagerSignIn(self)
-        #self.forget(self)
+        self.forget(self)
 
 
     def closeScreen(self):
