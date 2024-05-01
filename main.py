@@ -41,7 +41,7 @@ class Main(Tk):
         super().__init__()
         
         
-        self.geometry('1400x500')
+        self.attributes('-fullscreen', True)
         self.title('Main')
         self.config(bg = '#d9472a') 
         
