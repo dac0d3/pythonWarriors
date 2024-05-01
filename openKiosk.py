@@ -1,5 +1,6 @@
 
 from tkinter import *
+import tkinter
 import customtkinter
 from tkinter import messagebox
 from PIL import ImageTk,Image
@@ -38,11 +39,12 @@ And this function will call the 'Customer' class and also the 'addOneCust' metho
 
 
 
-class CustomerTransaction(Toplevel): #customtkinter.CTk #Toplevel
+class CustomerTransaction(Tk): #customtkinter.CTk #Toplevel
     
     def __init__(self,):
         super().__init__()
         
+
         #parent.destroy()
         
         self.title('Customer Transaction')  
@@ -63,7 +65,49 @@ class CustomerTransaction(Toplevel): #customtkinter.CTk #Toplevel
                                                 font= ('arial',17),corner_radius=10,fg_color = '#31120c')
         
         self.startButton.place(relx = 0.51,rely = 0.6, anchor = CENTER)
+    
+
+    
+    def startTransaction(self):
         
+        from customer import Customer
+        addOneCust()
+        Customer(self)
+       
+        self.withdraw()
+        #self.destroy()
+
+
+
+class CustomerTransaction2(Toplevel): #customtkinter.CTk #Toplevel
+    
+    def __init__(self,):
+        super().__init__()
+        
+
+        #parent.destroy()
+        
+        self.title('Customer Transaction')  
+        # make function to get resolution so that it adjusts to each window 
+        
+        self.geometry('500x300')
+        self.config(bg = '#bf3c22')
+ 
+        self.logo = Image.open('pythonLogo.png')
+        self.resized = self.logo.resize((510,400))
+        self.logoNew = ImageTk.PhotoImage(self.resized)
+        
+        self.photoLabel = Label(self, image = self.logoNew,bg ='#bf3c22')
+        self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
+        
+        
+        self.startButton = customtkinter.CTkButton(self,text = 'Start your Order',command = self.startTransaction,bg_color ='#bf3c22',
+                                                font= ('arial',17),corner_radius=10,fg_color = '#31120c')
+        
+        self.startButton.place(relx = 0.51,rely = 0.6, anchor = CENTER)
+    
+
+    
     def startTransaction(self):
         
         from customer import Customer
@@ -71,24 +115,14 @@ class CustomerTransaction(Toplevel): #customtkinter.CTk #Toplevel
         Customer(self)
        
         self.forget(self)
-        #self.destroy()
-        
-           
- 
-# This function starts the customer transaction        
-def start():
-    global run
-    
-    run = CustomerTransaction()
+        #self.destroy()  
+
+
+def run2():
+    run = CustomerTransaction2()
     run.mainloop()
-    
-# This function stops the current transaction and calls a new one 'start()'
-def stopAndRun():
-      
-    run.forget(run)
-    start()
-    
-start() 
-    
+
+
+
 
 

@@ -7,8 +7,10 @@ import ttkbootstrap as tb
 
 from openKiosk import *
 
-
-#run = CustomerTransaction()
-#run.mainloop()
-
-
+def start():
+    run = CustomerTransaction()
+    if run.wm_state == 'withdrawn':
+        run.iconify()
+    run.mainloop()
+    
+start() 

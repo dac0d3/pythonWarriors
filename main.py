@@ -4,7 +4,7 @@ import customtkinter
 from PIL import ImageTk,Image
 
 
-
+# Make a duplicate of each class to call when going back only as top level 
 
 
 '''
@@ -35,7 +35,7 @@ for the user to input their credentials.
 '''
 
 
-class Main(Toplevel):
+class Main(Toplevel): #Toplevel
     
     def __init__(self):
         super().__init__()

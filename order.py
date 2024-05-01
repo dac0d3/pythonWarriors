@@ -569,12 +569,22 @@ class Checkout2(Toplevel):
         meatLoversPizza(numMP)
         
         
-        #self.destroy()
+        
         self.forget(self)
+        from openKiosk import run2
+        run2()
+        
+        #self.forget(self)
        
         # Calling this function stops the current transaction and starts a new one
-        from openKiosk import stopAndRun
-        stopAndRun()
+        
+        
+        
+        
+        
+        
+
+           
         
     def back(self):
         Order(self)
