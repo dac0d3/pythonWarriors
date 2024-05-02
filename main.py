@@ -41,7 +41,7 @@ class Main(Tk): #Toplevel
         
         
         #self.attributes('-fullscreen', True)
-        self.geometry('1400x500')
+        self.geometry('1000x500')
         self.title('Main')
         self.config(bg = '#d9472a') 
         
@@ -119,7 +119,7 @@ class Main2(Toplevel): #Toplevel
         
         
         #self.attributes('-fullscreen', True)
-        self.geometry('1400x500')
+        self.geometry('1000x500')
         self.title('Main')
         self.config(bg = '#d9472a') 
         

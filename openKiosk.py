@@ -48,9 +48,10 @@ class CustomerTransaction(Tk): #customtkinter.CTk #Toplevel
         #parent.destroy()
         
         self.title('Customer Transaction')  
+        
         # make function to get resolution so that it adjusts to each window 
         
-        self.geometry('500x300')
+        self.geometry('1000x500')
         self.config(bg = '#bf3c22')
  
         self.logo = Image.open('pythonLogo.png')
@@ -115,7 +116,7 @@ class CustomerTransaction2(Toplevel): #customtkinter.CTk #Toplevel
         self.title('Customer Transaction')  
         # make function to get resolution so that it adjusts to each window 
         
-        self.geometry('500x300')
+        self.geometry('1000x500')
         self.config(bg = '#bf3c22')
  
         self.logo = Image.open('pythonLogo.png')

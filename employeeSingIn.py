@@ -42,7 +42,7 @@ class EmployeeSingIn(Toplevel):
         super().__init__(parent)
         
         self.title('Python Parlor Employee')
-        self.geometry('1400x500')
+        self.geometry('1000x500')
         self.config(bg = '#d9472a')
         
         self.chefButton = customtkinter.CTkButton(self,text = 'Chef Sign In',command = self.chefSign,bg_color='#d9472a',fg_color='black')
@@ -106,7 +106,7 @@ class ChefSignIn(Toplevel):
     def __init__(self,parent):
         super().__init__(parent)
         
-        self.geometry('1400x500')
+        self.geometry('1000x500')
         self.title('Chef Sign In')
         self.config(bg = '#d9472a')
         
@@ -185,7 +185,7 @@ class RunnerSignIn(Toplevel):
     def __init__(self,parent):
         super().__init__(parent)
         
-        self.geometry('1400x500')
+        self.geometry('1000x500')
         self.title('Chef Sign In')
         self.config(bg = '#d9472a')
         

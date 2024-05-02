@@ -43,7 +43,7 @@ class Customer(Toplevel):
         super().__init__(parent)
        
         
-        self.geometry('1440x500')   #900
+        self.geometry('1000x500')
         self.title('Customer Registration')
         self.config(bg = '#d9472a')
         

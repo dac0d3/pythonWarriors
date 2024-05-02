@@ -47,7 +47,7 @@ class Runner(Toplevel):
         
         #GUI for Runner window
         self.title('Orders')
-        self.geometry('1400x500')
+        self.geometry('1000x500')
         self.config(bg = '#d9472a')
         
 

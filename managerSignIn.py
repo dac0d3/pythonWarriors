@@ -39,7 +39,7 @@ class ManagerSignIn(Toplevel):
     def __init__(self,parent):
         super().__init__(parent)
         
-        self.geometry('1400x500')
+        self.geometry('1000x500')
         self.title('Manager Sign In')
         self.config(bg = '#d9472a')
         
@@ -132,7 +132,7 @@ class ManagerHomePage(Toplevel):
         super().__init__(parent)
         
         self.title('Manager HomePage')
-        self.geometry('1400x500')
+        self.geometry('1000x500')
         self.config(bg = '#d9472a')
 
 

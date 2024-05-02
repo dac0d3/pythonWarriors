@@ -64,7 +64,7 @@ class Order(Toplevel):
         self.book = load_workbook('customerTransactions.xlsx')
         self.sheet = self.book.active
         
-        self.geometry('1440x500') #900
+        self.geometry('1000x500')
         self.title('Order Screen')
         self.config(bg = '#335BFF') 
         
@@ -390,7 +390,7 @@ class Checkout2(Toplevel):
         print('total no tax: '+str(totalNoTax))
         print('tax: '+str(tax))
         
-        self.geometry('1440x500')
+        self.geometry('1000x500')
         self.title('Checkout')
         self.config(bg = '#d9472a')
         
