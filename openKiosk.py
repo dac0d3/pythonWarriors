@@ -79,6 +79,31 @@ class CustomerTransaction(Tk): #customtkinter.CTk #Toplevel
 
 
 
+
+
+
+
+'''
+
+Class Name: CustomerTransaction2
+Documentation Date: 04/21/24
+Prog. Name: Diego Carbajal
+
+Class Descripion: This class is the main loop for the customer transaction, it 
+creates the first window a customer would see when they want to place an order. The window shows the
+retaurant logo and a button which lets the customer know that they need to click it in order to start their order. 
+
+
+Important Functions: 
+
+'__init__' : This function is what creates the window and holds all the buttons and widgets dislayed in the GUI. 
+
+'startTransaction' : This function is called when the customer clicks on the button to start their transaction. 
+And this function will call the 'Customer' class and also the 'addOneCust' method in the 'updateTransaction' file. 
+
+
+'''
+
 class CustomerTransaction2(Toplevel): #customtkinter.CTk #Toplevel
     
     def __init__(self,):
@@ -118,6 +143,10 @@ class CustomerTransaction2(Toplevel): #customtkinter.CTk #Toplevel
         #self.destroy()  
 
 
+
+
+
+# method that call the duplicate transaction class as top level
 def run2():
     run = CustomerTransaction2()
     run.mainloop()

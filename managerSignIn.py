@@ -92,9 +92,9 @@ class ManagerSignIn(Toplevel):
     
     
     def goBack(self):
-        self.withdraw()  
-        from main import stopAndRun
-        stopAndRun()
+        self.withdraw()   
+        from main import Main2
+        Main2(self)
     
     
     
@@ -175,8 +175,8 @@ class ManagerHomePage(Toplevel):
     def resetTrans(self):
         resetTransactions()
         
-    def closeWindow(self):
+    def closeWindow(self): 
         self.withdraw()  
-        from main import stopAndRun
-        stopAndRun()
+        from main import Main2
+        Main2(self)
     

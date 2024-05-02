@@ -68,8 +68,8 @@ class EmployeeSingIn(Toplevel):
         
     def goBack(self):
         self.withdraw()  
-        from main import stopAndRun
-        stopAndRun()
+        from main import Main2
+        Main2(self)
     
       
       
