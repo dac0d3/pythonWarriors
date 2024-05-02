@@ -45,7 +45,7 @@ class Customer(Toplevel):
         
         self.geometry('1100x600')
         self.title('Customer Registration')
-        self.config(bg = '#db7c6b')
+        self.config(bg = '#9f3a2d')
         
         
         self.nameVal = StringVar
