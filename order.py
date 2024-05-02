@@ -16,7 +16,7 @@ import smtplib
 from revenue import *
 from updateInventory import *
 from updateTransaction import *
-from emailConfirm import EmailMessage
+from emailConfirm import *
 
 
 
@@ -595,7 +595,7 @@ class Checkout2(Toplevel):
         
         # This gets the customer email from excel and 
         cusEmail = sheet['C'+str(cusID)].value
-        EmailMessage(cusEmail)
+        emailConf(cusEmail)
         
                   
         updateCusID(cusID)

@@ -44,5 +44,7 @@ def emailConf(email):
         smtp.login(sender,password)
         smtp.sendmail(sender,receiver,em.as_string())
         
+    print('Email Sent')
+        
         
 #emailConf(email1)
