@@ -73,14 +73,14 @@ class Order(Toplevel):
         
         
         # This is the menu that shows the items and prices 
-        self.menuFrame = Frame(self,bg = '#FF7D33',padx = 70,pady = 70)
+        self.menuFrame = Frame(self,bg = '#FF7D33',padx = 70,pady = 70,highlightbackground="#31120c", highlightcolor="#31120c", highlightthickness=3,bd = 0)
         self.menuFrame.place(relx = 0.9,rely = 0.5,anchor = E)
         
         
-        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#0000FF')
+        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#FF7D33')
         self.menuLabel.grid(row = 1,column = 0,columnspan=2,pady = 2)
         
-        self.lineLabel = Label(self.menuFrame,text = '-----------------------------------------',bg = '#0000FF')
+        self.lineLabel = Label(self.menuFrame,text = '-----------------------------------------',bg = '#FF7D33')
         self.lineLabel.grid(row = 2,column = 0,columnspan=2,pady = 5) 
         
         # Displays images for Cheese pizza 
@@ -118,19 +118,19 @@ class Order(Toplevel):
         
         
         # These are the labels for the type of pizzas alligned with pictures  
-        self.CPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Cheese Pizza: $15')
+        self.CPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Cheese Pizza: $15',text_color='white')
         #self.CPPicturelabel.place(relx = 0.8,rely = 0.85,anchor = E)
         self.CPPicturelabel.grid(row = 3,column = 0)    
         
-        self.PPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Pepperoni Pizza: $17')
+        self.PPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Pepperoni Pizza: $17',text_color='white')
         #self.PPPicturelabel.place(relx = 0.9,rely = 0.85,anchor = E)
         self.PPPicturelabel.grid(row = 3,column = 1)    
         
-        self.HPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Hawaiian Pizza: $16')
+        self.HPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Hawaiian Pizza: $16',text_color='white')
         #self.HPPicturelabel.place(relx = 0.8,rely = 0.45,anchor = E)
         self.HPPicturelabel.grid(row = 5,column = 0)    
         
-        self.MPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Meat-Lovers Pizza: $19')
+        self.MPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Meat-Lovers: $19',text_color='white')
         #self.MPPicturelabel.place(relx = 0.9,rely = 0.45,anchor = E)
         self.MPPicturelabel.grid(row = 5,column = 1)    
         
@@ -143,12 +143,12 @@ class Order(Toplevel):
         
         
         # Frame for pizza label and their entry boxes
-        self.orderFrame = Frame(self,bg = '#964B00',pady = 70, padx = 70)
+        self.orderFrame = Frame(self,bg = '#964B00',pady = 70, padx = 70,highlightbackground="#31120c", highlightcolor="#31120c", highlightthickness=3,bd = 0)
         self.orderFrame.place(relx = 0.05,rely = 0.5,anchor = W)
         
 
         # heading for orderFrame
-        self.orderHeading = Label(self.orderFrame,text = "Enter your order below",font = ('arial',30,'bold'),bg = '#d9472a')                             
+        self.orderHeading = Label(self.orderFrame,text = "Enter your order below",font = ('arial',30,'bold'),bg = '#964B00')                             
         self.orderHeading.grid(row = 0,column = 0,columnspan=2)
         
         #entry for Cheese pizzas 
@@ -436,8 +436,14 @@ class Checkout2(Toplevel):
         
         
         
+        
+        
+        
+        
+        
+        
         # This is the frame and everything to go inside 
-        self.orderFrame = Frame(self,bg = '#F3B552',padx = 55,pady = 150,)
+        self.orderFrame = Frame(self,bg = '#F3B552',padx = 55,pady = 100,highlightbackground="#31120c", highlightcolor="#31120c", highlightthickness=3,bd = 0)
         self.orderFrame.place(relx = 0.5,rely =0.5,anchor = CENTER)
         
         
