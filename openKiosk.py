@@ -51,7 +51,8 @@ class CustomerTransaction(Tk): #customtkinter.CTk #Toplevel
         
         # make function to get resolution so that it adjusts to each window 
         
-        self.geometry('1000x500')
+        #self.attributes('-fullscreen',True)
+        self.geometry('1100x600')
         self.config(bg = '#bf3c22')
  
         self.logo = Image.open('pythonLogo.png')
@@ -116,14 +117,15 @@ class CustomerTransaction2(Toplevel): #customtkinter.CTk #Toplevel
         self.title('Customer Transaction')  
         # make function to get resolution so that it adjusts to each window 
         
-        self.geometry('1000x500')
+        #self.attributes('-fullscreen',True)
+        self.geometry('1100x600')
         self.config(bg = '#bf3c22')
  
         self.logo = Image.open('pythonLogo.png')
         self.resized = self.logo.resize((510,400))
         self.logoNew = ImageTk.PhotoImage(self.resized)
         
-        self.photoLabel = Label(self, image = self.logoNew,bg ='#bf3c22')
+        self.photoLabel = Label(self, image = self.logoNew,bg ='#bf3c22',pady = 70,padx = 70)
         self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         

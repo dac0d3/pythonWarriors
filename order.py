@@ -64,131 +64,171 @@ class Order(Toplevel):
         self.book = load_workbook('customerTransactions.xlsx')
         self.sheet = self.book.active
         
-        self.geometry('1000x500')
+        #self.attributes('-fullscreen',True)
+        self.geometry('1100x600')
         self.title('Order Screen')
-        self.config(bg = '#335BFF') 
+        self.config(bg = '#bf3c22') 
         
         
         
+        
+        # This is the menu that shows the items and prices 
+        self.menuFrame = Frame(self,bg = '#FF7D33',padx = 70,pady = 70)
+        self.menuFrame.place(relx = 0.9,rely = 0.5,anchor = E)
+        
+        
+        self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#0000FF')
+        self.menuLabel.grid(row = 1,column = 0,columnspan=2,pady = 2)
+        
+        self.lineLabel = Label(self.menuFrame,text = '-----------------------------------------',bg = '#0000FF')
+        self.lineLabel.grid(row = 2,column = 0,columnspan=2,pady = 5) 
         
         # Displays images for Cheese pizza 
         self.cheesePizzaIm = Image.open('360_F_26257008_Amvaw8kdz8KViXR1Gc3fNgl2sfubDV8E.webp')
         self.resized = self.cheesePizzaIm.resize((100,100))
         self.cheesePizzaImNew = ImageTk.PhotoImage(self.resized)
-        self.cheesePhotoLabel = Label(self,image = self.cheesePizzaImNew,bg ='#d9472a')
-        self.cheesePhotoLabel.place(relx = 0.8,rely = 0.7,anchor = E)
-        
-        
+        self.cheesePhotoLabel = Label(self.menuFrame,image = self.cheesePizzaImNew,bg ='#d9472a')
+        #self.cheesePhotoLabel.place(relx = 0.8,rely = 0.7,anchor = E)  
+        self.cheesePhotoLabel.grid(row = 4,column = 0)      
         
         # Displays images for peperoni pizza 
         self.pepPizzaIm = Image.open('AdobeStock_223971020.jpeg')
         self.resized = self.pepPizzaIm.resize((100,100))
         self.pepPizzaImNew = ImageTk.PhotoImage(self.resized)
-        self.pepPhotoLabel = Label(self, image = self.pepPizzaImNew,bg ='#d9472a')
-        self.pepPhotoLabel.place(relx = 0.9,rely = 0.7,anchor = E)
-
-
+        self.pepPhotoLabel = Label(self.menuFrame, image = self.pepPizzaImNew,bg ='#d9472a')
+        #self.pepPhotoLabel.place(relx = 0.9,rely = 0.7,anchor = E)
+        self.pepPhotoLabel.grid(row = 4,column = 1)    
 
         # Displays images for hawaiian pizza 
         self.hawaiianPizzaIm = Image.open('AdobeStock_89727055.jpeg')
         self.resized = self.hawaiianPizzaIm.resize((100,100))
         self.hawaiianPizzaImNew = ImageTk.PhotoImage(self.resized)
-        self.hawaiianPhotoLabel = Label(self, image = self.hawaiianPizzaImNew,bg ='#d9472a')
-        self.hawaiianPhotoLabel.place(relx = 0.8,rely = 0.3,anchor = E)
-        
-        
+        self.hawaiianPhotoLabel = Label(self.menuFrame, image = self.hawaiianPizzaImNew,bg ='#d9472a')
+        #self.hawaiianPhotoLabel.place(relx = 0.8,rely = 0.3,anchor = E)
+        self.hawaiianPhotoLabel.grid(row = 6,column = 0)    
         
         # Displays images for meatlovers pizza 
         self.mlPizzaIm = Image.open('AdobeStock_144066594.jpeg')
         self.resized = self.mlPizzaIm.resize((100,100))
         self.mlPizzaImNew = ImageTk.PhotoImage(self.resized)
-        self.mlPhotoLabel = Label(self, image = self.mlPizzaImNew,bg ='#d9472a')
-        self.mlPhotoLabel.place(relx = 0.9,rely = 0.3,anchor = E)
+        self.mlPhotoLabel = Label(self.menuFrame, image = self.mlPizzaImNew,bg ='#d9472a')
+        #self.mlPhotoLabel.place(relx = 0.9,rely = 0.3,anchor = E)
+        self.mlPhotoLabel.grid(row = 6,column = 1)    
         
         
         
         # These are the labels for the type of pizzas alligned with pictures  
-        self.CPPicturelabel = customtkinter.CTkLabel(self,text = 'Cheese Pizza: ')
-        self.CPPicturelabel.place(relx = 0.8,rely = 0.85,anchor = E)
+        self.CPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Cheese Pizza: $15')
+        #self.CPPicturelabel.place(relx = 0.8,rely = 0.85,anchor = E)
+        self.CPPicturelabel.grid(row = 3,column = 0)    
         
-        self.PPPicturelabel = customtkinter.CTkLabel(self,text = 'Pepperoni Pizza: ')
-        self.PPPicturelabel.place(relx = 0.9,rely = 0.85,anchor = E)
+        self.PPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Pepperoni Pizza: $17')
+        #self.PPPicturelabel.place(relx = 0.9,rely = 0.85,anchor = E)
+        self.PPPicturelabel.grid(row = 3,column = 1)    
         
-        self.HPPicturelabel = customtkinter.CTkLabel(self,text = 'Hawaiian Pizza: ')
-        self.HPPicturelabel.place(relx = 0.8,rely = 0.45,anchor = E)
+        self.HPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Hawaiian Pizza: $16')
+        #self.HPPicturelabel.place(relx = 0.8,rely = 0.45,anchor = E)
+        self.HPPicturelabel.grid(row = 5,column = 0)    
         
-        self.MPPicturelabel = customtkinter.CTkLabel(self,text = 'Meat-Lovers Pizza: ')
-        self.MPPicturelabel.place(relx = 0.9,rely = 0.45,anchor = E)
-        
-        
-        
-        
+        self.MPPicturelabel = customtkinter.CTkLabel(self.menuFrame,text = 'Meat-Lovers Pizza: $19')
+        #self.MPPicturelabel.place(relx = 0.9,rely = 0.45,anchor = E)
+        self.MPPicturelabel.grid(row = 5,column = 1)    
         
         
+        
+        
+        
+        
+        
+        
+        
+        # Frame for pizza label and their entry boxes
+        self.orderFrame = Frame(self,bg = '#964B00',pady = 70, padx = 70)
+        self.orderFrame.place(relx = 0.05,rely = 0.5,anchor = W)
+        
+
+        # heading for orderFrame
+        self.orderHeading = Label(self.orderFrame,text = "Enter your order below",font = ('arial',30,'bold'),bg = '#d9472a')                             
+        self.orderHeading.grid(row = 0,column = 0,columnspan=2)
         
         #entry for Cheese pizzas 
-        self.entryCP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
-        self.entryCP.place(relx = 0.1,rely = 0.2,anchor = W)
+        self.entryCP = customtkinter.CTkEntry(self.orderFrame,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
+        #self.entryCP.place(relx = 0.1,rely = 0.2,anchor = W)
+        self.entryCP.grid(row = 1,column = 1,pady = 2)
 
         #entry for Pepperoni pizzas 
-        self.entryPP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
-        self.entryPP.place(relx = 0.1,rely = 0.3,anchor = W)
+        self.entryPP = customtkinter.CTkEntry(self.orderFrame,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
+        #self.entryPP.place(relx = 0.1,rely = 0.3,anchor = W)
+        self.entryPP.grid(row = 2,column = 1,pady = 2)
 
         #entry for Hawaiian pizzas 
-        self.entryHP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
-        self.entryHP.place(relx = 0.1,rely = 0.4,anchor = W)
+        self.entryHP = customtkinter.CTkEntry(self.orderFrame,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
+        #self.entryHP.place(relx = 0.1,rely = 0.4,anchor = W)
+        self.entryHP.grid(row = 3,column = 1,pady = 2)
 
         #entry for Meat Lovers pizzas 
-        self.entryMP = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
-        self.entryMP.place(relx = 0.1,rely = 0.5,anchor = W)
+        self.entryMP = customtkinter.CTkEntry(self.orderFrame,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
+        #self.entryMP.place(relx = 0.1,rely = 0.5,anchor = W)
+        self.entryMP.grid(row = 4,column = 1,pady = 2)
         
-        
-        
-        
-        
-        # button that will get order and open window to checkout screen 
-        self.checkoutButton = customtkinter.CTkButton(self,text = "Proceed to checkout",command = self.getValues,
-                                                      bg_color= '#d9472a',hover_color='gray',corner_radius=10,fg_color='#31120c')
-        self.checkoutButton.place(relx = 0.1,rely = 0.8,anchor = SW)
-        
+
         
         # These are the labels for the type of pizzas alligned with entry boxes 
-        self.CPlabel = customtkinter.CTkLabel(self,text = 'Cheese Pizza: ')
-        self.CPlabel.place(relx = 0.015,rely = 0.2,anchor = W)
+        self.CPlabel = customtkinter.CTkLabel(self.orderFrame,text = 'Cheese Pizza: ')
+        #self.CPlabel.place(relx = 0.015,rely = 0.2,anchor = W)
+        self.CPlabel.grid(row = 1,column = 0,pady = 2)
         
-        self.PPlabel = customtkinter.CTkLabel(self,text = 'Pepperoni Pizza: ')
-        self.PPlabel.place(relx = 0.015,rely = 0.3,anchor = W)
+        self.PPlabel = customtkinter.CTkLabel(self.orderFrame,text = 'Pepperoni Pizza: ')
+        #self.PPlabel.place(relx = 0.015,rely = 0.3,anchor = W)
+        self.PPlabel.grid(row = 2,column = 0,pady = 2)
         
-        self.HPlabel = customtkinter.CTkLabel(self,text = 'Hawaiian Pizza: ')
-        self.HPlabel.place(relx = 0.015,rely = 0.4,anchor = W)
+        self.HPlabel = customtkinter.CTkLabel(self.orderFrame,text = 'Hawaiian Pizza: ')
+        #self.HPlabel.place(relx = 0.015,rely = 0.4,anchor = W)
+        self.HPlabel.grid(row = 3,column = 0,pady = 2)
         
-        self.MPlabel = customtkinter.CTkLabel(self,text = 'Meat Lovers Pizza: ')
-        self.MPlabel.place(relx = 0.015,rely = 0.5,anchor = W)
+        self.MPlabel = customtkinter.CTkLabel(self.orderFrame,text = 'Meat-Lovers Pizza: ')
+        #self.MPlabel.place(relx = 0.015,rely = 0.5,anchor = W)
+        self.MPlabel.grid(row = 4,column = 0,pady = 2)
         
+ 
+ 
+        # button that will get order and open window to checkout screen 
+        self.checkoutButton = customtkinter.CTkButton(self.orderFrame,text = "Proceed to checkout",command = self.getValues,
+                                                      bg_color= '#d9472a',hover_color='gray',corner_radius=10,fg_color='#31120c')
+        self.checkoutButton.grid(row = 5,column = 0,columnspan = 2,pady = 30)
+        #self.checkoutButton.place(relx = 0.1,rely = 0.8,anchor = SW)
 
 
 
 
+
+        '''
         # This is the menu that shows the items and prices 
-        self.menuFrame = Frame(self,bg = '#FF7D33',padx = 70,pady = 70,)
+        self.menuFrame = Frame(self,bg = '#FF7D33',padx = 70,pady = 70)
         self.menuFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
+        
+        
+        
         self.menuLabel = Label(self.menuFrame,font = ('arial',23,),text = 'MENU',bg = '#0000FF')
-        self.menuLabel.pack()
+        self.menuLabel.grid(row = 1,column = 0,columnspan=2,pady = 2)
+        
+        self.lineLabel = Label(self.menuFrame,text = '-------------------------------------',bg = '#0000FF')
+        self.lineLabel.grid(row = 2,column = 0,columnspan=2,pady = 5) 
         
         self.chLabel = Label(self.menuFrame,text = 'Cheese Pizza: $15',bg = '#0000FF')
-        self.chLabel.pack()
+        self.chLabel.grid(row = 3,column = 0,pady = 2,columnspan= 2)
         
         self.ppLabel = Label(self.menuFrame,text = 'Pepperoni: $17',bg = '#0000FF')
-        self.ppLabel.pack()
+        self.ppLabel.grid(row = 4,column = 0,pady = 2,columnspan= 2)
         
         self.hpLabel = Label(self.menuFrame,text = 'Hawaiian Pizza: $16',bg = '#0000FF')
-        self.hpLabel.pack()
+        self.hpLabel.grid(row = 5,column = 0,pady = 2,columnspan= 2)
         
         self.mpLabel = Label(self.menuFrame,text = 'Meat-Lovers Pizza: $19',bg = '#0000FF')
-        self.mpLabel.pack()
-
+        self.mpLabel.grid(row = 6,column = 0,pady = 2,columnspan= 2)
+        '''
 
 
 
@@ -390,7 +430,7 @@ class Checkout2(Toplevel):
         print('total no tax: '+str(totalNoTax))
         print('tax: '+str(tax))
         
-        self.geometry('1000x500')
+        self.geometry('1100x600')
         self.title('Checkout')
         self.config(bg = '#d9472a')
         

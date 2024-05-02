@@ -43,45 +43,54 @@ class Customer(Toplevel):
         super().__init__(parent)
        
         
-        self.geometry('1000x500')
+        self.geometry('1100x600')
         self.title('Customer Registration')
-        self.config(bg = '#d9472a')
+        self.config(bg = '#964B00')
         
         
         self.nameVal = StringVar
         self.emailVal = StringVar
 
 
+        # Frame for everything in window
+        self.infoFrame = Frame(self,bg = '#d9472a',pady = 100,padx = 100)
+        self.infoFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
+        
+        
         #Heading 
         #Label(self,text = "Customer Registration",font = 'ar 45 bold',bg = '#d9472a').place(relx = 0.105,rely = 0.065,anchor = W,fg = 'black')
-        self.custRegTitle = customtkinter.CTkLabel(self,text = "Enter your information below",font = ('arial',30,'bold'),bg_color = '#d9472a',fg_color='#d9472a',text_color='#31120c',
+        self.custRegTitle = customtkinter.CTkLabel(self.infoFrame,text = "Enter your information below",font = ('arial',30,'bold'),bg_color = '#d9472a',fg_color='#d9472a',text_color='#31120c',
                                                    height=40)
-        self.custRegTitle.place(relx = 0.1,rely = 0.05,anchor = W)
+        self.custRegTitle.grid(row = 0,column= 0,columnspan = 2,pady = 20)
 
 
         #Field Name
-        self.name = customtkinter.CTkLabel(self,text = "Name: ",bg_color='#d9472a',font = ('arial',15))
-        self.email = customtkinter.CTkLabel(self,text = "Email: ",bg_color = '#d9472a',font = ('arial',15))
+        self.name = customtkinter.CTkLabel(self.infoFrame,text = "Name: ",bg_color='#d9472a',font = ('arial',15))
+        self.email = customtkinter.CTkLabel(self.infoFrame,text = "Email: ",bg_color = '#d9472a',font = ('arial',15))
 
-        self.name.place(relx = 0.1,rely = 0.2,anchor = W)
-        self.email.place(relx = 0.1,rely = 0.3,anchor = W)
+        self.name.grid(row = 1,column= 0,pady = 2,columnspan = 2)
+        self.email.grid(row = 3,column= 0,pady = 2,columnspan = 2)
 
 
         #Creating Entry Field
-        self.nameEntry = customtkinter.CTkEntry(self,border_width=0 ,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b',)    #bg_color='#d9472a',corner_radius=10    ,textvariable=self.nameVal                                  
-        self.emailEntry = customtkinter.CTkEntry(self, border_width=0,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b',)       #,textvariable=self.emailVal
+        self.nameEntry = customtkinter.CTkEntry(self.infoFrame,border_width=0 ,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b',)    #bg_color='#d9472a',corner_radius=10    ,textvariable=self.nameVal                                  
+        self.emailEntry = customtkinter.CTkEntry(self.infoFrame, border_width=0,bg_color='#d9472a',corner_radius=5,fg_color='#db7c6b',)       #,textvariable=self.emailVal
 
 
         #Packing Entry Fields
-        self.nameEntry.place(relx = 0.1,rely = 0.25,anchor = W)
-        self.emailEntry.place(relx = 0.1,rely = 0.35,anchor = W)
+        self.nameEntry.grid(row = 2,column= 0,pady = 2,columnspan = 2)
+        self.emailEntry.grid(row = 4,column= 0,pady = 2,columnspan = 2)
 
 
         #Submit Button
-        self.submitButton = customtkinter.CTkButton(self,text = 'Submit',command = self.getVals,
+        self.submitButton = customtkinter.CTkButton(self.infoFrame,text = 'Submit',command = self.getVals,
                                                     corner_radius=10,bg_color='#d9472a',
                                                     hover_color='gray',fg_color='#31120c')
-        self.submitButton.place(relx = 0.1,rely = 0.5,anchor = W)
+        #self.submitButton.place(relx = 0.1,rely = 0.5,anchor = W)
+        self.submitButton.grid(row = 5,column= 0,columnspan = 2,pady = 30)
+        
+        
+        
         
             
        
