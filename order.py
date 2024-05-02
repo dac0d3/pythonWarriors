@@ -151,51 +151,55 @@ class Order(Toplevel):
         self.orderHeading = Label(self.orderFrame,text = "Enter your order below",font = ('arial',30,'bold'),bg = '#964B00')                             
         self.orderHeading.grid(row = 0,column = 0,columnspan=2)
         
+        # Line space
+        self.line2 = Label(self.orderFrame,text = "---------------------------------------------------------",bg = '#964B00')                             
+        self.line2.grid(row = 1,column = 0,columnspan=2)
+        
         #entry for Cheese pizzas 
         self.entryCP = customtkinter.CTkEntry(self.orderFrame,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
         #self.entryCP.place(relx = 0.1,rely = 0.2,anchor = W)
-        self.entryCP.grid(row = 1,column = 1,pady = 2)
+        self.entryCP.grid(row = 2,column = 1,pady = 2)
 
         #entry for Pepperoni pizzas 
         self.entryPP = customtkinter.CTkEntry(self.orderFrame,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
         #self.entryPP.place(relx = 0.1,rely = 0.3,anchor = W)
-        self.entryPP.grid(row = 2,column = 1,pady = 2)
+        self.entryPP.grid(row = 3,column = 1,pady = 2)
 
         #entry for Hawaiian pizzas 
         self.entryHP = customtkinter.CTkEntry(self.orderFrame,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
         #self.entryHP.place(relx = 0.1,rely = 0.4,anchor = W)
-        self.entryHP.grid(row = 3,column = 1,pady = 2)
+        self.entryHP.grid(row = 4,column = 1,pady = 2)
 
         #entry for Meat Lovers pizzas 
         self.entryMP = customtkinter.CTkEntry(self.orderFrame,bg_color='#d9472a',fg_color='#db7c6b',border_width=0)
         #self.entryMP.place(relx = 0.1,rely = 0.5,anchor = W)
-        self.entryMP.grid(row = 4,column = 1,pady = 2)
+        self.entryMP.grid(row = 5,column = 1,pady = 2)
         
 
         
         # These are the labels for the type of pizzas alligned with entry boxes 
         self.CPlabel = customtkinter.CTkLabel(self.orderFrame,text = 'Cheese Pizza: ')
         #self.CPlabel.place(relx = 0.015,rely = 0.2,anchor = W)
-        self.CPlabel.grid(row = 1,column = 0,pady = 2)
+        self.CPlabel.grid(row = 2,column = 0,pady = 2)
         
         self.PPlabel = customtkinter.CTkLabel(self.orderFrame,text = 'Pepperoni Pizza: ')
         #self.PPlabel.place(relx = 0.015,rely = 0.3,anchor = W)
-        self.PPlabel.grid(row = 2,column = 0,pady = 2)
+        self.PPlabel.grid(row = 3,column = 0,pady = 2)
         
         self.HPlabel = customtkinter.CTkLabel(self.orderFrame,text = 'Hawaiian Pizza: ')
         #self.HPlabel.place(relx = 0.015,rely = 0.4,anchor = W)
-        self.HPlabel.grid(row = 3,column = 0,pady = 2)
+        self.HPlabel.grid(row = 4,column = 0,pady = 2)
         
         self.MPlabel = customtkinter.CTkLabel(self.orderFrame,text = 'Meat-Lovers Pizza: ')
         #self.MPlabel.place(relx = 0.015,rely = 0.5,anchor = W)
-        self.MPlabel.grid(row = 4,column = 0,pady = 2)
+        self.MPlabel.grid(row = 5,column = 0,pady = 2)
         
  
  
         # button that will get order and open window to checkout screen 
         self.checkoutButton = customtkinter.CTkButton(self.orderFrame,text = "Proceed to checkout",command = self.getValues,
                                                       bg_color= '#d9472a',hover_color='gray',corner_radius=10,fg_color='#31120c')
-        self.checkoutButton.grid(row = 5,column = 0,columnspan = 2,pady = 30)
+        self.checkoutButton.grid(row = 6,column = 0,columnspan = 2,pady = 30)
         #self.checkoutButton.place(relx = 0.1,rely = 0.8,anchor = SW)
 
 
