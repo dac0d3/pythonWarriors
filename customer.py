@@ -45,7 +45,7 @@ class Customer(Toplevel):
         
         self.geometry('1100x600')
         self.title('Customer Registration')
-        self.config(bg = '#964B00')
+        self.config(bg = '#db7c6b')
         
         
         self.nameVal = StringVar
@@ -53,7 +53,7 @@ class Customer(Toplevel):
 
 
         # Frame for everything in window
-        self.infoFrame = Frame(self,bg = '#d9472a',pady = 100,padx = 100)
+        self.infoFrame = Frame(self,bg = '#d9472a',pady = 100,padx = 100,border=10)
         self.infoFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
