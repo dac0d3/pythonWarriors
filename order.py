@@ -597,7 +597,7 @@ class Checkout2(Toplevel):
         
         cusID = getCusID()  
         
-        # This gets the customer email from excel and 
+        # This gets the customer email from excel and calls method to send customer email
         cusEmail = sheet['C'+str(cusID)].value
         emailConf(cusEmail)
         
