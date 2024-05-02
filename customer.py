@@ -106,7 +106,7 @@ class Customer(Toplevel):
             email = self.emailEntry.get()
             
             if name.isalpha() == True:
-                if email.find('@csun.edu')!= -1 or email.find('@gmail.com')!= -1 or email.find('@icloud.com')!= -1 :
+                if email.find('@my.csun.edu')!= -1 or email.find('@gmail.com')!= -1 or email.find('@icloud.com')!= -1 :
                 
                     saveValues(cusID,name,email)
 
