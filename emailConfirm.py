@@ -46,8 +46,13 @@ def emailConf(email):
             smtp.sendmail(sender,receiver,em.as_string())
 
         print('Email Sent')
+        
+        return True
+    
     except:
         print('Email Not Valid')
+        
+        return False
         
         
         

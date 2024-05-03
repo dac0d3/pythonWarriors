@@ -10,6 +10,7 @@ import openpyxl
 from openpyxl import Workbook, load_workbook
 
 from updateTransaction import *
+from emailConfirm import emailConf
 
 book = load_workbook('customerTransactions.xlsx')
 sheet = book.active
@@ -105,21 +106,32 @@ class Customer(Toplevel):
             name = self.nameEntry.get()     
             email = self.emailEntry.get()
             
+            # Checks validity of email and send email to verify customer 
+            emailCheck = emailConf(email)
+            
             if name.isalpha() == True:
-                if email.find('@my.csun.edu')!= -1 or email.find('@gmail.com')!= -1 or email.find('@icloud.com')!= -1 :
-                
+                if emailCheck == True: 
                     saveValues(cusID,name,email)
 
-                    #print("Name:", name)
-                    #print("Email:", email)
+                        #print("Name:", name)
+                        #print("Email:", email)
 
                     Order(self)         # strts order in order class
                     self.forget(self)   # hides customer sign in for next customer 
                 else:
-                    messagebox.showwarning('Error',"Enter your csun, gmail, or icloud email")
+                    messagebox.showwarning('Error',"Your email is not valid")
             else:
                 messagebox.showwarning('Error',"Your name can only contain letters")
              
         else:
             messagebox.showwarning('Error',"You missed an entry!")
-        
+     
+     
+     
+'''
+if email.find('@my.csun.edu')!= -1 or email.find('@gmail.com')!= -1 or email.find('@icloud.com')!= -1 :
+                    
+                        
+else:
+    messagebox.showwarning('Error',"Enter your csun, gmail, or icloud email")
+    '''
