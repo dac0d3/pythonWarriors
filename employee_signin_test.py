@@ -19,6 +19,7 @@ class TestEmployeeSignIn(unittest.TestCase):
         app.entry2.insert(0, 'incorrect_password') 
         app.checkInfo()  
         root.mainloop()  
+        print("Not signed in")
 
     def test_RunnerSignIn_CorrectCredentials(self):
         root = Tk()
@@ -33,7 +34,8 @@ class TestEmployeeSignIn(unittest.TestCase):
         app = RunnerSignIn(root)
         app.entry1.insert(0, 'incorrect_username') 
         app.entry2.insert(0, 'incorrect_password') 
-        app.checkInfo()  
+        app.checkInfo()
+        print("Not signed in")
 
 if __name__ == '__main__':
     unittest.main()
