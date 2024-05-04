@@ -45,11 +45,33 @@ class EmployeeSingIn(Toplevel):
         self.geometry('1000x500')
         self.config(bg = '#d9472a')
         
-        self.chefButton = customtkinter.CTkButton(self,text = 'Chef Sign In',command = self.chefSign,bg_color='#d9472a',fg_color='black')
-        self.chefButton.place(relx = 0.4,rely = 0.4,anchor = CENTER)
         
-        self.runnerButton = customtkinter.CTkButton(self,text = 'Runner Sign In',command = self.runnerSign,bg_color='#d9472a',fg_color='black')
-        self.runnerButton.place(relx = 0.5,rely = 0.4,anchor = CENTER)
+        
+        
+        
+        #Frame for chef and runner button
+        self.jobFrame = Frame(self,pady = 50,padx = 30,bg = 'red')
+        self.jobFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
+        
+        #Heading 
+        self.managerTitle = customtkinter.CTkLabel(self.jobFrame ,text = "Select Position",font = ('arial',26),bg_color = '#d9472a')
+        self.managerTitle.grid(row = 0,column = 0,columnspan = 2,pady = 5)
+        
+        self.space1 = customtkinter.CTkLabel(self.jobFrame ,text = '' )
+        self.space1.grid(row = 1,column = 0,pady = 10)
+        
+        self.chefButton = customtkinter.CTkButton(self.jobFrame,text = 'Chef Sign In',command = self.chefSign,bg_color='#d9472a',fg_color='black',height = 35,width = 35)
+        self.chefButton.grid(row = 2, column = 0, columnspan = 2,pady = 4)
+        
+        self.runnerButton = customtkinter.CTkButton(self.jobFrame,text = 'Runner Sign In',command = self.runnerSign,bg_color='#d9472a',fg_color='black',height = 35,width = 35)
+        self.runnerButton.grid(row = 3, column = 0, columnspan = 2,pady = 4)
+        
+        
+        
+        
+        
+        
+        
         
         self.backButton = customtkinter.CTkButton(self,text = 'Back',
                                                   command = self.goBack,bg_color='#d9472a',
@@ -110,25 +132,33 @@ class ChefSignIn(Toplevel):
         self.title('Chef Sign In')
         self.config(bg = '#d9472a')
         
-        self.user = customtkinter.CTkLabel(self,text = 'Enter Username: ' )
-        self.user.grid(row =1,column = 1)
         
-        self.entry1= Entry(self)
-        self.entry1= customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black')
-        self.entry1.grid(row = 1,column = 2)
         
-        self.passw = customtkinter.CTkLabel(self,text = 'Enter Password: ' )
-        self.passw.grid(row =2,column = 1)
+        #Frame for chef and runner button
+        self.chefFrame = Frame(self,pady = 50,padx = 30,bg = 'red')
+        self.chefFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
-        self.entry2 = Entry(self)
-        self.entry2= customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black')
-        self.entry2.grid(row = 2,column = 2)
         
-        self.submit = customtkinter.CTkButton(self,text = "Submit",command = self.checkInfo,bg_color='#d9472a',fg_color='black')
-        self.submit.grid(row = 3,column = 2)
+        self.user = customtkinter.CTkLabel(self.chefFrame ,text = 'Enter Username: ' )
+        self.user.grid(row =1,column = 1,pady = 4)
         
+        self.entry1= customtkinter.CTkEntry(self.chefFrame ,bg_color='#d9472a',fg_color='black')
+        self.entry1.grid(row = 1,column = 2,pady = 4)
+        
+        self.passw = customtkinter.CTkLabel(self.chefFrame ,text = 'Enter Password: ' )
+        self.passw.grid(row =2,column = 1,pady = 4)
+        
+        self.entry2= customtkinter.CTkEntry(self.chefFrame ,bg_color='#d9472a',fg_color='black')
+        self.entry2.grid(row = 2,column = 2,pady = 4)
+        
+        self.submit = customtkinter.CTkButton(self.chefFrame ,text = "Submit",command = self.checkInfo,bg_color='#d9472a',fg_color='black')
+        self.submit.grid(row = 3,column = 2,columnspan = 2,pady = 4)
+        
+        
+        
+        # Return button
         self.returnButton = customtkinter.CTkButton(self,text = 'Back',command = self.goBack,bg_color='#d9472a',fg_color='black')
-        self.returnButton.grid(row = 10,column = 1)
+        self.returnButton.place(relx = 0.1,rely = 0.85,anchor = W)
     
     
     def checkInfo(self):

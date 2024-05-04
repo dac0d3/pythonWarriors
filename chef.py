@@ -5,6 +5,8 @@ from openpyxl import Workbook, load_workbook
 from managerSignIn import *
 import customtkinter
 
+from main import Main2
+
 
 # excel sheet for transactions
 book = load_workbook('customerTransactions.xlsx')           
@@ -61,6 +63,9 @@ class Chef(Toplevel):
 
         # fetching data from getOrder def
         self.getOrders()
+        
+        self.exitButton = customtkinter.CTkButton(self,text = 'Exit',command = self.exitPage)
+        self.exitButton.place(relx = 0.8,rely = 0.8,anchor = CENTER)
 
       
 
@@ -77,6 +82,11 @@ class Chef(Toplevel):
         self.selected_row_label = Label(self, text="", bg='#d9472a')
         self.selected_row_label.pack() 
 
+
+    # Method to exit chef home Page
+    def exitPage(self):
+        Main2(self)
+        self.forget(self)
 
        
     # def for looping through customer transactions to get order data

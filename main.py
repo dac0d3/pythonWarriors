@@ -53,15 +53,14 @@ class Main(Tk): #Toplevel
         self.photoLabel.place(relx = 0.5,rely = 0.5,anchor = CENTER)
 
 
-
         self.employeeButton = customtkinter.CTkButton(self,text = 'Employee Sign-in',command = self.employeeSign,bg_color= '#d9472a',
                                                fg_color='black',height = 40,width=20)
-        self.employeeButton.place(relx = 0.41,rely = 0.6,anchor = W)
+        self.employeeButton.place(relx = 0.37,rely = 0.6,anchor = W)
         
         
         self.managerButton = customtkinter.CTkButton(self,text = 'Manager Sign-in',command = self.managerSign,bg_color= '#d9472a',
                                                fg_color='black',height = 40,width=20)
-        self.managerButton.place(relx = 0.61,rely = 0.6,anchor = E)
+        self.managerButton.place(relx = 0.65,rely = 0.6,anchor = E)
         
 
     def employeeSign(self):
@@ -134,12 +133,12 @@ class Main2(Toplevel): #Toplevel
 
         self.employeeButton = customtkinter.CTkButton(self,text = 'Employee Sign-in',command = self.employeeSign,bg_color= '#d9472a',
                                                fg_color='black',height = 40,width=20)
-        self.employeeButton.place(relx = 0.41,rely = 0.6,anchor = W)
+        self.employeeButton.place(relx = 0.37,rely = 0.6,anchor = W)
         
         
         self.managerButton = customtkinter.CTkButton(self,text = 'Manager Sign-in',command = self.managerSign,bg_color= '#d9472a',
                                                fg_color='black',height = 40,width=20)
-        self.managerButton.place(relx = 0.61,rely = 0.6,anchor = E)
+        self.managerButton.place(relx = 0.65,rely = 0.6,anchor = E)
         
 
     def employeeSign(self):

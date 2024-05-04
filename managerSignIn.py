@@ -48,31 +48,50 @@ class ManagerSignIn(Toplevel):
         self.logoNew = ImageTk.PhotoImage(self.resized)
         
         self.photoLabel = Label(self, image = self.logoNew,bg ='#d9472a')
-        self.photoLabel.place(relx = 0.62,rely = 0.43,anchor = CENTER)
+        self.photoLabel.place(relx = 0.7,rely = 0.43,anchor = CENTER)
         
         
+        
+        
+        
+        #Frame for text and entry boxes
+        self.signFrame = Frame(self,pady = 50,padx = 30,bg = 'red')
+        self.signFrame.place(relx = 0.05,rely = 0.43,anchor = W)
         
         #Heading 
-        self.managerTitle = customtkinter.CTkLabel(self,text = "Manager Sign-In",font = ('arial',30),bg_color = '#d9472a')
-        self.managerTitle.place(relx = 0.1,rely = 0.05,anchor = W)
+        self.managerTitle = customtkinter.CTkLabel(self.signFrame ,text = "Manager Sign-In",font = ('arial',26),bg_color = '#d9472a')
+        self.managerTitle.grid(row = 0,column = 0,columnspan = 2,pady = 10)
         
+        self.space1 = customtkinter.CTkLabel(self.signFrame ,text = '' )
+        self.space1.grid(row = 1,column = 0,pady = 10)
         
-        self.user = customtkinter.CTkLabel(self,text = 'Enter Username: ' )
-        self.user.place(relx = 0.1,rely = 0.2,anchor = W)
+        #Username label
+        self.user = customtkinter.CTkLabel(self.signFrame ,text = 'Enter Username: ',font = ('arial',15))
+        self.user.grid(row = 2,column = 0,pady = 2)
         
-        self.entry1= customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black')
-        self.entry1.place(relx = 0.2,rely = 0.2,anchor = W)
+        # username entry
+        self.entry1= customtkinter.CTkEntry(self.signFrame ,bg_color='#d9472a',fg_color='black')
+        self.entry1.grid(row = 2,column = 1,pady = 2)
         
-        self.passw = customtkinter.CTkLabel(self,text = 'Enter Password: ' )
-        self.passw.place(relx = 0.1,rely = 0.3,anchor = W)
+        #password label
+        self.passw = customtkinter.CTkLabel(self.signFrame ,text = 'Enter Password: ',font = ('arial',15))
+        self.passw.grid(row = 3,column = 0,pady = 2)
         
-        self.entry2 = customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black')
-        self.entry2.place(relx = 0.2,rely = 0.3,anchor = W)
+        #password entry
+        self.entry2 = customtkinter.CTkEntry(self.signFrame ,bg_color='#d9472a',fg_color='black')
+        self.entry2.grid(row = 3,column = 1,pady = 2)
         
-        self.submit = customtkinter.CTkButton(self,text = "Submit",command = self.checkCredentials,
-                                              bg_color='#d9472a',fg_color='black')
-        self.submit.place(relx = 0.2,rely = 0.4,anchor = W)
+        self.space2 = customtkinter.CTkLabel(self.signFrame ,text = '' )
+        self.space2.grid(row = 4,column = 0,pady = 5)
+        
+        #submit button
+        self.submit = customtkinter.CTkButton(self.signFrame ,text = "Submit",command = self.checkCredentials,
+                                              bg_color='#d9472a',fg_color='black',height = 12,width = 20)
+        self.submit.grid(row = 5,column = 0,pady = 2,columnspan = 2)
     
+    
+    
+        # return button
         self.returnButton = customtkinter.CTkButton(self,text = 'Back',command = self.goBack,
                                                     bg_color='#d9472a',fg_color='black',height = 10,width = 10)
         self.returnButton.place(relx = 0.1,rely = 0.9,anchor = SW)
@@ -145,35 +164,47 @@ class ManagerHomePage(Toplevel):
 
 
 
+        
+        #Frame for text and entry boxes
+        self.homeFrame = Frame(self,pady = 75,padx = 75,bg = 'red')
+        self.homeFrame.place(relx = 0.05,rely = 0.43,anchor = W)
+        
+        
+        
+        # Buttons to restock inventory and reset customer transactions
+        self.button1 = customtkinter.CTkButton(self.homeFrame,text = 'Restock Inventory',command = self.resetInventory,
+                                               bg_color='#d9472a',fg_color='black')
+        self.button1.grid(row = 1,column = 0, columnspan = 2,pady = 3)
+        
+        self.button2 = customtkinter.CTkButton(self.homeFrame,text = 'Reset Transactions', command = self.resetTrans,
+                                               bg_color='#d9472a',fg_color='black')
+        self.button2.grid(row = 2,column = 0, columnspan = 2,pady = 3)
 
-        self.button1 = customtkinter.CTkButton(self,text = 'Restock Inventory',command = self.resetInventory,
-                                               bg_color='#d9472a',fg_color='black')
-        self.button1.place(relx = 0.5,rely = 0.4,anchor = W)
         
-        self.button2 = customtkinter.CTkButton(self,text = 'Reset Transactions', command = self.resetTrans,
-                                               bg_color='#d9472a',fg_color='black')
-        self.button2.place(relx = 0.5,rely = 0.5,anchor = W)
+        # gets rev and put it in revenue label
+        rev = getRevenue()
+        rev = round(rev,2)
         
+        self.label = customtkinter.CTkButton(self.homeFrame,text = 'Current Revenue: $'+str(rev),
+                                            bg_color='#d9472a',fg_color='black',height = 20,width = 20)
+        self.label.grid(row = 3,column = 0, columnspan = 2,pady = 3)
+        
+        
+        
+        # Exti button
         self.button4 = customtkinter.CTkButton(self,text = 'Exit',command = self.closeWindow,
                                                bg_color='#d9472a',fg_color='black')
-        self.button4.place(relx = 0.5,rely = 0.6,anchor = W)
-        
-
-        
-        rev = getRevenue()
-        
-        rev = round(rev,2)
-        self.label = customtkinter.CTkLabel(self,text = 'Current Revenue: $'+str(rev),
-                                            bg_color='#d9472a',fg_color='black')
-        self.label.place(relx = 0.5,rely = 0.7,anchor = W)
+        self.button4.place(relx = 0.8,rely = 0.8,anchor = W)
         
         
     def resetInventory(self):
         restockInventory()
         print('Inventory has been restocked!')
-        
+        messagebox.showinfo('Alert','Inventory has been restocked to full capacity')
+         
     def resetTrans(self):
         resetTransactions()
+        messagebox.showinfo('Alert','New excel sheet is now ready')
         
     def closeWindow(self): 
         self.withdraw()  
