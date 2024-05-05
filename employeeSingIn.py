@@ -134,7 +134,7 @@ class ChefSignIn(Toplevel):
         
         
         
-        #Frame for chef and runner button
+        #Frame for chef 
         self.chefFrame = Frame(self,pady = 50,padx = 30,bg = 'red')
         self.chefFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
@@ -219,25 +219,38 @@ class RunnerSignIn(Toplevel):
         self.title('Chef Sign In')
         self.config(bg = '#d9472a')
         
-        self.user = customtkinter.CTkLabel(self,text = 'Enter Username: ' )
-        self.user.grid(row =1,column = 1)
+        
+        
+        
+        
+        #Frame for runner
+        self.runnerFrame = Frame(self,pady = 50,padx = 30,bg = 'red')
+        self.runnerFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
+        
+        
+        
+        self.user = customtkinter.CTkLabel(self.runnerFrame,text = 'Enter Username: ' )
+        self.user.grid(row =1,column = 1,pady = 4)
         
         self.entry1= Entry(self)
-        self.entry1= customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black')
-        self.entry1.grid(row = 1,column = 2)
+        self.entry1= customtkinter.CTkEntry(self.runnerFrame,bg_color='#d9472a',fg_color='black')
+        self.entry1.grid(row =1,column = 2,pady = 4)
         
-        self.passw = customtkinter.CTkLabel(self,text = 'Enter Password: ' )
-        self.passw.grid(row =2,column = 1)
+        self.passw = customtkinter.CTkLabel(self.runnerFrame,text = 'Enter Password: ' )
+        self.passw.grid(row =2,column = 1,pady = 4)
         
         self.entry2 = Entry(self)
-        self.entry2= customtkinter.CTkEntry(self,bg_color='#d9472a',fg_color='black')
-        self.entry2.grid(row = 2,column = 2)
+        self.entry2= customtkinter.CTkEntry(self.runnerFrame,bg_color='#d9472a',fg_color='black')
+        self.entry2.grid(row =2,column = 2,pady = 4)
         
-        self.submit = customtkinter.CTkButton(self,text = "Submit",command = self.checkInfo,bg_color='#d9472a',fg_color='black')
-        self.submit.grid(row = 3,column = 2)
+        self.submit = customtkinter.CTkButton(self.runnerFrame,text = "Submit",command = self.checkInfo,bg_color='#d9472a',fg_color='black')
+        self.submit.grid(row =3,column = 2,columnspan = 2, pady = 4)
         
+        
+        
+        # return button 
         self.returnButton = customtkinter.CTkButton(self,text = 'Back',command = self.goBack,bg_color='#d9472a',fg_color='black')
-        self.returnButton.grid(row = 10,column = 1)
+        self.returnButton.place(relx = 0.05,rely = 0.9,anchor = W)
     
     
     
