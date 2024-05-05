@@ -74,6 +74,7 @@ class CustomerTransaction(Tk): #customtkinter.CTk #Toplevel
         
         from customer import Customer
         addOneCust()
+        
         Customer(self)
        
         self.withdraw()

@@ -619,7 +619,6 @@ class Checkout2(Toplevel):
         meatLoversPizza(numMP)
         
         
-        
         self.forget(self)
         from openKiosk import run2
         run2()
