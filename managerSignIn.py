@@ -55,30 +55,30 @@ class ManagerSignIn(Toplevel):
         
         
         #Frame for text and entry boxes
-        self.signFrame = Frame(self,pady = 50,padx = 30,bg = 'red')
+        self.signFrame = Frame(self,pady = 50,padx = 30,bg = '#FFE6D8',highlightbackground="#31120c", highlightcolor="#31120c", highlightthickness=3,bd = 0)
         self.signFrame.place(relx = 0.05,rely = 0.43,anchor = W)
         
         #Heading 
-        self.managerTitle = customtkinter.CTkLabel(self.signFrame ,text = "Manager Sign-In",font = ('arial',26),bg_color = '#d9472a')
+        self.managerTitle = customtkinter.CTkLabel(self.signFrame ,text = "Manager Sign-In",font = ('arial',26),bg_color = '#FFE6D8',text_color='black')
         self.managerTitle.grid(row = 0,column = 0,columnspan = 2,pady = 10)
         
         self.space1 = customtkinter.CTkLabel(self.signFrame ,text = '' )
         self.space1.grid(row = 1,column = 0,pady = 10)
         
         #Username label
-        self.user = customtkinter.CTkLabel(self.signFrame ,text = 'Enter Username: ',font = ('arial',15))
+        self.user = customtkinter.CTkLabel(self.signFrame ,text = 'Enter Username: ',font = ('arial',15),bg_color = '#FFE6D8',text_color='black')
         self.user.grid(row = 2,column = 0,pady = 2)
         
         # username entry
-        self.entry1= customtkinter.CTkEntry(self.signFrame ,bg_color='#d9472a',fg_color='black')
+        self.entry1= customtkinter.CTkEntry(self.signFrame ,bg_color='#FFE6D8',fg_color='black')
         self.entry1.grid(row = 2,column = 1,pady = 2)
         
         #password label
-        self.passw = customtkinter.CTkLabel(self.signFrame ,text = 'Enter Password: ',font = ('arial',15))
+        self.passw = customtkinter.CTkLabel(self.signFrame ,text = 'Enter Password: ',font = ('arial',15),bg_color = '#FFE6D8',text_color='black')
         self.passw.grid(row = 3,column = 0,pady = 2)
         
         #password entry
-        self.entry2 = customtkinter.CTkEntry(self.signFrame ,bg_color='#d9472a',fg_color='black')
+        self.entry2 = customtkinter.CTkEntry(self.signFrame ,bg_color='#FFE6D8',fg_color='black')
         self.entry2.grid(row = 3,column = 1,pady = 2)
         
         self.space2 = customtkinter.CTkLabel(self.signFrame ,text = '' )
@@ -86,7 +86,7 @@ class ManagerSignIn(Toplevel):
         
         #submit button
         self.submit = customtkinter.CTkButton(self.signFrame ,text = "Submit",command = self.checkCredentials,
-                                              bg_color='#d9472a',fg_color='black',height = 12,width = 20)
+                                              bg_color='#FFE6D8',fg_color='black',height = 12,width = 20)
         self.submit.grid(row = 5,column = 0,pady = 2,columnspan = 2)
     
     
@@ -166,18 +166,18 @@ class ManagerHomePage(Toplevel):
 
         
         #Frame for text and entry boxes
-        self.homeFrame = Frame(self,pady = 75,padx = 75,bg = 'red')
+        self.homeFrame = Frame(self,pady = 75,padx = 75,bg = '#FFE6D8',highlightbackground="#31120c", highlightcolor="#31120c", highlightthickness=3,bd = 0)
         self.homeFrame.place(relx = 0.05,rely = 0.43,anchor = W)
         
         
         
         # Buttons to restock inventory and reset customer transactions
         self.button1 = customtkinter.CTkButton(self.homeFrame,text = 'Restock Inventory',command = self.resetInventory,
-                                               bg_color='#d9472a',fg_color='black')
+                                               bg_color='#FFE6D8',fg_color='black')
         self.button1.grid(row = 1,column = 0, columnspan = 2,pady = 3)
         
         self.button2 = customtkinter.CTkButton(self.homeFrame,text = 'Reset Transactions', command = self.resetTrans,
-                                               bg_color='#d9472a',fg_color='black')
+                                               bg_color='#FFE6D8',fg_color='black')
         self.button2.grid(row = 2,column = 0, columnspan = 2,pady = 3)
 
         
@@ -186,7 +186,7 @@ class ManagerHomePage(Toplevel):
         rev = round(rev,2)
         
         self.label = customtkinter.CTkButton(self.homeFrame,text = 'Current Revenue: $'+str(rev),
-                                            bg_color='#d9472a',fg_color='black',height = 20,width = 20)
+                                            bg_color='#FFE6D8',fg_color='black',height = 20,width = 20)
         self.label.grid(row = 3,column = 0, columnspan = 2,pady = 3)
         
         

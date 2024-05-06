@@ -50,20 +50,20 @@ class EmployeeSingIn(Toplevel):
         
         
         #Frame for chef and runner button
-        self.jobFrame = Frame(self,pady = 50,padx = 30,bg = 'red')
+        self.jobFrame = Frame(self,pady = 50,padx = 30,bg = '#FFE6D8',highlightbackground="#31120c", highlightcolor="#31120c", highlightthickness=3,bd = 0)
         self.jobFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         #Heading 
-        self.managerTitle = customtkinter.CTkLabel(self.jobFrame ,text = "Select Position",font = ('arial',26),bg_color = '#d9472a')
+        self.managerTitle = customtkinter.CTkLabel(self.jobFrame ,text = "Select Position",font = ('arial',26),bg_color = '#FFE6D8',text_color = 'black')
         self.managerTitle.grid(row = 0,column = 0,columnspan = 2,pady = 5)
         
         self.space1 = customtkinter.CTkLabel(self.jobFrame ,text = '' )
         self.space1.grid(row = 1,column = 0,pady = 10)
         
-        self.chefButton = customtkinter.CTkButton(self.jobFrame,text = 'Chef Sign In',command = self.chefSign,bg_color='#d9472a',fg_color='black',height = 35,width = 35)
+        self.chefButton = customtkinter.CTkButton(self.jobFrame,text = 'Chef Sign In',command = self.chefSign,bg_color='#FFE6D8',fg_color='black',height = 35,width = 35)
         self.chefButton.grid(row = 2, column = 0, columnspan = 2,pady = 4)
         
-        self.runnerButton = customtkinter.CTkButton(self.jobFrame,text = 'Runner Sign In',command = self.runnerSign,bg_color='#d9472a',fg_color='black',height = 35,width = 35)
+        self.runnerButton = customtkinter.CTkButton(self.jobFrame,text = 'Runner Sign In',command = self.runnerSign,bg_color='#FFE6D8',fg_color='black',height = 35,width = 35)
         self.runnerButton.grid(row = 3, column = 0, columnspan = 2,pady = 4)
         
         
@@ -135,23 +135,23 @@ class ChefSignIn(Toplevel):
         
         
         #Frame for chef 
-        self.chefFrame = Frame(self,pady = 50,padx = 30,bg = 'red')
+        self.chefFrame = Frame(self,pady = 50,padx = 30,bg = '#FFE6D8',highlightbackground="#31120c", highlightcolor="#31120c", highlightthickness=3,bd = 0)
         self.chefFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
-        self.user = customtkinter.CTkLabel(self.chefFrame ,text = 'Enter Username: ' )
+        self.user = customtkinter.CTkLabel(self.chefFrame ,text = 'Enter Username: ' ,bg_color = '#FFE6D8',text_color='black')
         self.user.grid(row =1,column = 1,pady = 4)
         
-        self.entry1= customtkinter.CTkEntry(self.chefFrame ,bg_color='#d9472a',fg_color='black')
+        self.entry1= customtkinter.CTkEntry(self.chefFrame ,bg_color='#FFE6D8',fg_color='black')
         self.entry1.grid(row = 1,column = 2,pady = 4)
         
-        self.passw = customtkinter.CTkLabel(self.chefFrame ,text = 'Enter Password: ' )
+        self.passw = customtkinter.CTkLabel(self.chefFrame ,text = 'Enter Password: ' ,bg_color = '#FFE6D8',text_color='black')
         self.passw.grid(row =2,column = 1,pady = 4)
         
-        self.entry2= customtkinter.CTkEntry(self.chefFrame ,bg_color='#d9472a',fg_color='black')
+        self.entry2= customtkinter.CTkEntry(self.chefFrame ,bg_color='#FFE6D8',fg_color='black')
         self.entry2.grid(row = 2,column = 2,pady = 4)
         
-        self.submit = customtkinter.CTkButton(self.chefFrame ,text = "Submit",command = self.checkInfo,bg_color='#d9472a',fg_color='black')
+        self.submit = customtkinter.CTkButton(self.chefFrame ,text = "Submit",command = self.checkInfo,bg_color='#FFE6D8',fg_color='black')
         self.submit.grid(row = 3,column = 2,columnspan = 2,pady = 4)
         
         
@@ -216,7 +216,7 @@ class RunnerSignIn(Toplevel):
         super().__init__(parent)
         
         self.geometry('1000x500')
-        self.title('Chef Sign In')
+        self.title('Runner Sign In')
         self.config(bg = '#d9472a')
         
         
@@ -224,26 +224,26 @@ class RunnerSignIn(Toplevel):
         
         
         #Frame for runner
-        self.runnerFrame = Frame(self,pady = 50,padx = 30,bg = 'red')
+        self.runnerFrame = Frame(self,pady = 50,padx = 30,bg = '#FFE6D8',highlightbackground="#31120c", highlightcolor="#31120c", highlightthickness=3,bd = 0)
         self.runnerFrame.place(relx = 0.5,rely = 0.5,anchor = CENTER)
         
         
         
-        self.user = customtkinter.CTkLabel(self.runnerFrame,text = 'Enter Username: ' )
+        self.user = customtkinter.CTkLabel(self.runnerFrame,text = 'Enter Username: ' ,bg_color = '#FFE6D8',text_color='black')
         self.user.grid(row =1,column = 1,pady = 4)
         
         self.entry1= Entry(self)
-        self.entry1= customtkinter.CTkEntry(self.runnerFrame,bg_color='#d9472a',fg_color='black')
+        self.entry1= customtkinter.CTkEntry(self.runnerFrame,bg_color='#FFE6D8',fg_color='black')
         self.entry1.grid(row =1,column = 2,pady = 4)
         
-        self.passw = customtkinter.CTkLabel(self.runnerFrame,text = 'Enter Password: ' )
+        self.passw = customtkinter.CTkLabel(self.runnerFrame,text = 'Enter Password: ' ,bg_color = '#FFE6D8',text_color='black')
         self.passw.grid(row =2,column = 1,pady = 4)
         
         self.entry2 = Entry(self)
-        self.entry2= customtkinter.CTkEntry(self.runnerFrame,bg_color='#d9472a',fg_color='black')
+        self.entry2= customtkinter.CTkEntry(self.runnerFrame,bg_color='#FFE6D8',fg_color='black')
         self.entry2.grid(row =2,column = 2,pady = 4)
         
-        self.submit = customtkinter.CTkButton(self.runnerFrame,text = "Submit",command = self.checkInfo,bg_color='#d9472a',fg_color='black')
+        self.submit = customtkinter.CTkButton(self.runnerFrame,text = "Submit",command = self.checkInfo,bg_color='#FFE6D8',fg_color='black')
         self.submit.grid(row =3,column = 2,columnspan = 2, pady = 4)
         
         
