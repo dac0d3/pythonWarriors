@@ -4,6 +4,7 @@ import openpyxl
 from openpyxl import Workbook, load_workbook
 from managerSignIn import *
 import customtkinter
+import random
 
 from main import Main2
 
@@ -43,72 +44,101 @@ associated with the button or to make the current order disappear if it's no lon
 
 
 class Runner(Toplevel):
-    
+
     def __init__(self, parent):
         super().__init__(parent)
-        
-        #GUI for Runner window
-        self.title('Orders')
-        self.geometry('1000x500')
-        self.config(bg = '#d9472a')
-        
 
-    
-        # List to order labels
-        self.order_labels = []
+        # GUI for chef window
+        self.title('Orders & Tables')
+        self.geometry('1000x500')
+        self.config(bg='#d9472a')
+
+        # Canvas to hold the frame and allow scrolling
+        self.canvas = Canvas(self, bg='#d9472a')
+        self.canvas.pack(side=LEFT, fill=BOTH, expand=True)
+
+        # Canvas to hold the buttons
+        self.frame = Frame(self.canvas, bg='#d9472a')
+        self.canvas.create_window((0, 0), window=self.frame, anchor='nw')
+
+        # List to hold order buttons and their associated delete buttons
+        self.order_buttons = {}
 
         # list for order data
         self.order_data = []
 
-        # fetching data from getOrder def
+        # Fetch order data from Excel
         self.getOrders()
-        
-        self.exitButton = customtkinter.CTkButton(self,text = 'Exit',command = self.exitPage)
-        self.exitButton.place(relx = 0.8,rely = 0.8,anchor = CENTER)
 
-      
+        for idx, order_text in enumerate(self.order_data, start=1):
+            order_btn = Button(self.frame, text=f"Order {idx}", command=lambda i=idx: self.display_row(i),
+                               bg='#d9472a', fg='black', highlightbackground='#d9472a', highlightcolor='#d9472a')
+            order_btn.pack(side=TOP, anchor=W, padx=10, pady=5)
 
-        for idx, row_data in enumerate(self.order_data, start=2):
-            #function call
-            btn = Button(self, text=f"Order {idx - 1}", command=lambda i=idx: self.display_row(i),bg='#d9472a',fg='black', highlightbackground='#d9472a',
-            highlightcolor='#d9472a')
-            btn.pack(side=TOP, anchor=W)
-            
-            #adds button to list
-            self.order_labels.append(btn)
+            delete_btn = Button(self.frame, text=f"Complete Order {idx}", command=lambda button=order_btn: self.deleteButton(button),
+                     bg='#d9472a', fg='black', highlightbackground='#d9472a', highlightcolor='#d9472a')
 
-        # Selected row label
-        self.selected_row_label = Label(self, text="", bg='#d9472a')
-        self.selected_row_label.pack() 
+            delete_btn.pack(side=TOP, anchor=E, padx=10, pady=5)
 
+            # Store order button and delete button in the list
+            self.order_buttons[order_btn] = delete_btn
 
-    # Method to exit runner home Page 
-    def exitPage(self):
-        Main2(self)
-        self.forget(self)
-        
-       
-    # def for looping through customer transactions to get order data
+        # Scrollbar
+        scrollbar = Scrollbar(self, orient=VERTICAL, command=self.canvas.yview, bg='blue')
+        scrollbar.pack(side=RIGHT, fill=Y)
+        self.canvas.config(yscrollcommand=scrollbar.set)
+
+        # Updates the scroll function
+        self.canvas.update_idletasks()
+        self.canvas.config(scrollregion=self.canvas.bbox("all"))
+
+        # Selected order label
+        self.selected_order_label = Label(self, text="", bg='#d9472a')
+        self.selected_order_label.pack()
+
+        self.exitButton = customtkinter.CTkButton(self, text='Exit', command=self.exitPage)
+        self.exitButton.place(relx=0.8, rely=0.8, anchor=CENTER)
+
+    # Method to fetch orders data from Excel
     def getOrders(self):
         for row in range(2, sheet.max_row + 1):
             CP = sheet['D' + str(row)].value
             PP = sheet['E' + str(row)].value
             HP = sheet['F' + str(row)].value
-            MLP =sheet['G' + str(row)].value
+            MLP = sheet['G' + str(row)].value
 
-            if CP is not None:  # if no data is available, then file has reached final order
-                self.order_data.append(f"Cheese Pizza(s){CP}\nPepperoni Pizza(s):{PP}\nHawaiian Pizza(s):{HP}\nMeat Lovers Pizza(s):{MLP}")
-    
-    def display_row(self, row_num):
-        #get widget value
-        current_text = self.selected_row_label.cget("text")  
-        #adjusting list by 2 b/c excel index starting at 2 and 
-        new_text = f"ORDER #{row_num -1}\n{self.order_data[row_num-2]}"  
+            if CP is not None:  # Check if data is available for this row
+                table_number = random.randint(1, 50) #random variable to imitate customers being seated
+                self.order_data.append(
+                    f"TABLE {table_number}: \nCheese Pizza(s) {CP}\nPepperoni Pizza(s): {PP}\nHawaiian Pizza(s): {HP}\nMeat Lovers Pizza(s): {MLP}")
+                
+    # Method to display selected order details
+    def display_row(self, order_num):
+        current_text = self.selected_order_label.cget("text")
+        new_text = f"ORDER #{order_num}\n{self.order_data[order_num - 1]}" if 1 <= order_num <= len(
+            self.order_data) else ""
 
-        if current_text == new_text: 
-            self.selected_row_label.config(text="", bg='#FFC902', fg='black',font=('Arial', 18))
-        else: 
-            self.selected_row_label.config(text=new_text, bg='#FFC902', fg='black',font=('Arial', 18))
+        if current_text == new_text:
+            self.selected_order_label.config(text="", bg='#FFC902', fg='black', font=('Arial', 50))
+        else:
+            self.selected_order_label.config(text=new_text, bg='#FFC902', fg='black', font=('Arial', 50))
+
+  
+    # Method to delete an order button and its associated delete button
+    def deleteButton(self, order_btn):
+        delete_btn = self.order_buttons.pop(order_btn)
+        order_btn.destroy()
+        delete_btn.destroy()
+
+    # Check if there are no more order buttons left
+        if not self.order_buttons:
+            self.selected_order_label.config(text="", bg='#d9472a', fg='black', font=('Arial', 50))
+
+
+    # Method to exit chef home Page
+    def exitPage(self):
+        Main2(self)
+        self.forget(self)
 
 
 
