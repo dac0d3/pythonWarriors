@@ -84,7 +84,7 @@ class Order(Toplevel):
         self.lineLabel.grid(row = 2,column = 0,columnspan=2,pady = 5) 
         
         # Displays images for Cheese pizza 
-        self.cheesePizzaIm = Image.open('360_F_26257008_Amvaw8kdz8KViXR1Gc3fNgl2sfubDV8E.webp')
+        self.cheesePizzaIm = Image.open('a82131d6-d7db-4ab2-9727-13b7057fa813.png')
         self.resized = self.cheesePizzaIm.resize((100,100))
         self.cheesePizzaImNew = ImageTk.PhotoImage(self.resized)
         self.cheesePhotoLabel = Label(self.menuFrame,image = self.cheesePizzaImNew,bg ='#5EB6D7')
@@ -92,7 +92,7 @@ class Order(Toplevel):
         self.cheesePhotoLabel.grid(row = 4,column = 0)      
         
         # Displays images for peperoni pizza 
-        self.pepPizzaIm = Image.open('AdobeStock_223971020.jpeg')
+        self.pepPizzaIm = Image.open('70b5e075-dc74-4be5-a5f2-abac79d93907.png')
         self.resized = self.pepPizzaIm.resize((100,100))
         self.pepPizzaImNew = ImageTk.PhotoImage(self.resized)
         self.pepPhotoLabel = Label(self.menuFrame, image = self.pepPizzaImNew,bg ='#5EB6D7')
@@ -100,7 +100,7 @@ class Order(Toplevel):
         self.pepPhotoLabel.grid(row = 4,column = 1)    
 
         # Displays images for hawaiian pizza 
-        self.hawaiianPizzaIm = Image.open('AdobeStock_89727055.jpeg')
+        self.hawaiianPizzaIm = Image.open('1c279298-5a52-4085-a0af-cad880c07072.png')
         self.resized = self.hawaiianPizzaIm.resize((100,100))
         self.hawaiianPizzaImNew = ImageTk.PhotoImage(self.resized)
         self.hawaiianPhotoLabel = Label(self.menuFrame, image = self.hawaiianPizzaImNew,bg ='#5EB6D7')
@@ -108,7 +108,7 @@ class Order(Toplevel):
         self.hawaiianPhotoLabel.grid(row = 6,column = 0)    
         
         # Displays images for meatlovers pizza 
-        self.mlPizzaIm = Image.open('AdobeStock_144066594.jpeg')
+        self.mlPizzaIm = Image.open('dc7d8097-83ac-4d30-9e26-38c111ddab0c.png')
         self.resized = self.mlPizzaIm.resize((100,100))
         self.mlPizzaImNew = ImageTk.PhotoImage(self.resized)
         self.mlPhotoLabel = Label(self.menuFrame, image = self.mlPizzaImNew,bg ='#5EB6D7')
@@ -638,6 +638,4 @@ class Checkout2(Toplevel):
     def back(self):
         Order(self)
         self.forget(self)
-        
-
         
