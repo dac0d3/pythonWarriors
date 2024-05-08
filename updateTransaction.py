@@ -70,7 +70,7 @@ def saveValues(cusID,name,email):
     
     
     
-    
+# Method to save order in excel after the order is confirmed in checkout  
 def saveOrder(cusID,numCP,numPP,numHP,numMP,total):
     
     numCP = int(numCP)
