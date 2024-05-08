@@ -77,7 +77,7 @@ class Chef(Toplevel):
 
             # Store order button and delete button in the dictionary
             self.order_buttons[order_btn] = delete_btn
-
+        '''
         # Scrollbar
         scrollbar = Scrollbar(self, orient=VERTICAL, command=self.canvas.yview, bg='blue')
         scrollbar.pack(side=RIGHT, fill=Y)
@@ -86,7 +86,7 @@ class Chef(Toplevel):
         # Update the scroll function
         self.canvas.update_idletasks()
         self.canvas.config(scrollregion=self.canvas.bbox("all"))
-
+        '''
         # Selected order label
         self.selected_order_label = Label(self, text="", bg='#d9472a')
         self.selected_order_label.pack()
