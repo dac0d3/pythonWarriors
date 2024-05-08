@@ -22,16 +22,16 @@ cd ..
 ### Exectuable
 > Do it all in  terminal
 
-1. cp <file>.py <file>.command
+1. cp file.py file.command
 2. add the following line to the top
 ```
 #!/usr/bin/env python
 
 some other code
 ```
-3. chmod +x <file>.command
+3. chmod +x file.command
 
-4. ./<file>.command
+4. ./file.command
 
 ### Module Not Found error
 
